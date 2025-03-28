@@ -29,7 +29,7 @@
     top: 4%;
     right: 30px;
     font-size: 2em;
-    color: #1c520d;
+    color: #A6BD75;
     cursor: pointer;
   }
   
@@ -38,7 +38,7 @@
     top: 4%;
     left: 30px;
     font-size: 2em;
-    color: #0c4d1a;
+    color: #A6BD75;
     cursor: pointer;
   }
   
@@ -55,10 +55,11 @@
     height: 330px;
     margin: 0px 10px;
     display: inline-block;
-    background: rgb(116, 179, 121);
+    background: linear-gradient(to bottom, whitesmoke  65%, #A6BD75 80%);
     border-radius: 5px;
     box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
-  }
+}
+
   
   .post-slider .post-wrapper .post .post-info {
     height: 130px;
@@ -66,20 +67,62 @@
   }
   
   .post-slider .post-wrapper .post .slider-image {
-    width: 100%;
-    height: 200px;
+    width: 100%; /* Mantiene el ancho total del contenedor */
+    height: 200px; /* Mantiene la altura */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    object-position: center; /* Centra la imagen */
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-  }
+}
+
+
+  .slider-title {
+    font-family: 'Merriweather', serif; /* Cambia la fuente */
+    color: #333333; /* Color del texto */
+    font-size: 24px; /* Tamaño de la fuente */
+    font-weight: bold; /* Texto en negrita */
+    text-transform: uppercase; /* Convertir a mayúsculas */
+}
+
+/* Cambiar el estilo del título de cada post */
+.post-info h4 a {
+    font-family: 'Source Sans Pro', sans-serif; /* Cambia la fuente */
+    color: #192c0b; /* Color del enlace */
+    margin-top: 10px;
+    font-size: 18px; /* Tamaño de la fuente */
+    text-decoration: none; /* Elimina el subrayado */
+    transition: color 0.3s ease-in-out; /* Transición suave de color */
+}
+
+/* Cambiar el color del enlace al pasar el cursor */
+.post-info h4 a:hover {
+    color: #837d2e; /* Color más oscuro al hacer hover */
+}
+
+/* Cambiar el color y estilo del autor y fecha */
+.post-info i {
+    font-family: 'Source Sans Pro', sans-serif; /* Fuente */
+    color: #1c1c1c; /* Color del texto */
+    font-size: 14px; /* Tamaño del texto */
+    margin-top: 60px;
+    
+}
+
+.post-img{
+    padding: 0;
+    position: relative;
+}
+
+  
   
 /* Contenedor del contenido dentro del header */
 .header-content {
-    max-width: 1200px; /* Limita el ancho máximo del contenido */
-    margin: auto; /* Centra el contenido horizontalmente */
-    display: flex; /* Usa flexbox para organizar elementos */
-    justify-content: space-between; /* Distribuye los elementos a los extremos */
-    align-items: center; /* Alinea verticalmente los elementos */
-    padding: 0 20px; /* Añade espacio interno a los lados */
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 .header-content.logo-img{
     width: 75px;
@@ -93,16 +136,28 @@
 /* ======================= */
 /* 🔹 LOGO DEL HEADER 🔹 */
 /* ======================= */
+
+.container-cover .logo-ods img{
+    display: flex;
+    height: 90px;
+    margin-top: 10px;
+    margin-right:0px;
+ }
+
 .logo {
-    height: 80px; /* Altura del área del logo */
-    display: flex; /* Usa flexbox para centrar el contenido */
-    justify-content: center;
+    margin-top: 10px;
+    margin-left: 00px;
+    height: 80px;
+    display: flex;
     align-items: center;
+    font-size: 30px;
+    margin-right: 450px; /*posicion de el menu na ul li*/
+    /* Eliminar el margin-left que puede estar desalineando */
 }
 
 /* Estilo del texto dentro del logo */
 .logo h1 {
-    color: rgb(255, 255, 255); /* Color del texto del logo */
+    color: white; /* Color del texto del logo */
 }
 
 .logo-img img {
@@ -115,7 +170,9 @@
 /* 🔹 MENÚ DE NAVEGACIÓN 🔹 */
 /* =================== */
 .menu {
-    height: 80px; /* Mantiene la misma altura que el header */
+    height: 80px;
+    display:flex;
+    align-items: center; /* Asegura alineación vertical */
 }
 
 /* Contenedor del menú de navegación */
@@ -128,6 +185,7 @@
     height: 100%;
     display: flex; /* Usa flexbox para alinear los elementos en una fila */
     list-style: none; /* Elimina los estilos predeterminados de lista */
+    
 }
 
 /* Estilos para cada opción del menú */
@@ -138,6 +196,7 @@
     justify-content: center;
     align-items: center;
     position: relative; /* Permite agregar efectos visuales como líneas */
+    margin-top: 20px;/*Altura del menu nav ul*/
 }
 
 /* Línea superior que indica el menú seleccionado */
@@ -145,7 +204,7 @@
     content: ""; /* Elemento vacío para la línea */
     width: 100%;
     height: 4px;
-    background: #BDB76B; /* Color de la línea */
+    background: #a2a2a2; /* Color de la línea */
     position: absolute;
     top: 0; /* Aparece en la parte superior del menú */
     left: 0;
@@ -160,17 +219,18 @@
 
 /* Cambia el color del enlace cuando el usuario pasa el mouse */
 .menu nav ul li a:hover {
-    color: #BDB76B; /* Color del texto cuando está en hover */
+    color: white; /* Color del texto cuando está en hover */
 }
 
 /* Estilo para el texto del menú seleccionado */
 .menu .text-menu-selected {
-    color: #BDB76B; /* Color del elemento activo en el menú */
+    color: #ffffff; /* Color del elemento activo en el menú */
 }
 
 .menu nav ul li a i{
-    display: none;/*flex*/
+    display: flex;/*flex*/ /*none*/
 }
+
 
 #icon-menu{
     width: 50px;
@@ -181,7 +241,7 @@
     font-size: 20px;
     background: #fafafa;
     border-radius: 100%;
-    color:#78787878;
+    color:#000000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -197,29 +257,16 @@
 /* ====================== */
 /* 🔹 SECCIÓN DE PORTADA 🔹 */
 /* ====================== */
-header {
-  background-image: url(imagenWeb/img15.jpg);
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-}
-/* ================================ */
-/* 🔹 CONTENIDO CENTRAL DE LA PORTADA 🔹 */
-/* ================================ */
-.container-info-cover {
-    max-width: 800px; /* Limita el ancho del contenido */
-    height: 500px; /* Coincide con la altura de la portada */
-    margin: auto; /* Centra el contenido */
-    text-align: center; /* Alinea el texto al centro */
-    display: flex; /* Usa flexbox */
-    flex-direction: column; /* Apila los elementos verticalmente */
-    justify-content: center; /* Centra verticalmente */
-    align-items: center; /* Centra horizontalmente */
-    position: relative; /* Asegura que esté sobre la capa de fondo */
-    z-index: 1; /* Lo coloca sobre la capa de color */
+.container-cover {
+    width: 100%; /* Asegura que cubra toda la anchura de la pantalla */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    position:relative; /* Permite superponer elementos como capas */
+    background-image: url(imagenWeb/img15.jpg); /* Imagen de fondo */
+    background-position: center; /* Centra la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir toda el área */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    margin-top: 0;
+    padding-top: 0;
 }
 
 /* ====================== */
@@ -228,14 +275,15 @@ header {
 .container-info-cover h1 {
     font-size: 45px; /* Tamaño grande del título */
     font-weight: 500; /* Peso de la fuente */
-    color: #333333; /* Color gris oscuro */
+    color: whitesmoke; /* Color gris oscuro */
     margin-bottom: 20px; /* Espacio debajo del título */
+    
 }
 
 .container-info-cover p {
     font-size: 20px; /* Tamaño del texto del párrafo */
     font-weight: 300; /* Fuente ligera */
-    color: #333333; /* Color gris oscuro */
+    color: whitesmoke; /* Color gris oscuro */
 }
 
 /*contenedor - contenido del articulo*/
@@ -256,6 +304,7 @@ article{
     border-radius: 6px;
     position: relative;
     overflow: hidden;
+    display: flex;
     
 }
 
@@ -266,7 +315,7 @@ article:before{
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(41, 73, 7, 0.8);
+    background: #748f40;
 
 }
 
@@ -277,15 +326,37 @@ article h1{
 
 }
 
-article p{
-    margin-top: 20px;
+
+article nav ul li a{
+    margin-top: 50px;
     font-size: 18px;
-    color: #3c3c3c
+    color: #3c3c3c;
+    text-decoration:none;
+    padding: 0;
+    margin: 0;
+    
+    
+}
+article nav ul li {
+    margin-top: 50px;
+    font-size: 20px;
+    color: #3c3c3c;
+    list-style: none;
+    height: 100%;
+    display: flex;
+    
 }
 
-article img{
+.big-post img{
     width: 100%;
+    height: auto;
     margin-top: 20px;
+    margin-top: 20px;
+    margin-left: 370px;
+    border-radius: 6px;
+    display:flex;
+
+    
 }
 
 /*aside de los areticulos de relacionados*/
@@ -316,9 +387,9 @@ article img{
     margin-left: 20px;
     padding: 10px 50px;
     font-size: 16px;
-    background: rgba(137, 167, 104, 0.8);
+    background: #465627;
     border: none;
-    color: #3c3c3c;
+    color: #e6e4e4;
     cursor: pointer;
     border-radius: 6px;
     font-family: 'Merriweather', sans-serif; 
@@ -331,12 +402,14 @@ article img{
     font-family: 'Merriweather', sans-serif; 
 } 
 
+
+
 /*footer - pie de pagina*/
 
 .container-footer{
     width: 100%;
     padding: 40px 0;
-    background: #f7f7f7;
+    background:#c2c2c2;
     margin-top: 40px;
 }
 
@@ -363,14 +436,14 @@ article img{
 .container-footer footer .redes-footer .icon-redes-footer{
     font-size: 20px;
     margin: 20px;
-    background: #efefef;
+    background: #b2afaf;
     width: 50px;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 100%;
-    color: #a2a2a2
+    color: #646363
 }
 
 .container-footer footer .redes-footer .fa-facebook:hover{
@@ -470,7 +543,7 @@ article img{
         position: fixed;
         top: 80px;
         left: 0;
-        background: #fff;
+        background: #332e2e;
         transform: translateX(-350px);
         overflow: hidden;
         box-shadow: 10px 0px 20px -25px black;
@@ -491,7 +564,7 @@ article img{
 
     .menu nav ul li{
         max-width: 200px;
-        height: 50px;
+        height: 60px;
         justify-content: flex-start;
     }
 
@@ -502,15 +575,16 @@ article img{
     }
 
     .menu nav ul li a{ 
-        margin-top: 40px;
-        color: #ffffff;
+        margin-top: 50px;
+        color: #201f1f;
+    
     }
 
     .menu nav ul li a i{
         width: 20px;
         display: inline-block;
         margin-right: 10px;
-        color: rgb(255, 255, 255);
+        color: #1d2732
     }
 
     .icon-menu{

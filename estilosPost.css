@@ -1,0 +1,53 @@
+#ultimos-articulos .articulo {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los artículos se ajusten si no caben */
+    gap: 20px; /* Espaciado uniforme entre artículos */
+    justify-content: center; /* Centra los artículos en la fila */
+    background: #9fc782;
+    
+  }
+  
+  #ultimos-articulos .articulo-item {
+    width: 30%; /* Cada artículo ocupará el 30% del ancho disponible */
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: -10px 0 20px -30px black;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+  }
+  
+  #ultimos-articulos .articulo img {
+    width: 100%; /* Ajusta la imagen al ancho del artículo */
+    height: auto; /* Mantiene las proporciones de la imagen */
+    border-radius: 5px;
+  }
+  
+  #ultimos-articulos .articulo h3 {
+    margin-top: 10px;
+    font-size: 18px; /* Ajusta el tamaño del título */
+    color: #333;
+  }
+  
+  #ultimos-articulos .articulo p {
+    font-size: 16px;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-top: 10px;
+    font-weight: 500;
+    color: #666;
+    
+  }
+  
+  #ultimos-articulos .articulo span {
+    font-size: 14px;
+    color: #999;
+    margin-top: 5px;
+  }
+  
+  #ultimos-articulos .articulo a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block; /* Mantiene el enlace en su propia línea */
+  }
