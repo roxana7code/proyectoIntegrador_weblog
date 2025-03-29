@@ -3,7 +3,7 @@
     flex-wrap: wrap; /* Permite que los artículos se ajusten si no caben */
     gap: 20px; /* Espaciado uniforme entre artículos */
     justify-content: center; /* Centra los artículos en la fila */
-    background: #9fc782;
+    
     
   }
   
@@ -15,6 +15,7 @@
     position: relative;
     overflow: hidden;
     text-align: left;
+    background: #9fc782;
   }
   
   #ultimos-articulos .articulo img {
