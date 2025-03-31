@@ -1,6 +1,8 @@
 /* Importa la fuente Source Sans Pro desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* ============================= */
 /* 🔹 RESET Y ESTILOS GENERALES 🔹 */
@@ -261,7 +263,8 @@
     max-width: 100%; /* Asegura que cubra toda la anchura de la pantalla */
     height: 100vh; /* Ocupa toda la altura de la pantalla */
     position:relative; /* Permite superponer elementos como capas */
-    background-image: url(imagenWeb/img15.jpg); /* Imagen de fondo */
+    background-image: url(imagenWeb/img17.jpeg); /* Imagen de fondo */
+    filter: brightness(0.9);
     background-position: center; /* Centra la imagen */
     background-size: cover; /* Ajusta la imagen para cubrir toda el área */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -310,27 +313,39 @@ article{
 }
 
 h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-style: normal;
     text-align: center;
     font-size: 50px;
 }
-
-
 article h1{
     margin-top: 10px;
     font-weight: 500;
     font-size: 40px;
 
 }
+/*parte de los titulos de cada paso*/
 .contenido nav ul li{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
     text-decoration: none;
     list-style: none;
     margin-top: 80px;
-    margin-left: 0;
+    margin-left: 20px;
     font-size: 25px;
-    font-weight: bold;
     color: #2d2d2d;
-    
-    
+}
+.contenido nav ul p{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    opacity: 0.5;
+    margin-left: 55px;
 }
 article img{
     display: block;
@@ -353,27 +368,19 @@ article nav ul li a i{
 }
 
 article .contenido button{
+    text-align: center;
     margin-top: 25px;
-    background-color: #507246; /* Color azul */
+    background-color: #659a55; /* Color azul */
     padding: 10px 20px; /* Espaciado interno */
     font-size: 16px; /* Tamaño del texto */
     border: none; /* Sin bordes */
     border-radius: 5px; /* Bordes redondeados */
     cursor: pointer; /* Cambia el cursor al pasar */
-    
-    
 }
 article .contenido button:hover{
     opacity: 0.8;
 
 }
-
-
-/*aside de los areticulos de relacionados*/
-
-
-
-
 /*footer - pie de pagina*/
 
 .container-footer{
