@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  
+}
+
 #ultimos-articulos .articulo {
     display: flex;
     flex-wrap: wrap; /* Permite que los artículos se ajusten si no caben */
     gap: 20px; /* Espaciado uniforme entre artículos */
     justify-content: center; /* Centra los artículos en la fila */
     
+    margin-top: 400px;
     
   }
   
@@ -17,7 +26,14 @@
     position: relative;
     overflow: hidden;
     text-align: left;
-    background: #9fc782;
+    background: #63626212;
+    
+  }
+  #ultimos-articulos .articulo-item:hover{
+  transform: translateY(-5px); /* Hace que la tarjeta se eleve ligeramente */
+  box-shadow: 0 8px 20px rgba(55, 255, 0, 0.467); /* Aumenta la sombra para un efecto 3D */
+  transition: 200ms;
+
   }
   
   #ultimos-articulos .articulo img {
@@ -29,7 +45,8 @@
   #ultimos-articulos .articulo h3 {
     margin-top: 10px;
     font-size: 18px; /* Ajusta el tamaño del título */
-    color: #333;
+    color: #333333e7;
+    
   }
   
   #ultimos-articulos .articulo p {
@@ -54,20 +71,272 @@
     margin-top: 10px;
     display: inline-block; /* Mantiene el enlace en su propia línea */
   }
-  .informacion {
-   font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    
-  }
-  #contanido-todo .tip1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-  }
+/* Fondo general del cuerpo de la página */
+#body-recetas{
+  background: linear-gradient(135deg, #f5f7fa, #cbd2dc); /* Degradado suave en el fondo */
+  font-family: 'Poppins', sans-serif; /* Fuente moderna */
+  margin: 0;
+  padding: 0;
+}
+/*---- Estilos de los tips --- */
+/* Todo el menu */
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #fff;
+  box-shadow: 0 4px 25px -22px black; /*el 0 no tendra movimiento de izquierda a derecha, 4 movimiento hacia abajo, -25 desvenecimiento, 22 posicion o tamaño*/
+  z-index: 2; /* va estar por encima de todo*/
+}
 
-  .informacion img{
-    display: flex;
-    
+.contenido-header{
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  
+
+}
+.menu-tips .logo-ods img{
+  display: inline-flex;
+  height: 90px;
+  margin-top: 10px;
+  margin-right:0px;
+}
+
+.menu-tips{
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-tips a b {
+  color: #298d0e;
+}
+.menu-tips a{
+  color: #201f1f;
+}
+
+.menu-tips{
+  height: 80px;
+
+}
+.menu-tips nav{
+  height:100%;
+}
+.menu-tips nav ul{
+  height: 100%;
+  display: flex;
+  list-style: none;
+  margin-left: 620px ;
+}
+.menu-tips nav ul li{
+  height: 100%;
+  margin: 0% 20px; /*0% margen verticalmente 20px margen horizontalmente*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; 
+  
+}
+/*
+.menu-selected:before{
+  content: "";
+  width: 100%;
+  height: 4px;
+  background: #9fc782;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+*/
+.menu-tips nav ul li a{
+  color: #201f1f; /*color menu letra*/
+}
+
+
+
+
+.menu-tips nav ul li a:hover{
+  color: #298d0e;
+  transition: color 300ms;
+}
+
+
+
+/* Contenedor principal de la información */
+.informacion {
+  font-size: 20px;
+  max-width: 90%; /* Para que no ocupe todo el ancho */
+  margin: auto;
+  padding: 30px;
+  background: #ffffff; /* Fondo blanco para contraste */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra para efecto de elevación */
+  border-radius: 10px; /* Bordes redondeados */
+  margin-top: 30px;
+}
+
+/* Título principal */
+.titulo h1 {
+  font-size: 45px;
+  margin-top: 60px;
+  text-align: center; /* Centra el título */
+  color: #333; /* Color oscuro para contraste */
+  font-weight: 700; /* Hace que el texto sea más grueso */
+  text-transform: uppercase; /* Convierte el texto en mayúsculas */
+}
+
+/* Subtítulo */
+.sub-titulo h2 {
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 28px;
+  color: #555; /* Color ligeramente más claro */
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+/* Contenedor de los tips de alimentación */
+.tip-recetas {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea */
+  gap: 20px; /* Espacio entre los elementos */
+  justify-content: center; /* Centra los elementos */
+  margin-top: 30px;
+}
+
+/* Cada tip dentro de una tarjeta */
+.tip-recetas p {
+  flex: 1 1 calc(30% - 20px); /* Ocupa el 30% del ancho del contenedor con espacio */
+  background: #ffffff; /* Fondo blanco */
+  padding: 20px;
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra para resaltar */
+  font-size: 18px;
+  font-weight: 400;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto suave al pasar el cursor */
+  
+}
+
+/* Efecto hover en las tarjetas (cuando se pasa el cursor) */
+.tip-recetas p:hover {
+  transform: translateY(-5px); /* Hace que la tarjeta se eleve ligeramente */
+  box-shadow: 0 8px 20px rgba(55, 255, 0, 0.467); /* Aumenta la sombra para un efecto 3D */
+  background-color: #f8f9fa; /* Color gris claro */
+}
+
+/* Imágenes dentro de las recetas */
+.tip-recetas img {
+  width: 100%; /* La imagen se adapta al tamaño del contenedor */
+  max-width: 500px; /* Evita que sean demasiado grandes */
+  border-radius: 10px; /* Bordes redondeados para mejor estética */
+  display: block;
+  margin: 20px auto; /* Centra la imagen */
+}
+
+.tip-titulo {
+  font-size: 20px; /* Tamaño del texto */
+  font-weight: bold; /* Hace que el texto sea más grueso */
+  color: #2c3e50; /* Color oscuro elegante */
+  display: block; /* Hace que el título ocupe toda la línea */
+  margin-bottom: 5px; /* Espaciado entre el título y el contenido */
+  
+}
+/*footer*/
+
+
+
+.container-footer{
+  width: 100%;
+  padding: 40px 0;
+  background:#1b7402cf;
+  margin-top: 40px;
+  
   }
+  
+  .container-footer footer{
+  max-width: 1200px;
+  margin: auto;
+  }
+  
+  .container-footer footer .logo-footer{
+  text-align: center;
+  }
+  
+  .container-footer footer .logo-footer img{
+  width: 100px;
+  }
+  
+  .container-footer footer .redes-footer{
+      display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  }
+  
+  .container-footer footer .redes-footer .icon-redes-footer{
+  font-size: 20px;
+  margin: 20px;
+  background: #b2afaf;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  color: #646363
+  }
+  
+  .container-footer footer .redes-footer .fa-facebook:hover{
+  background: #41479a;
+  color: #fff;    
+  }
+  
+  .container-footer footer .redes-footer .fa-instagram:hover{
+  background: linear-gradient(to top right, #fcde30, #e9712a, #d2313b, #ae4198, #7546a1, #5443A6);
+  color: #fff;
+  }
+  
+  .container-footer footer .redes-footer .fa-twitter:hover{
+  background: #1DA1F2;
+  color: #fff;
+  }
+  
+  .container-footer footer hr{
+  margin-top: 20px;
+  border: none;
+  height: 2px;
+  background: #c0c0c07a;
+  
+  }
+  
+  .container-footer h4{
+  text-align: c;
+  margin-top: 70px;    
+  color: #424242;
+  font-weight: px;
+  
+  }
+  
+
+/* RESPONSIVE DESIGN */
+
+/* Ajuste para pantallas medianas (tablets) */
+@media (max-width: 768px) {
+  .tip-recetas p {
+      flex: 1 1 calc(50% - 20px); /* Se muestran 2 columnas en pantallas medianas */
+  }
+}
+
+/* Ajuste para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  .tip-recetas p {
+      flex: 1 1 100%; /* Los elementos se muestran en una sola columna */
+  }
+}
+
+
   

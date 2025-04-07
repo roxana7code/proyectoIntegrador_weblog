@@ -11,48 +11,46 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
 
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
     <link rel="stylesheet" href="estilos.css">
-
     <link rel="stylesheet" href="estilosPost.css">
-
 
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, 
     minimum-scale=1.0">
-
 </head>
 <body>
-    <div class="container-all" id="move-content">
-        <div class="container-cover"> 
-            <div id="icon-menu">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-
-            <div class="menu" id="show-menu">
+    <header>
+        <div class="contenido-heder">
+            <div class="menu-tips">
                 <div class="logo-ods"> 
                     <img src="imagenWeb/img9.png" alt="">
                 </div>
-                <div class="logo">
-                    <h1>Salud y Bienestar</h1>
+                <h1><a href="index.html">Salud y <b>bienestar</b></a></h1>
+                <div class="menu-contenido">
+                    <nav>
+                        <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                        <li><a href="crear-post.html"><i class="fab fa-youtube" ></i> Tutoriales</a></li>
+                        <li><a href="https://youtu.be/2ba_M4QwLP8?si=RM6vAoFWaRnRmDU0"><i class="fas fa-sign-in-alt"></i>  Iniciar sesión</a></li>
+                        </ul>
+                    </nav>
                 </div>
-
-                <nav>
-                    <ul>
-                        <li><a href="#"><i class="fas fa-home"></i> Inicio</a></li>
-                        <li><a href="https://youtu.be/2ba_M4QwLP8?si=RM6vAoFWaRnRmDU0"><i class="fas fa-headset"></i> Contacto</a></li>
-                        <li><a href="crear-post.html"><i class="fas fa-pen"></i> Crear Post</a></li>
-                    </ul>
-                </nav>
             </div>
         </div>
-    
+    </header>
+    <div class="container-all" id="move-content">
+
+        <div class="container-cover">
+            <div id="icon-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
         <div class="post-slider">
             <h1 class="slider-title">Trending Posts</h1>
             <i class="fas fa-chevron-left prev"></i>
             <i class="fas fa-chevron-right next"></i>
-    
+
             <div class="post-wrapper">
                 <div class="post">
                     <img src="imagenWeb/img18.jpeg" alt="" class="slider-image">
@@ -61,166 +59,152 @@
                         <i class="far fa-user"> Gustavo Solorzano</i> &nbsp;
                         <i class="far fa-calendar"> Feb 10, 2025</i>
                     </div>
-             </div>
-    
-          <div class="post">
-            <img src="imagenWeb/img19.jpeg" alt="" class="slider-image">
-            <div class="post-info">
-              <h4><a href="post2.html">Los mejores tips de alimentacion</a></h4>
-              <i class="far fa-user"> Roxana Orozco </i>
-              &nbsp;
-              <i class="far fa-calendar"> Feb 12, 2025</i>
-            </div>
-          </div>
-    
-          <div class="post">
-            <img src="imagenWeb/img20.jpeg" alt="" class="slider-image">
-            <div class="post-info">
-              <h4><a href="post3.html">Los mejores ejercicios!</a></h4>
-              <i class="far fa-user"> Axel Flores</i>
-              &nbsp;
-              <i class="far fa-calendar"> Feb 15, 2025</i>
-            </div>
-          </div>
-    
-          <div class="post">
-            <img src="imagenWeb/img21.jpeg" alt="" class="slider-image">
-            <div class="post-info">
-              <h4><a href="post4.html">Mantente activo...</a></h4>
-              <i class="far fa-user"> Gustavo Solorzano</i>
-              &nbsp;
-              <i class="far fa-calendar"> Feb 20, 2025</i>
-            </div>
-          </div>
-    
-          <div class="post">
-            <img src="imagenWeb/img22.jpeg" alt="" class="slider-image">
-            <div class="post-info">
-              <h4><a href="post5.html">Los mejores tips de alimentacion</a></h4>
-              <i class="far fa-user"> Abigail Martinez</i>
-              &nbsp;
-              <i class="far fa-calendar"> Feb 23, 2025</i>
-            </div>
-          </div>
-    
-    
-        </div>
-    
-    <div class="container-conten">
-        <div class="Big-post">
-          <h1> Pasos para una alimentación saludable</h1>
-        </div>
-      <article>   
-        
-        <div class="contenido">
-          <nav>
-            <ul>
-              <li><a href="#"><i class="fas fa-calendar-alt"></i></a> Planificas tus comidas</li>
-              <p> Organiza tus comidas saludables para</p> 
-              <p>asegurar una dieta balanceada</p>
-              <li><a href="#"><i class="fas fa-apple-alt"></i></a> Incluye mas frutas y verduras</li>
-              <p> Aumenta el consumo de alimentos frescos y </p> 
-              <p> naturales en tu dieta diaria</p>
-              <li><a href="#"><i class="fas fa-tint"></i></a> Hidratate adecuadamente</li>
-              <p> Mantén tu cuerpo hidratado bebiendo </p> 
-              <p>suficiente agua a lo largo del día</p>
-            </ul>  
-          </nav>
+                </div>
 
-          <button onclick="window.location.href='post2.html';">
-            <a href="post2.html" style="color: whitesmoke; text-decoration: none;">Leer más</a>
-          </button>
-          
+                <div class="post">
+                    <img src="imagenWeb/img19.jpeg" alt="" class="slider-image">
+                    <div class="post-info">
+                        <h4><a href="post2.html">Los mejores tips de alimentacion</a></h4>
+                        <i class="far fa-user"> Roxana Orozco </i> &nbsp;
+                        <i class="far fa-calendar"> Feb 12, 2025</i>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <img src="imagenWeb/img20.jpeg" alt="" class="slider-image">
+                    <div class="post-info">
+                        <h4><a href="post3.html">Los mejores ejercicios!</a></h4>
+                        <i class="far fa-user"> Axel Flores</i> &nbsp;
+                        <i class="far fa-calendar"> Feb 15, 2025</i>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <img src="imagenWeb/img21.jpeg" alt="" class="slider-image">
+                    <div class="post-info">
+                        <h4><a href="post4.html">Mantente activo...</a></h4>
+                        <i class="far fa-user"> Gustavo Solorzano</i> &nbsp;
+                        <i class="far fa-calendar"> Feb 20, 2025</i>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <img src="imagenWeb/img22.jpeg" alt="" class="slider-image">
+                    <div class="post-info">
+                        <h4><a href="post5.html">Los mejores tips de alimentacion</a></h4>
+                        <i class="far fa-user"> Abigail Martinez</i> &nbsp;
+                        <i class="far fa-calendar"> Feb 23, 2025</i>
+                    </div>
+                </div>
+            </div>
         </div>
-          
-        <img src="imagenWeb/img16.jpg" alt="">
-          
-      </article>
+
+        <div class="container-conten">
+            <div class="Big-post">
+                <h1>Pasos para una alimentación saludable</h1>
+            </div>
+            <article>
+                <div class="contenido">
+                    <nav>
+                        <ul>
+                            <li><a href="#"><i class="fas fa-calendar-alt"></i></a> Planificas tus comidas</li>
+                            <p>Organiza tus comidas saludables para</p>
+                            <p>asegurar una dieta balanceada</p>
+                            <li><a href="#"><i class="fas fa-apple-alt"></i></a> Incluye mas frutas y verduras</li>
+                            <p>Aumenta el consumo de alimentos frescos y</p>
+                            <p>naturales en tu dieta diaria</p>
+                            <li><a href="#"><i class="fas fa-tint"></i></a> Hidratate adecuadamente</li>
+                            <p>Mantén tu cuerpo hidratado bebiendo</p>
+                            <p>suficiente agua a lo largo del día</p>
+                        </ul>
+                    </nav>
+
+                    <button onclick="window.location.href='post-tips.html';">
+                        <a href="post-tips.html" style="color: whitesmoke; text-decoration: none;">Leer más</a>
+                    </button>
+                </div>
+
+                <img src="imagenWeb/img16.jpg" alt="">
+            </article>
+        </div>
+
+        <div class="post-wrapper">
+            <!-- Aquí se insertarán los posts desde JavaScript -->
+        </div>
+
+        <section id="ultimos-articulos">
+            <div class="articulo">
+                <div class="articulo-item">
+                    <img src="post_Img/post6.jpg" alt="Salud y bienestar">
+                    <h3>Galletas de avena y platano </h3>
+                    <p>Estas son unas galletas de avena muy saludables y fáciles, ideales…  </p>
+                    <span>24/05/2025</span>
+                    <a href="post-Bloguero/post6.html">Leer más</a>
+                </div>
+                <div class="articulo-item">
+                    <img src="post_Img/post1.jpg" alt="Salud y bienestar">
+                    <h3>¿Cómo debe de ser la dieta para deportistas de alto rendimiento? </h3>
+                    <p>La dieta para deportistas de alto rendimiento juega un papel crucial para… </p>
+                    <span>24/05/2025</span>
+                    <a href="post-Bloguero/post1.html">Leer más</a>
+                </div>
+                <div class="articulo-item">
+                    <img src="post_Img/post2.jpg" alt="Salud y bienestar">
+                    <h3>Dieta antiinflamatoria: alimentos recomendados y cuáles evitar </h3>
+                    <p>Elegir una dieta antiinflamatoria es clave para prevenir y combatir la inflamación que… </p>
+                    <span>24/05/2025</span>
+                    <a href="post-Bloguero/post2.html">Leer más</a>
+                </div>
+                <div class="articulo-item">
+                    <img src="post_Img/post3.jpg" alt="Salud y bienestar">
+                    <h3>Galletas de calabaza para el desayuno  </h3>
+                    <p>Estas galletas de calabaza se han vuelto una de mis recetas favoritas. Te prometo que te van a encantar… </p>
+                    <span>24/05/2025</span>
+                    <a href="post-Bloguero/post3.html">Leer más</a>
+                </div>
+                <div class="articulo-item">
+                    <img src="post_Img/post4.jpg" alt="Salud y bienestar">
+                    <h3>Smoothie de Frutas y Avena </h3>
+                    <p>Este smoothie es una excelente manera de comenzar el… </p>
+                    <span>24/05/2025</span>
+                    <a href="post-Bloguero/post4.html">Leer más</a>
+                </div>
+                <div class="articulo-item">
+                    <img src="post_Img/post5.png" alt="Salud y bienestar">
+                    <h3>Ensalada con naranja, queso y pistachos </h3>
+                    <p>Esta ensalada con naranja, queso de cabra y pistachos, aportan… </p>
+                    <span>24/05/2025</span>
+                    <a href="post-Bloguero/post5.html">Leer más</a>
+                </div>
+                <!-- Repite el bloque div para más artículos -->
+            </div>
+        </section>
+
+        <div class="container-footer">
+            <footer>
+                <div class="logo-footer">
+                    <img src="imagenWeb/img9.png" alt="">
+                </div>
+
+                <div class="redes-footer">
+                    <a href="https://www.facebook.com/share/193M2XwD2p/?mibextid=wwXIfr"><i class="fa-brands fa-facebook icon-redes-footer"></i></a>
+                    <a href="https://www.instagram.com/salud_optimaa?igsh=MXJuNXlsZGdjNGpvaQ%3D%3D&utm_source=qr"><i class="fa-brands fa-instagram icon-redes-footer"></i></a>
+                    <a href="#"><i class="fab fa-twitter icon-redes-footer"></i></a>
+                </div>
+
+                <hr>
+                <h4>@ 2025 salud y bienestar - Todos los derechos reservados</h4>
+            </footer>
+        </div>
 
     </div>
-    
-    <div class="post-wrapper">
-        <!-- Aquí se insertarán los posts desde JavaScript -->
-    </div>
-    
-    <section id="ultimos-articulos">
-        
-        <div class="articulo">
-          <div class="articulo-item">
-            <img src="imagenWeb/img3.jpg" alt="Salud y bienestar">
-            <h3>Salud para todos</h3>
-            <p>Una exploración sobre cómo...</p>
-            <span>24/05/2025</span>
-            <a href="#">Leer más</a>
-          </div>
-          <div class="articulo-item">
-            <img src="imagenWeb/img3.jpg" alt="Salud y bienestar">
-            <h3>El impacto de la contaminación</h3>
-            <p>Un artículo sobre cómo los problemas...</p>
-            <span>24/05/2025</span>
-            <a href="#">Leer más</a>
-          </div>
-          <div class="articulo-item">
-            <img src="imagenWeb/img3.jpg" alt="Salud y bienestar">
-            <h3>El impacto de la contaminación</h3>
-            <p>Un artículo sobre cómo los problemas...</p>
-            <span>24/05/2025</span>
-            <a href="#">Leer más</a>
-          </div>
-          <div class="articulo-item">
-            <img src="imagenWeb/img3.jpg" alt="Salud y bienestar">
-            <h3>El impacto de la contaminación</h3>
-            <p>Un artículo sobre cómo los problemas...</p>
-            <span>24/05/2025</span>
-            <a href="#">Leer más</a>
-          </div>
-          <div class="articulo-item">
-            <img src="imagenWeb/img3.jpg" alt="Salud y bienestar">
-            <h3>El impacto de la contaminación</h3>
-            <p>Un artículo sobre cómo los problemas...</p>
-            <span>24/05/2025</span>
-            <a href="#">Leer más</a>
-          </div>
-          <div class="articulo-item">
-            <img src="imagenWeb/img3.jpg" alt="Salud y bienestar">
-            <h3>El impacto de la contaminación</h3>
-            <p>Un artículo sobre cómo los problemas...</p>
-            <span>24/05/2025</span>
-            <a href="#">Leer más</a>
-          </div>
-          
-          <!-- Repite el bloque div para más artículos -->
-        </div>
-      </section>
 
-    <div class="container-footer">
-    
-    <footer>
-        <div class="logo-footer"> 
-            <img src="imagenWeb/img9.png" alt="">
-        </div>
-    
-        <div class="redes-footer">
-            <a href="https://www.facebook.com/share/193M2XwD2p/?mibextid=wwXIfr"><i class="fa-brands fa-facebook icon-redes-footer"></i></a>
-            <a href="https://www.instagram.com/salud_optimaa?igsh=MXJuNXlsZGdjNGpvaQ%3D%3D&utm_source=qr"><i class="fa-brands fa-instagram icon-redes-footer"></i></a>
-            <a href="#"><i class="fa-regular fa-heart icon-redes-footer"></i></a>
-        </div>
-    
-        <hr>
-        <h4>@ 2025 salud y bienestar - Todos los derechos reservados</h4>
-    </footer>
-    
-    </div>
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-</div>
+    <!-- Slick Carousel -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-   <!-- JQuery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<!-- Slick Carousel -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-
-<script src="js/script.js"></script>
-
-
+    <script src="js/script.js"></script>
+</body>
+</html>

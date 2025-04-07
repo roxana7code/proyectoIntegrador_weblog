@@ -19,56 +19,50 @@
 /* POST SLIDER   */
 .post-slider {
     position: relative;
-  }
-  
-  .post-slider .slider-title {
+} 
+.post-slider .slider-title {
     text-align: center;
     margin: 30px auto;
-  }
-  
-  .post-slider .next {
+}
+.post-slider .next {
     position: absolute;
     top: 4%;
     right: 30px;
     font-size: 2em;
     color: #A6BD75;
     cursor: pointer;
-  }
-  
-  .post-slider .prev {
+    margin-top: 100px;
+}
+.post-slider .prev {
     position: absolute;
     top: 4%;
     left: 30px;
     font-size: 2em;
     color: #A6BD75;
     cursor: pointer;
-  }
-  
-  .post-slider .post-wrapper {
+    margin-top: 100px;
+}
+.post-slider .post-wrapper {
     width: 84%;
     height: 350px;
     margin: 0px auto;
     overflow: hidden;
     padding: 10px 0px 10px 0px;
-  }
-  
-  .post-slider .post-wrapper .post {
+}
+.post-slider .post-wrapper .post {
     width: 300px;
     height: 330px;
     margin: 0px 10px;
     display: inline-block;
-    background: linear-gradient(to bottom, whitesmoke  65%, #A6BD75 80%);
+    background: linear-gradient(to bottom, whitesmoke  65%,#3c9c1feb 80%);
     border-radius: 5px;
     box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
 }
-
-  
-  .post-slider .post-wrapper .post .post-info {
+.post-slider .post-wrapper .post .post-info {
     height: 130px;
     padding: 0px 5px;
-  }
-  
-  .post-slider .post-wrapper .post .slider-image {
+}
+.post-slider .post-wrapper .post .slider-image {
     width: 100%; /* Mantiene el ancho total del contenedor */
     height: 200px; /* Mantiene la altura */
     object-fit: cover; /* Ajusta la imagen sin deformarla */
@@ -76,9 +70,7 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
-
-
-  .slider-title {
+.slider-title {
     font-family: 'Merriweather', serif; /* Cambia la fuente */
     color: #333333; /* Color del texto */
     font-size: 24px; /* Tamaño de la fuente */
@@ -115,123 +107,14 @@
     position: relative;
 }
 
-  
-  
 /* Contenedor del contenido dentro del header */
-.header-content {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-.header-content.logo-img{
-    width: 75px;
-    float: left;
-}
-.header-content.logo-img img{
-    width: 50%;
-    margin-top: 5px;
-}
+
 
 /* ======================= */
 /* 🔹 LOGO DEL HEADER 🔹 */
 /* ======================= */
 
-.container-cover .logo-ods img{
-    display: flex;
-    height: 90px;
-    margin-top: 10px;
-    margin-right:0px;
- }
 
-.logo {
-    margin-top: 10px;
-    margin-left: 00px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    font-size: 30px;
-    margin-right: 520px; /*posicion de el menu na ul li*/
-    /* Eliminar el margin-left que puede estar desalineando */
-}
-
-/* Estilo del texto dentro del logo */
-.logo h1 {
-    color: white; /* Color del texto del logo */
-}
-
-.logo-img img {
-    width: 80px; /* Ajusta el ancho del logo */
-    height: auto; /* Mantén la proporción de la imagen */
-    margin-top: 6px; /* Ajusta el margen superior si es necesario */
-}
-
-/* =================== */
-/* 🔹 MENÚ DE NAVEGACIÓN 🔹 */
-/* =================== */
-.menu {
-    height: 80px;
-    display:flex;
-    align-items: center; /* Asegura alineación vertical */
-}
-
-/* Contenedor del menú de navegación */
-.menu nav {
-    height: 100%; /* Ocupa toda la altura del menú */
-}
-
-/* Lista de elementos del menú */
-.menu nav ul {
-    height: 100%;
-    display: flex; /* Usa flexbox para alinear los elementos en una fila */
-    list-style: none; /* Elimina los estilos predeterminados de lista */
-    
-}
-
-/* Estilos para cada opción del menú */
-.menu nav ul li {
-    height: 100%;
-    margin: 0px 20px; /* Espaciado horizontal entre los elementos */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative; /* Permite agregar efectos visuales como líneas */
-    margin-top: 20px;/*Altura del menu nav ul*/
-}
-
-/* Línea superior que indica el menú seleccionado */
-.menu-selected:before {
-    content: ""; /* Elemento vacío para la línea */
-    width: 100%;
-    height: 4px;
-    background: #a2a2a2; /* Color de la línea */
-    position: absolute;
-    top: 0; /* Aparece en la parte superior del menú */
-    left: 0;
-}
-
-/* Estilos para los enlaces dentro del menú */
-.menu nav ul li a {
-    color: #777777; /* Color gris del texto del menú */
-    font-size: 18px; /* Tamaño de la fuente */
-    transition: color 300ms; /* Transición de color al pasar el cursor */
-}
-
-/* Cambia el color del enlace cuando el usuario pasa el mouse */
-.menu nav ul li a:hover {
-    color: white; /* Color del texto cuando está en hover */
-}
-
-/* Estilo para el texto del menú seleccionado */
-.menu .text-menu-selected {
-    color: #ffffff; /* Color del elemento activo en el menú */
-}
-
-.menu nav ul li a i{
-    display: flex;/*flex*/ /*none*/
-}
 
 
 #icon-menu{
@@ -275,13 +158,7 @@
 /* ====================== */
 /* 🔹 ESTILOS DEL TEXTO 🔹 */
 /* ====================== */
-.container-info-cover h1 {
-    font-size: 45px; /* Tamaño grande del título */
-    font-weight: 500; /* Peso de la fuente */
-    color: whitesmoke; /* Color gris oscuro */
-    margin-bottom: 20px; /* Espacio debajo del título */
-    
-}
+
 
 .container-info-cover p {
     font-size: 20px; /* Tamaño del texto del párrafo */
@@ -312,7 +189,7 @@ article{
     
 }
 
-h1{
+.Big-post h1{
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -383,74 +260,76 @@ article .contenido button:hover{
 }
 /*footer - pie de pagina*/
 
+
+
 .container-footer{
-    width: 100%;
-    padding: 40px 0;
-    background:#c2c2c2;
-    margin-top: 40px;
+width: 100%;
+padding: 40px 0;
+background:#1b7402cf;
+margin-top: 40px;
+
 }
 
 .container-footer footer{
-    max-width: 1200px;
-    margin: auto;
+max-width: 1200px;
+margin: auto;
 }
 
 .container-footer footer .logo-footer{
-    text-align: center;
+text-align: center;
 }
 
 .container-footer footer .logo-footer img{
-    width: 100px;
+width: 100px;
 }
 
 .container-footer footer .redes-footer{
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
-
+justify-content: center;
+margin-top: 20px;
 }
 
 .container-footer footer .redes-footer .icon-redes-footer{
-    font-size: 20px;
-    margin: 20px;
-    background: #b2afaf;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    color: #646363
+font-size: 20px;
+margin: 20px;
+background: #b2afaf;
+width: 50px;
+height: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 100%;
+color: #646363
 }
 
 .container-footer footer .redes-footer .fa-facebook:hover{
-    background: #41479a;
-    color: #fff;    
+background: #41479a;
+color: #fff;    
 }
 
 .container-footer footer .redes-footer .fa-instagram:hover{
-    background: linear-gradient(to top right, #fcde30, #e9712a, #d2313b, #ae4198, #7546a1, #5443A6);
-    color: #fff;
+background: linear-gradient(to top right, #fcde30, #e9712a, #d2313b, #ae4198, #7546a1, #5443A6);
+color: #fff;
 }
 
-.container-footer footer .redes-footer .fa-heart:hover{
-    background: #ff0000;
+.container-footer footer .redes-footer .fa-twitter:hover{
+    background: #1DA1F2;
     color: #fff;
 }
 
 .container-footer footer hr{
-    margin-top: 20px;
-    border: none;
-    height: 2px;
-    background: #c0c0c07a;
-    
+margin-top: 20px;
+border: none;
+height: 2px;
+background: #c0c0c07a;
+
 }
 
 .container-footer h4{
-    text-align: c;
-    margin-top: 70px;
-    color: #8e8e8e;
-    font-weight: px;
+text-align: center;
+margin-top: 70px;    
+color: #424242;
+font-weight: px;
 
 }
 
@@ -476,7 +355,7 @@ article .contenido button:hover{
         align-items: center;
     }
 
-   .imagen {
+.imagen {
         margin-left: 50px;
         width: 150px; /* Ajusta el ancho */
         height: 100px; /* Ajusta la altura */
@@ -489,8 +368,7 @@ article .contenido button:hover{
     .container-aside{
         display: flex;
         justify-content: center;
-          
-    }
+}
 
     .container-aside aside{
         max-width: 300px;
