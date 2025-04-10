@@ -13,10 +13,18 @@
     box-sizing: border-box; /* Mantiene el tamaño total del elemento sin afectar padding y border */
     text-decoration: none; /* Elimina el subrayado de los enlaces */
     font-family: 'Source Sans Pro', sans-serif; /* Fuente predeterminada para toda la página */
-}
+} 
 
 
 /* POST SLIDER   */
+
+/*agranda las tarjetas al pasar el mause sobre ellas */
+.post:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(55, 255, 0, 0.467); /* Aumenta la sombra para un efecto 3D */
+    transition: 200ms;
+}
+
 .post-slider {
     position: relative;
 } 
@@ -142,6 +150,20 @@
 /* ====================== */
 /* 🔹 SECCIÓN DE PORTADA 🔹 */
 /* ====================== */
+
+/* Estilos base */
+
+
+@media (max-width: 768px) {
+    .menu-contenido {
+    display: none;
+    width: 100%;
+    }
+}
+
+
+
+
 .container-cover {
     max-width: 100%; /* Asegura que cubra toda la anchura de la pantalla */
     height: 100vh; /* Ocupa toda la altura de la pantalla */
@@ -154,6 +176,16 @@
     margin-top: 0;
     padding-top: 0;
 }
+
+/*hace la imagen de menu responsive */
+@media (max-width: 768px) {
+    .container-cover {
+        background-position: top center; /* Muestra la parte superior de la imagen y la centra horizontalmente */
+        background-size: contain;        /* Ajusta la imagen para que quepa completa (aunque no llene todo el contenedor) */
+        height: 100vh;                   /* Mantiene la altura en 100% del alto de la pantalla */
+    }
+}
+
 
 /* ====================== */
 /* 🔹 ESTILOS DEL TEXTO 🔹 */
@@ -168,26 +200,36 @@
 
 /*contenedor - contenido del articulo*/
 .container-conten{
-    width: 1200px;
-    margin: auto;
-    margin-top: 50px;
-    justify-content: center;
-    height: 360px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
     
 }
 
+
 article{
+    margin-top: 30px;
     width: 100%;
     padding: 20px;
     padding-bottom: 40px;
     box-shadow: -10px 0 20px -30px black;
-    border-radius: 6px;
+    border-radius: 7px;
     position: relative;
     overflow:hidden;
     display: flex;
-    
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     
 }
+
+.contenido {
+    flex: 1 1 400px;
+}
+
 
 .Big-post h1{
     font-family: 'Poppins', sans-serif;
@@ -215,6 +257,8 @@ article h1{
     font-size: 25px;
     color: #2d2d2d;
 }
+
+
 .contenido nav ul p{
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -224,16 +268,31 @@ article h1{
     opacity: 0.5;
     margin-left: 55px;
 }
+
 article img{
+    flex: 1 1 350px;
     display: block;
-    margin-top: 30px;
-    width: 70vh;
-    height:520px;
+    width: 80%;
+    height: 500px;
     border-radius: 30%;
-    margin-left: 180px;
-    
-    
+    margin: 0 auto;
+    object-fit: cover;
+    max-width: 420px;
 }
+
+@media (max-width: 992px) {
+    article {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    }
+    article img {
+        height: 500px; /* También puedes personalizar la altura en móvil */
+    margin-top: 30px;
+    }
+}
+
+
 article nav ul li a i{
     color: #2e2e2e;
     border-radius: 10px;
@@ -247,7 +306,8 @@ article nav ul li a i{
 article .contenido button{
     text-align: center;
     margin-top: 25px;
-    background-color: #659a55; /* Color azul */
+    margin-left: 40px;
+    background-color: #437334; /* Color azul */
     padding: 10px 20px; /* Espaciado interno */
     font-size: 16px; /* Tamaño del texto */
     border: none; /* Sin bordes */
@@ -256,6 +316,8 @@ article .contenido button{
 }
 article .contenido button:hover{
     opacity: 0.8;
+    background-color: #2a621a;
+    transform: scale(1.05);
 
 }
 /*footer - pie de pagina*/
