@@ -74,6 +74,50 @@ align-items: center;
 position: relative; 
 
 }
+
+@media screen and (max-width: 768px) {
+  header {
+    height: 60px; /* más pequeño que los 80px originales */
+  }
+
+  .menu-tips {
+    height: 60px;
+  }
+
+  .menu-tips .logo-ods img {
+    height: 50px;
+    margin-top: 5px;
+  }
+
+  .menu-tips nav ul {
+    margin-left: 10;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .menu-tips nav ul li {
+    margin: 0 10px;
+    font-size: 14px;
+  }
+
+  .contenido-header {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .menu-tips h1 a {
+    font-size: 18px;      /* más pequeño */
+    margin-left: auto;    /* lo empuja a la derecha */
+    margin-right: 10px;   /* espacio a la derecha */
+  }
+
+  .menu-tips nav ul {
+    margin-left: 30px; /* separa el menú de "Salud y Bienestar" */
+    gap: 10px; /* espacio entre los ítems del menú */
+  }
+  
+}
+
 /*
 .menu-selected:before{
     content: "";
@@ -143,9 +187,9 @@ display: flex;
 .contenido-posts img {
   display: block;
   max-width: 100%;
-  height: 100vh;
+  height: auto;
   border-radius: 8px;
-  margin: 30px auto 0 auto;
+  margin: 0 auto;
 }
 .contenido-posts p span{
 color:#217300dc;
@@ -254,6 +298,7 @@ box-shadow: 0 8px 20px rgba(55, 255, 0, 0.467); /* Aumenta la sombra para un efe
 
 
 
+/*PAGINA ULTIMA DE CONTACTO*/
 
 
 .container-footer{
@@ -324,6 +369,41 @@ box-shadow: 0 8px 20px rgba(55, 255, 0, 0.467); /* Aumenta la sombra para un efe
   text-align: center;
   margin-top: 70px;
   color: #424242;
-  font-weight: px;
+  font-weight: normal;
 
 }
+
+@media screen and (max-width: 768px) {
+  .container-footer {
+    padding: 20px 0;
+  }
+
+  .container-footer footer {
+    padding: 0 15px;
+  }
+
+  .container-footer footer .logo-footer img {
+    width: 80px;
+  }
+
+  .container-footer footer .redes-footer {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .container-footer footer .redes-footer .icon-redes-footer {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    margin: 10px;
+  }
+
+  .container-footer h4 {
+    font-size: 14px;
+    margin-top: 40px;
+  }
+}
+
+
+
+

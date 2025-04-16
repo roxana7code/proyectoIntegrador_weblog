@@ -8,13 +8,19 @@
   
 }
 
+@media (max-width: 480) {
+  .articulo-item{
+      flex: 1 1 100%; 
+  }
+}
+
 #ultimos-articulos .articulo {
     display: flex;
     flex-wrap: wrap; /* Permite que los artículos se ajusten si no caben */
     gap: 20px; /* Espaciado uniforme entre artículos */
     justify-content: center; /* Centra los artículos en la fila */
     
-    margin-top: 400px;
+    margin-top: 80px;
     
   }
   
@@ -91,6 +97,57 @@ header{
   z-index: 2; /* va estar por encima de todo*/
 }
 
+
+
+
+/*barra MENU*/
+
+
+@media (max-width: 768px) {
+  .contenido-header {
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .menu-tips {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .menu-tips .logo-ods img {
+    height: 60px;
+    margin-top: 5px;
+  }
+
+  .menu-tips h1 {
+    font-size: 18px;
+  }
+
+  .menu-tips nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .menu-tips nav ul li a {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+}
+
+
+/*finnnnn*/
+
+
+
+/* ========== RESPONSIVE ========= */
+
 .contenido-header{
   max-width: 1200px;
   margin: auto;
@@ -98,6 +155,9 @@ header{
   
 
 }
+
+/*logo nutria */
+
 .menu-tips .logo-ods img{
   display: inline-flex;
   height: 90px;

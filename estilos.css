@@ -18,12 +18,7 @@
 
 /* POST SLIDER   */
 
-/*agranda las tarjetas al pasar el mause sobre ellas */
-.post:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(55, 255, 0, 0.467); /* Aumenta la sombra para un efecto 3D */
-    transition: 200ms;
-}
+
 
 .post-slider {
     position: relative;
@@ -32,6 +27,8 @@
     text-align: center;
     margin: 30px auto;
 }
+
+
 .post-slider .next {
     position: absolute;
     top: 4%;
@@ -154,12 +151,29 @@
 /* Estilos base */
 
 
+
 @media (max-width: 768px) {
-    .menu-contenido {
-    display: none;
-    width: 100%;
+    .menu-contenido nav ul li {
+      display: flex;            /* Asegura que siga visible */
+      flex-wrap: wrap;          /* Permite que los elementos bajen si no caben */
+      justify-content: center;  /* Centra los elementos horizontalmente */
+      width: 100%;              /* Ocupará todo el ancho del contenedor */
+      gap: 0.5rem;              /* Menor separación entre elementos */
     }
+
+    .menu-contenido li a {
+      font-size: 10px;          /* Texto más pequeño */
+      padding: 6px 10px;        /* Menos padding horizontal */
+    }
+
+    .contenido-header {
+      padding: 10px;            /* Menor padding general del encabezado */
+      flex-direction: column;  /* Si necesitas apilar logo y menú verticalmente */
+    align-items: center;
+    }
+    
 }
+
 
 
 
@@ -183,8 +197,11 @@
         background-position: top center; /* Muestra la parte superior de la imagen y la centra horizontalmente */
         background-size: contain;        /* Ajusta la imagen para que quepa completa (aunque no llene todo el contenedor) */
         height: 100vh;                   /* Mantiene la altura en 100% del alto de la pantalla */
+        margin-bottom: 20px;
     }
 }
+
+
 
 
 /* ====================== */
@@ -512,4 +529,5 @@ font-weight: px;
     .container-aside{
         flex-wrap: wrap;
     }
+
 
