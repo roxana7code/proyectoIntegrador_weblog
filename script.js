@@ -13,38 +13,39 @@ $(document).ready(function () {
     });
 
     $(".post-wrapper").slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        nextArrow: $(".next"),
+        centerMode: true,        // Activa el modo centrado
+        centerPadding: '0px',    // Sin relleno en los lados
+        slidesToShow: 3,         // Muestra 3 slides a la vez
+        slidesToScroll: 1,       // Desplaza 1 slide a la vez
+        autoplay: true,          // Activar autoplay
+        autoplaySpeed: 2000,     // Velocidad de autoplay
+        nextArrow: $(".next"),   // Configuración de los botones de navegación
         prevArrow: $(".prev"),
         responsive: [
             {
                 breakpoint: 1024,
                 settings: {
+                    centerMode: true,
                     slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
                 }
             },
             {
                 breakpoint: 600,
                 settings: {
+                    centerMode: true,
                     slidesToShow: 2,
-                    slidesToScroll: 2
                 }
             },
             {
                 breakpoint: 480,
                 settings: {
+                    centerMode: true,
                     slidesToShow: 1,
-                    slidesToScroll: 1
                 }
             }
         ]
     });
+    
 });     
 // Se ejecuta cuando el contenido del DOM está completamente cargado
 document.addEventListener("DOMContentLoaded", function () {

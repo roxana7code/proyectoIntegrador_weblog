@@ -17,8 +17,32 @@
 
 
 /* POST SLIDER   */
+/* Aplica el efecto a todos los posts */
+.slick-slide .post {
+    opacity: 0.5; /* Baja la opacidad de los posts fuera del centro */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
 
+/* Resalta el post central */
+.slick-center .post {
+    transform: scale(1.2); /* Aumenta el tamaño del post central */
+    opacity: 1; /* El post central no tiene opacidad reducida */
+    z-index: 10; /* Asegura que el post central esté por encima de los demás */
+}
 
+/* Resalta la imagen del post central */
+.slick-center .post img {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen */
+}
+
+/* Para mejorar la visibilidad de los botones de navegación */
+.slick-prev, .slick-next {
+    opacity: 0.5;
+}
+.slick-prev:hover, .slick-next:hover {
+    opacity: 1; /* Aumenta la opacidad al pasar el mouse */
+}
+/* ====================== */
 
 .post-slider {
     position: relative;
@@ -59,7 +83,7 @@
     height: 330px;
     margin: 0px 10px;
     display: inline-block;
-    background: linear-gradient(to bottom, whitesmoke  65%,#3c9c1feb 80%);
+    background: linear-gradient(to bottom, whitesmoke  65%,#84835deb 80%);
     border-radius: 5px;
     box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
 }
@@ -110,6 +134,15 @@
 .post-img{
     padding: 0;
     position: relative;
+}
+
+
+body {
+    background-image: url("../imagenWeb/fondo2.jpg"); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* Contenedor del contenido dentro del header */

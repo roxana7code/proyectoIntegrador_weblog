@@ -32,12 +32,12 @@
     position: relative;
     overflow: hidden;
     text-align: left;
-    background: #63626212;
+    background: #cccbadcd;
     
   }
   #ultimos-articulos .articulo-item:hover{
   transform: translateY(-5px); /* Hace que la tarjeta se eleve ligeramente */
-  box-shadow: 0 8px 20px rgba(55, 255, 0, 0.467); /* Aumenta la sombra para un efecto 3D */
+  box-shadow: 0 8px 20px rgba(82, 106, 75, 0.467); /* Aumenta la sombra para un efecto 3D */
   transition: 200ms;
 
   }
@@ -313,7 +313,7 @@ header{
 .container-footer{
   width: 100%;
   padding: 40px 0;
-  background:#1b7402cf;
+  background:#9e9773cf;
   margin-top: 40px;
   
   }
