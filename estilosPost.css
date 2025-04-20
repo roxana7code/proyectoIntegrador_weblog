@@ -79,7 +79,7 @@
   }
 /* Fondo general del cuerpo de la página */
 #body-recetas{
-  background: linear-gradient(135deg, #f5f7fa, #cbd2dc); /* Degradado suave en el fondo */
+  background: linear-gradient(135deg, #f5f7fa, #dbdccb); /* Degradado suave en el fondo */
   font-family: 'Poppins', sans-serif; /* Fuente moderna */
   margin: 0;
   padding: 0;

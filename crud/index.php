@@ -15,20 +15,25 @@ $query = mysqli_query($con, $sql);
         <div class="contenido-heder">
             <div class="menu-tips">
                 <div class="logo-ods"> 
-                    <img src="imagenWeb/img9.png" alt="">
+                    <img src="../imagenWeb/img9.png" alt="">
                 </div>
-                <h1><a href="index.html">Panel del <b>admin</b></a></h1>
+                <h1><a href="index.php">Panel del <b>admin</b></a></h1>
                 <div class="menu-contenido">
                     <nav>
                         <ul>
-                        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                        <li><a href="#"><i class="fas fa-sign-in-alt"></i> Cerrar sesion</a></li>
+                        <li><a href="index.php"><i class="fas fa-home"></i> Inicio</a></li>
+                        <li><a href="../index.html"><i class="fas fa-sign-in-alt"></i> Cerrar sesión</a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
         </div>
     </header>
+
+    <div id="popup-bienvenida" class="popup-bienvenida">
+    <p>Bienvenido al panel del admin</p>
+</div>
+
 
 
 <head>
@@ -93,18 +98,34 @@ $query = mysqli_query($con, $sql);
     <div class="container-footer">
             <footer>
                 <div class="logo-footer">
-                    <img src="imagenWeb/img9.png" alt="">
+                    <img src="../imagenWeb/img9.png" alt="">
                 </div>
 
                 <div class="redes-footer">
                     <a href="https://www.facebook.com/share/193M2XwD2p/?mibextid=wwXIfr" target="_blank"><i class="fa-brands fa-facebook icon-redes-footer"></i></a>
                     <a href="https://www.instagram.com/salud_optimaa?igsh=MXJuNXlsZGdjNGpvaQ%3D%3D&utm_source=qr" target="_blank"><i class="fa-brands fa-instagram icon-redes-footer"></i></a>
-                    <a href="#"><i class="fab fa-twitter icon-redes-footer"></i></a>
+                    <a href="https://x.com/VALERIACUE96463"><i class="fab fa-twitter icon-redes-footer"></i></a>
                 </div>
 
                 <hr>
                 <h4>@ 2025 salud y bienestar - Todos los derechos reservados</h4>
             </footer>
         </div>
+        <script>
+    window.onload = function() {
+        const popup = document.getElementById('popup-bienvenida');
+        popup.style.display = 'block';
+        popup.style.animation = 'fadeIn 1s ease forwards';
+
+        setTimeout(() => {
+            popup.style.animation = 'fadeOut 1s ease forwards';
+        }, 9000); // inicia salida al segundo 9
+
+        setTimeout(() => {
+            popup.style.display = 'none';
+        }, 10000); // oculta al segundo 10
+    };
+</script>
+
 </body>
 </html>
