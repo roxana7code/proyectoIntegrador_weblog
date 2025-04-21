@@ -45,17 +45,18 @@ $query = mysqli_query($con, $sql);
 
 <body>
     <div class="formulario">
-        <form action="insert_publicacion.php" method="POST">
+    <form action="insert_publicacion.php" method="POST" enctype="multipart/form-data">
+
             <h1>Crear publicacion</h1>
 
-           <input type="text" name="titulo" placeholder="Titulo de la publicacion">
-           <input type="text" name="autor" placeholder="Autor de la publicacion">        
-           <input type="text" name="contenido" placeholder="Contenido de la publicacion">
-           <input type="text" name="resumen" placeholder="Resumen de la publicacion">
-           <input type="file" name="imagen" accept="image/*" placeholder="Imagen de la publicacion">
-           <input type="date" name="fecha">
+        <input type="text" name="titulo" placeholder="Titulo de la publicacion">
+        <input type="text" name="autor" placeholder="Autor de la publicacion">        
+        <input type="text" name="contenido" placeholder="Contenido de la publicacion">
+        <input type="text" name="resumen" placeholder="Resumen de la publicacion">
+        <input type="file" name="imagen" accept="image/*" placeholder="Imagen de la publicacion">
+        <input type="date" name="fecha">
 
-           <input type="submit" value="Agregar publicacion"> 
+        <input type="submit" value="Agregar publicacion"> 
         </form>
     </div>
 
@@ -73,6 +74,7 @@ $query = mysqli_query($con, $sql);
                     <th>Fecha</th>
                     <th></th>
                     <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -86,6 +88,18 @@ $query = mysqli_query($con, $sql);
                 <th><?= $row['resumen'] ?></th>
                 <th><?= $row['imagen'] ?></th>
                 <th><?= $row['fecha'] ?></th>
+                <th>
+<button class="ver-btn" 
+    data-titulo="<?= htmlspecialchars($row['titulo']) ?>"
+    data-autor="<?= htmlspecialchars($row['autor']) ?>"
+    data-contenido="<?= htmlspecialchars($row['contenido']) ?>"
+    data-resumen="<?= htmlspecialchars($row['resumen']) ?>"
+    data-imagen="<?= htmlspecialchars($row['imagen']) ?>"
+    data-fecha="<?= htmlspecialchars($row['fecha']) ?>"
+>
+    Ver
+</button>
+</th>
 
                 <th><a href="update.php?publicacion=<?= $row['publicacion']?>" class="publicaciones-table--edit">Editar</a></th>
                 <th><a href="delete_publicacion.php?publicacion=<?= $row['publicacion']?>" class="publicaciones-table--delete">Eliminar</a></th>
@@ -125,6 +139,96 @@ $query = mysqli_query($con, $sql);
             popup.style.display = 'none';
         }, 10000); // oculta al segundo 10
     };
+</script>
+<!-- Modal para ver publicación -->
+<div id="postModal" class="modal">
+<div class="modal-content">
+    <span class="close" id="modalClose">&times;</span>
+    <div id="modal-content">
+    <!-- Aquí se mostrará la información de la publicación -->
+    </div>
+</div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+const modal = document.getElementById("postModal");
+const modalContent = document.getElementById("modal-content");
+const closeBtn = document.getElementById("modalClose");
+
+  // Escucha clics en todos los botones con la clase ver-btn
+document.querySelectorAll(".ver-btn").forEach(button => {
+    button.addEventListener("click", function () {
+    const titulo = this.dataset.titulo;
+    const autor = this.dataset.autor;
+    const contenido = this.dataset.contenido;
+    const resumen = this.dataset.resumen;
+    const imagen = this.dataset.imagen;
+    const fecha = this.dataset.fecha;
+
+    modalContent.innerHTML = `
+        <h2>${titulo}</h2>
+        ${imagen ? `<img src="../imagenWeb/${imagen}" alt="Imagen de la publicación">` : ""}
+        <p><strong>Autor:</strong> ${autor}</p>
+        <p><strong>Contenido:</strong> ${contenido}</p>
+        <p><strong>Resumen:</strong> ${resumen}</p>
+        <p><strong>Fecha:</strong> ${fecha}</p>
+    `;
+
+    modal.style.display = "block";
+    });
+});
+
+closeBtn.addEventListener("click", function () {
+    modal.style.display = "none";
+});
+
+window.addEventListener("click", function (event) {
+    if (event.target == modal) {
+    modal.style.display = "none";
+    }
+});
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+const modal = document.getElementById("postModal");
+const modalContent = document.getElementById("modal-content");
+const closeBtn = document.getElementById("modalClose");
+
+  // Escucha clics en todos los botones con la clase ver-btn
+document.querySelectorAll(".ver-btn").forEach(button => {
+    button.addEventListener("click", function () {
+    const titulo = this.dataset.titulo;
+    const autor = this.dataset.autor;
+    const contenido = this.dataset.contenido;
+    const resumen = this.dataset.resumen;
+    const imagen = this.dataset.imagen;
+    const fecha = this.dataset.fecha;
+
+    modalContent.innerHTML = `
+        <h2>${titulo}</h2>
+        ${imagen ? `<img src="../imagenWeb/${imagen}" alt="Imagen de la publicación">` : ""}
+        <p><strong>Autor:</strong> ${autor}</p>
+        <p><strong>Contenido:</strong> ${contenido}</p>
+        <p><strong>Resumen:</strong> ${resumen}</p>
+        <p><strong>Fecha:</strong> ${fecha}</p>
+    `;
+
+    modal.style.display = "block";
+    });
+});
+
+closeBtn.addEventListener("click", function () {
+    modal.style.display = "none";
+});
+
+window.addEventListener("click", function (event) {
+    if (event.target == modal) {
+    modal.style.display = "none";
+    }
+});
+});
+
 </script>
 
 </body>
