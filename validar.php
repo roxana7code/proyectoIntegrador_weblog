@@ -1,0 +1,53 @@
+<?php
+session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+include("conexion.php");
+$conexion = connection();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $usuario = $_POST['usuario'] ?? '';
+    $contraseña = $_POST['contraseña'] ?? '';
+
+    $stmt = $conexion->prepare("SELECT * FROM usuarios WHERE usuario = ?");
+    $stmt->bind_param("s", $usuario);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $fila = $result->fetch_assoc();
+
+        if (password_verify($contraseña, $fila['contraseña'])) {
+            $_SESSION['usuario'] = $usuario;
+            $_SESSION['id_cargo'] = $fila['id_cargo'];
+            $_SESSION['tipo'] = ($fila['id_cargo'] == 1) ? 'admin' : 'usuario';
+
+
+            if ($fila['id_cargo'] == 1) {
+                header("Location: /proyectoIntegrador_weblog/crud/index.php");
+                exit;
+            } elseif ($fila['id_cargo'] == 2) {
+                header("Location: http://" . $_SERVER['HTTP_HOST'] . "/proyectoIntegrador_weblog/index.php");
+                exit;
+            } else {
+                header("Location: index.php?error=cargo");
+                exit;
+            }
+        } else {
+            // Redirige con error de contraseña
+            header("Location: index.php?error=contraseña");
+            exit;
+        }
+    } else {
+        // Redirige con error de usuario no encontrado
+        header("Location: index.php?error=usuario");
+        exit;
+    }
+
+    $stmt->close();
+    $conexion->close();
+} else {
+    header("Location: index.php?error=metodo");
+    exit;
+}
