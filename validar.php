@@ -25,23 +25,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
             if ($fila['id_cargo'] == 1) {
-                header("Location: /proyectoIntegrador_weblog/crud/index.php");
+                header("Location: /crud/indexCrud.php");
                 exit;
             } elseif ($fila['id_cargo'] == 2) {
-                header("Location: http://" . $_SERVER['HTTP_HOST'] . "/proyectoIntegrador_weblog/index.php");
+                header("Location: http://" . $_SERVER['HTTP_HOST'] . "/indexUsuario.php");
                 exit;
             } else {
-                header("Location: index.php?error=cargo");
+                header("Location: inicioSesion.php?error=cargo");
                 exit;
             }
         } else {
             // Redirige con error de contraseña
-            header("Location: index.php?error=contraseña");
+            header("Location: inicioSesion.php?error=contraseña");
             exit;
         }
     } else {
         // Redirige con error de usuario no encontrado
-        header("Location: index.php?error=usuario");
+        header("Location: /inicioSesion.php?error=usuario");
         exit;
     }
 

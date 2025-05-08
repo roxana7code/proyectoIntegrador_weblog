@@ -20,7 +20,7 @@ if (isset($_GET['error'])) {
 ?>
 
         <h1>Sistema de Login</h1>
-        <a href="/proyectoIntegrador_weblog/visitante.html" class="btn-regresar">← Regresar</a>
+        <a href="/visitante.html" class="btn-regresar">← Regresar</a>
         
         <p>Usuario <input type="text" placeholder="Ingrese su nombre" name="usuario" required></p>
         

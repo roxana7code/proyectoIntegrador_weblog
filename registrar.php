@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             VALUES ('$nombre', '$usuario', '$email', '$contraseñaHash', $id_cargo)";
 
     if (mysqli_query($conexion, $sql)) {
-        header("Location: index.php");
+        header("Location: /inicioSesion.php");
         exit;
     } else {
         $_SESSION['mensaje_error'] = "❌ Error al registrar: " . mysqli_error($conexion);

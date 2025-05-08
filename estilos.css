@@ -1,0 +1,611 @@
+/* Importa la fuente Source Sans Pro desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* ============================= */
+/* 🔹 RESET Y ESTILOS GENERALES 🔹 */
+/* ============================= */
+* {
+    margin: 0; /* Elimina los márgenes predeterminados */
+    padding: 0; /* Elimina los rellenos predeterminados */
+    box-sizing: border-box; /* Mantiene el tamaño total del elemento sin afectar padding y border */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    font-family: 'Source Sans Pro', sans-serif; /* Fuente predeterminada para toda la página */
+} 
+
+
+/* POST SLIDER   */
+/* Aplica el efecto a todos los posts */
+.slick-slide .post {
+    opacity: 0.5; /* Baja la opacidad de los posts fuera del centro */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Resalta el post central */
+.slick-center .post {
+    transform: scale(1.2); /* Aumenta el tamaño del post central */
+    opacity: 1; /* El post central no tiene opacidad reducida */
+    z-index: 10; /* Asegura que el post central esté por encima de los demás */
+}
+
+/* Resalta la imagen del post central */
+.slick-center .post img {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen */
+}
+
+/* Para mejorar la visibilidad de los botones de navegación */
+.slick-prev, .slick-next {
+    opacity: 0.5;
+}
+.slick-prev:hover, .slick-next:hover {
+    opacity: 1; /* Aumenta la opacidad al pasar el mouse */
+}
+/* ====================== */
+
+.post-slider {
+    position: relative;
+} 
+.post-slider .slider-title {
+    text-align: center;
+    margin: 30px auto;
+}
+
+
+.post-slider .next {
+    position: absolute;
+    top: 4%;
+    right: 30px;
+    font-size: 2em;
+    color: #A6BD75;
+    cursor: pointer;
+    margin-top: 100px;
+}
+.post-slider .prev {
+    position: absolute;
+    top: 4%;
+    left: 30px;
+    font-size: 2em;
+    color: #A6BD75;
+    cursor: pointer;
+    margin-top: 100px;
+}
+.post-slider .post-wrapper {
+    width: 84%;
+    height: 350px;
+    margin: 0px auto;
+    overflow: hidden;
+    padding: 10px 0px 10px 0px;
+}
+.post-slider .post-wrapper .post {
+    width: 300px;
+    height: 330px;
+    margin: 0px 10px;
+    display: inline-block;
+    background: linear-gradient(to bottom, whitesmoke  65%,#406837eb 80%);
+    border-radius: 5px;
+    box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
+}
+.post-slider .post-wrapper .post .post-info {
+    height: 130px;
+    padding: 0px 5px;
+}
+.post-slider .post-wrapper .post .slider-image {
+    width: 100%; /* Mantiene el ancho total del contenedor */
+    height: 200px; /* Mantiene la altura */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    object-position: center; /* Centra la imagen */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.slider-title {
+    font-family: 'Merriweather', serif; /* Cambia la fuente */
+    color: #333333; /* Color del texto */
+    font-size: 24px; /* Tamaño de la fuente */
+    font-weight: bold; /* Texto en negrita */
+    text-transform: uppercase; /* Convertir a mayúsculas */
+}
+
+/* Cambiar el estilo del título de cada post */
+.post-info h4 a {
+    font-family: 'Source Sans Pro', sans-serif; /* Cambia la fuente */
+    color: #192c0b; /* Color del enlace */
+    margin-top: 10px;
+    font-size: 18px; /* Tamaño de la fuente */
+    text-decoration: none; /* Elimina el subrayado */
+    transition: color 0.3s ease-in-out; /* Transición suave de color */
+}
+
+/* Cambiar el color del enlace al pasar el cursor */
+.post-info h4 a:hover {
+    color: #837d2e; /* Color más oscuro al hacer hover */
+}
+
+/* Cambiar el color y estilo del autor y fecha */
+.post-info i {
+    font-family: 'Source Sans Pro', sans-serif; /* Fuente */
+    color: #1c1c1c; /* Color del texto */
+    font-size: 14px; /* Tamaño del texto */
+    margin-top: 60px;
+    
+}
+
+.post-img{
+    padding: 0;
+    position: relative;
+}
+
+
+
+/* ======================= */
+/* 🔹 LOGO DEL HEADER 🔹 */
+/* ======================= */
+
+
+
+
+#icon-menu{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 20px;
+    top: 16px;
+    font-size: 20px;
+    background: #fafafa;
+    border-radius: 100%;
+    color:#000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+#icon-menu:hover{
+    opacity: 0.85;/*background: #f2f2f2;*/
+    
+}
+
+/* ====================== */
+/* 🔹 SECCIÓN DE PORTADA 🔹 */
+/* ====================== */
+
+/* Estilos base */
+
+
+
+@media (max-width: 768px) {
+    .menu-contenido nav ul li {
+      display: flex;            /* Asegura que siga visible */
+      flex-wrap: wrap;          /* Permite que los elementos bajen si no caben */
+      justify-content: center;  /* Centra los elementos horizontalmente */
+      width: 100%;              /* Ocupará todo el ancho del contenedor */
+      gap: 0.5rem;              /* Menor separación entre elementos */
+    }
+
+    .menu-contenido li a {
+      font-size: 10px;          /* Texto más pequeño */
+      padding: 6px 10px;        /* Menos padding horizontal */
+    }
+
+    .contenido-header {
+      padding: 10px;            /* Menor padding general del encabezado */
+      flex-direction: column;  /* Si necesitas apilar logo y menú verticalmente */
+    align-items: center;
+    }
+    
+}
+
+
+
+
+
+.container-cover {
+    max-width: 100%; /* Asegura que cubra toda la anchura de la pantalla */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    position:relative; /* Permite superponer elementos como capas */
+    background-image: url(imagenWeb/img17.jpeg); /* Imagen de fondo */
+    filter: brightness(0.9);
+    background-position: center; /* Centra la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir toda el área */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/*hace la imagen de menu responsive */
+@media (max-width: 768px) {
+    .container-cover {
+        background-position: top center; /* Muestra la parte superior de la imagen y la centra horizontalmente */
+        background-size: contain;        /* Ajusta la imagen para que quepa completa (aunque no llene todo el contenedor) */
+        height: 100vh;                   /* Mantiene la altura en 100% del alto de la pantalla */
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+/* ====================== */
+/* 🔹 ESTILOS DEL TEXTO 🔹 */
+/* ====================== */
+
+
+.container-info-cover p {
+    font-size: 20px; /* Tamaño del texto del párrafo */
+    font-weight: 300; /* Fuente ligera */
+    color: whitesmoke; /* Color gris oscuro */
+}
+
+/*contenedor - contenido del articulo*/
+.container-conten{
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    
+}
+
+
+article{
+    margin-top: 30px;
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 40px;
+    box-shadow: -10px 0 20px -30px black;
+    border-radius: 7px;
+    position: relative;
+    overflow:hidden;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    
+}
+
+.contenido {
+    flex: 1 1 400px;
+}
+
+
+.Big-post h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    font-size: 50px;
+}
+article h1{
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 40px;
+
+}
+/*parte de los titulos de cada paso*/
+.contenido nav ul li{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    list-style: none;
+    margin-top: 80px;
+    margin-left: 20px;
+    font-size: 25px;
+    color: #2d2d2d;
+}
+
+
+.contenido nav ul p{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    opacity: 0.5;
+    margin-left: 55px;
+}
+
+article img{
+    flex: 1 1 350px;
+    display: block;
+    width: 80%;
+    height: 500px;
+    border-radius: 30%;
+    margin: 0 auto;
+    object-fit: cover;
+    max-width: 420px;
+}
+
+@media (max-width: 992px) {
+    article {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    }
+    article img {
+        height: 500px; /* También puedes personalizar la altura en móvil */
+    margin-top: 30px;
+    }
+}
+
+
+article nav ul li a i{
+    color: #2e2e2e;
+    border-radius: 10px;
+    background: #999dd1;
+    cursor: default;
+    height: auto;
+    width: 35px;
+    text-align: center;
+}
+
+article .contenido button{
+    text-align: center;
+    margin-top: 25px;
+    margin-left: 40px;
+    background-color: #437334; /* Color azul */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño del texto */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar */
+}
+article .contenido button:hover{
+    opacity: 0.8;
+    background-color: #2a621a;
+    transform: scale(1.05);
+
+}
+/*footer - pie de pagina*/
+
+
+
+.container-footer{
+width: 100%;
+padding: 40px 0;
+background:#1b7402cf;
+margin-top: 40px;
+
+}
+
+.container-footer footer{
+max-width: 1200px;
+margin: auto;
+}
+
+.container-footer footer .logo-footer{
+text-align: center;
+}
+
+.container-footer footer .logo-footer img{
+width: 100px;
+}
+
+.container-footer footer .redes-footer{
+    display: flex;
+justify-content: center;
+margin-top: 20px;
+}
+
+.container-footer footer .redes-footer .icon-redes-footer{
+font-size: 20px;
+margin: 20px;
+background: #b2afaf;
+width: 50px;
+height: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 100%;
+color: #646363
+}
+
+.container-footer footer .redes-footer .fa-facebook:hover{
+background: #41479a;
+color: #fff;    
+}
+
+.container-footer footer .redes-footer .fa-instagram:hover{
+background: linear-gradient(to top right, #fcde30, #e9712a, #d2313b, #ae4198, #7546a1, #5443A6);
+color: #fff;
+}
+
+.container-footer footer .redes-footer .fa-twitter:hover{
+    background: #1DA1F2;
+    color: #fff;
+}
+
+.container-footer footer hr{
+margin-top: 20px;
+border: none;
+height: 2px;
+background: #c0c0c07a;
+
+}
+
+.container-footer h4{
+text-align: center;
+margin-top: 70px;    
+color: #424242;
+font-weight: px;
+
+}
+
+/* Responsive Desig - adaptable a dispocitivos moviles */
+
+@media screen and (max-width: 1220px){
+
+    .header-content,
+    .container-content,
+    .container-footer footer{
+        max-width: 1000px;
+        padding: 20px;
+
+    }
+
+}
+
+@media screen and (max-width: 1020px){
+
+    .container-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+.imagen {
+        margin-left: 50px;
+        width: 150px; /* Ajusta el ancho */
+        height: 100px; /* Ajusta la altura */
+    }
+
+    article{
+        box-shadow: 0 0 0 0;
+    }
+
+    .container-aside{
+        display: flex;
+        justify-content: center;
+}
+
+    .container-aside aside{
+        max-width: 300px;
+        margin: 10px;
+
+    }
+
+}
+
+@media screen and (max-width: 800px){
+
+    body{
+        overflow-x: hidden;
+    }
+
+    .container-all{
+        transition: all 300ms cubic-bezier(1,0,0,1);
+    }
+
+    .move-container-all{
+        transform: translateX(300px);
+    }
+
+    .menu{
+        width: 0px;/*300*/
+        height: 100vh;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        background: #332e2e;
+        transform: translateX(-350px);
+        overflow: hidden;
+        box-shadow: 10px 0px 20px -25px black;
+        transition: all 300ms cubic-bezier(1,0,0,1);
+    }
+
+    .show-lateral{
+        width: 300px;
+        transform: translateX(0px);
+    }
+
+    
+
+    .menu nav ul {
+        flex-direction: column;
+
+    }
+
+    .menu nav ul li{
+        max-width: 200px;
+        height: 60px;
+        justify-content: flex-start;
+    }
+
+}
+
+    .menu-selected:before{
+        width: 0;
+    }
+
+    .menu nav ul li a{ 
+        margin-top: 50px;
+        color: #201f1f;
+    
+    }
+
+    .menu nav ul li a i{
+        width: 20px;
+        display: inline-block;
+        margin-right: 10px;
+        color: #1d2732
+    }
+
+    .icon-menu{
+        display: flex;
+
+    }
+
+    .container-aside{
+        flex-wrap: wrap;
+    }
+    .search-form {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .search-form input[type="text"] {
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-radius: 20px 0 0 20px;
+        outline: none;
+        font-size: 14px;
+    }
+    
+    .search-form button {
+        padding: 6px 12px;
+        border: none;
+        background-color: #2e8b57;
+        color: white;
+        border-radius: 0 20px 20px 0;
+        cursor: pointer;
+    }
+    
+    .search-form button:hover {
+        background-color: #247248;
+    }
+    
+    .menu-contenido nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .menu-contenido nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .search-form {
+        display: flex;
+        margin-left: 20px;
+    }
+    
+    .search-form input {
+        padding: 5px;
+    }
+    
+    .search-form button {
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    
+    
+

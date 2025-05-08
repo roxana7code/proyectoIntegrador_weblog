@@ -38,7 +38,7 @@
 
 <form action="registrar.php" method="post">
     <h1>Registro de Usuario</h1>
-    <a href="/index.php" class="btn-regresar">← Regresar al Login</a>
+    <a href="/inicioSesion.php" class="btn-regresar">← Regresar al Login</a>
 
     <p>Nombre completo <input type="text" placeholder="Ingresa tu nombre" name="nombre" required></p>
     <p>Nombre de Usuario <input type="text" placeholder="Crea tu nombre de usuario" name="usuario" required></p>
@@ -64,7 +64,7 @@
 
     <p style="text-align: center; margin-top: 20px;">
         ¿Ya tienes una cuenta?
-        <a href="index.php" class="btn-registro">Inicia Sesión</a>
+        <a href="/inicioSesion.php" class="btn-registro">Inicia Sesión</a>
     </p>
 </form>
 

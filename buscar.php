@@ -2,9 +2,7 @@
 if (isset($_GET['q'])) {
     $busqueda = htmlspecialchars($_GET['q']);
     echo "<h1>Resultados para: <em>$busqueda</em></h1>";
-
-    // Asegúrate que esta ruta sea correcta:
-    include('conexion.php'); // o 'php/conexion.php' si está en una carpeta
+    include('conexion.php'); 
 
     $query = "SELECT * FROM publicaciones WHERE titulo LIKE '%$busqueda%' OR contenido LIKE '%$busqueda%'";
     $resultado = mysqli_query($conexion, $query);
