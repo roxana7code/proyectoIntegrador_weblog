@@ -7,8 +7,9 @@ include("conexion.php");
 $conexion = connection();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $usuario = $_POST['usuario'] ?? '';
-    $contraseña = $_POST['contraseña'] ?? '';
+    // Reemplazamos el operador null coalescing por isset() para compatibilidad con versiones anteriores de PHP
+    $usuario = isset($_POST['usuario']) ? $_POST['usuario'] : '';
+    $contraseña = isset($_POST['contraseña']) ? $_POST['contraseña'] : '';
 
     $stmt = $conexion->prepare("SELECT * FROM usuarios WHERE usuario = ?");
     $stmt->bind_param("s", $usuario);
@@ -22,7 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['usuario'] = $usuario;
             $_SESSION['id_cargo'] = $fila['id_cargo'];
             $_SESSION['tipo'] = ($fila['id_cargo'] == 1) ? 'admin' : 'usuario';
-
 
             if ($fila['id_cargo'] == 1) {
                 header("Location: /crud/indexCrud.php");
@@ -51,3 +51,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("Location: index.php?error=metodo");
     exit;
 }
+
