@@ -147,89 +147,138 @@ header {
     padding-top: 100px; /* deja espacio para el header */
 }
 
+.formulario {
+    margin: 20px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #cae3c8, #dadcde); /* Degradado de fondo suave */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Sombra más intensa */
+    width: 90%;
+    max-width: 600px; /* Ancho máximo */
+}
 
-.formulario form{
+.formulario h1 {
+    text-align: center;
+    color: #08290d; /* Color del título */
+    font-family: 'Roboto', sans-serif; /* Fuente moderna */
+    margin-bottom: 20px; /* Espacio debajo del título */
+    font-size: 28px; /* Tamaño de fuente grande */
+}
+
+.formulario form {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    width: 30%;
-    margin: 20px auto;
-    text-align: center;
+    gap: 20px; /* Espaciado entre los campos */
 }
 
-.formulario form input{
-    font-family: 'Segoe UI', sans-serif;
+.formulario form input,
+.formulario form textarea {
+    padding: 15px; /* Espaciado interno */
+    border: 2px solid #298d0e; /* Borde verde */
+    border-radius: 8px; /* Bordes redondeados */
+    outline: none; /* Sin contorno al enfocar */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+    font-size: 16px; /* Tamaño de fuente */
+    font-family: 'Roboto', sans-serif; /* Fuente moderna */
 }
 
-.formulario form input[type=text],
-.formulario form input[type=password],
-.formulario form input[type=email]{
-    padding: 8px;
-    border:2px solid #aaa;
-    border-radius:4px;
-    outline:none;
-    transition:.3s;
+.formulario form input:focus,
+.formulario form textarea:focus {
+    border-color: #60a100; /* Borde más claro al enfocar */
+    box-shadow: 0 0 8px rgba(96, 161, 0, 0.5); /* Sombra al enfocar */
 }
 
-.formulario form input[type=text]:focus,
-.formulario form input[type=password]:focus,
-.formulario form input[type=password]:focus{
-    border-color:dodgerBlue;
-    box-shadow:0 0 6px 0 dodgerBlue;
-}
-
-.formulario form input[type=submit]{
-    border: none;
-    padding: 12px 50px;
-    text-decoration: none;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border-radius: 5px;
-    background-color: white; 
-    color: black; 
-    border: 2px solid #60a100;
+.formulario form input[type=submit] {
+    border: none; /* Sin borde */
+    padding: 15px; /* Espaciado interno */
+    background-color: #298d0e; /* Color de fondo */
+    color: white; /* Color del texto */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-weight: bold; /* Texto en negrita */
+    font-size: 18px; /* Tamaño de fuente */
+    transition: background-color 0.3s, transform 0.3s; /* Transición suave */
 }
 
 .formulario form input[type=submit]:hover {
-    background-color: #60a100;
-    color: white;
+    background-color: #60a100; /* Color al pasar el cursor */
+    transform: translateY(-2px); /* Efecto de elevación */
 }
 
-.publicaciones-table table{
-    border: 1px solid #ccc;
-    border-collapse: collapse;
-    margin: 0;
-    padding: 0;
+.formulario form input[type=file] {
+    border: none; /* Sin borde */
+    padding: 10px; /* Espaciado interno */
+    background-color: #e7f9e7; /* Fondo suave */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.formulario form input[type=file]:hover {
+    background-color: #d0f0d0; /* Color al pasar el cursor */
+}
+
+
+.publicaciones-table {
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+}
+
+.publicaciones-table table {
     width: 100%;
-    table-layout: fixed;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden; /* Asegura que los bordes redondeados se mantengan */
 }
 
-table tr {
-    background-color: #d7f7e3;
-    border: 1px solid #ddd;
-    padding: 4px;
+.publicaciones-table th,
+.publicaciones-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
 }
 
-table th{
-    padding: 16px;
-    text-align: center;
-    font-size: .85em;
-}
-
-.publicaciones-table--edit{
-    background: #6a9c6a;
-    padding: 6px;
-    color: #fff;
-    text-align: center;
+.publicaciones-table th {
+    background-color: #dbdbdb; /* Fondo verde */
+    color: rgb(0, 0, 0); /* Color del texto */
     font-weight: bold;
 }
-.publicaciones-table--delete{
-    background: #b11e1e;
-    padding: 6px;
-    color: #fff;
-    text-align: center;
-    font-weight: bold;
+
+.publicaciones-table tr {
+    background-color: #f9f9f9; /* Color de fondo por defecto */
 }
+
+.publicaciones-table tr:hover {
+    background-color: #e2f0e5; /* Color al pasar el cursor sobre la fila */
+}
+
+.publicaciones-table--edit,
+.publicaciones-table--delete {
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.publicaciones-table--edit {
+    background-color: #6a9c6a; /* Color verde */
+}
+
+.publicaciones-table--delete {
+    background-color: #b11e1e; /* Color rojo */
+}
+
+.imagen-publicacion {
+    width: 50px; /* Ajustar el tamaño de la imagen */
+    height: auto; /* Mantiene la relación de aspecto */
+    border-radius: 4px; /* Bordes redondeados para las imágenes */
+}
+
 
 .container-footer {
     width: 100%;
@@ -406,5 +455,50 @@ table th{
 .ver-btn:hover {
     background-color: #45a049;
 }
+.crear-publicacion-btn {
+    padding: 20px 40px; /* Espaciado interno */
+    font-size: 24px; /* Tamaño de fuente */
+    color: white; /* Color del texto */
+    background-color: #298d0e; /* Color de fondo */
+    border: none; /* Sin borde */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s, transform 0.3s; /* Transición suave */
+    margin: 20px 0; /* Margen vertical */
+}
+
+.crear-publicacion-btn:hover {
+    background-color: #60a100; /* Color al pasar el cursor */
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+.oculto {
+    display: none; /* Clase para ocultar elementos */
+}
+.regresar-btn {
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 18px; /* Tamaño de fuente */
+    color: white; /* Color del texto */
+    background-color: #298d0e; /* Color de fondo */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+.regresar-btn:hover {
+    background-color: #60a100; /* Color al pasar el cursor */
+}
+.mensaje-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
 
 

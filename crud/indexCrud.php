@@ -6,47 +6,17 @@ $con = connection();
 $sql = "SELECT * FROM publicaciones";
 $query = mysqli_query($con, $sql);
 
-?>
-
-<?php
 session_start();
 error_reporting(0);
 $varsession = $_SESSION['usuario'];
-if($varsession== null || $varsession=''){
+if($varsession == null || $varsession == ''){
     header("location:/crud/indexCrud.php");
     die();
 }
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
-<header>
-        <div class="contenido-heder">
-            <div class="menu-tips">
-                <div class="logo-ods"> 
-                    <img src="../imagenWeb/img9.png" alt="">
-                </div>
-                <h1><a href="/crud/indexCrud.php">Panel del <b>admin</b></a></h1>
-                <div class="menu-contenido">
-                    <nav>
-                        <ul>
-                        <li><a href="/crud/indexCrud.php"><i class="fas fa-home"></i> Inicio</a></li>
-                        <li><a href="/indexUsuario.php"><i class="fas fa-sign-in-alt"></i> Vista previa</a></li>
-                        <li><a href="/crud/cerrar_sesion.php "><i class="fas fa-home"></i> Cerrar sesión</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <div id="popup-bienvenida" class="popup-bienvenida">
-    <p>Bienvenido al panel del admin</p>
-</div>
-
-
 
 <head>
     <meta charset="UTF-8">
@@ -56,20 +26,44 @@ if($varsession== null || $varsession=''){
 </head>
 
 <body>
-    <div class="formulario">
-    <form action="insert_publicacion.php" method="POST" enctype="multipart/form-data">
+    <header>
+        <div class="contenido-heder">
+            <div class="menu-tips">
+                <div class="logo-ods"> 
+                    <img src="../imagenWeb/img9.png" alt="">
+                </div>
+                <h1><a href="/crud/indexCrud.php">Panel del <b>admin</b></a></h1>
+                <div class="menu-contenido">
+                    <nav>
+                        <ul>
+                            <li><a href="/crud/indexCrud.php"><i class="fas fa-home"></i> Inicio</a></li>
+                            <li><a href="/indexUsuario.php"><i class="fas fa-sign-in-alt"></i> Vista previa</a></li>
+                            <li><a href="/crud/cerrar_sesion.php"><i class="fas fa-home"></i> Cerrar sesión</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
 
-            <h1>Crear publicacion</h1>
+    <div id="popup-bienvenida" class="popup-bienvenida">
+        <p>Bienvenido al panel del admin</p>
+    </div>
 
-        <input type="text" name="titulo" placeholder="Titulo de la publicacion">
-        <input type="text" name="autor" placeholder="Autor de la publicacion">        
-        <input type="text" name="contenido" placeholder="Contenido de la publicacion">
-        <input type="text" name="resumen" placeholder="Resumen de la publicacion">
-        <input type="file" name="imagen" accept="image/*" placeholder="Imagen de la publicacion">
-        <input type="date" name="fecha">
-
-        <input type="submit" value="Agregar publicacion"> 
-        </form>
+    <div class="container">
+        <button id="toggleFormButton" class="crear-publicacion-btn">Crear Publicación</button>
+        <div id="formContainer" class="formulario oculto">
+            <h1>Crear publicación</h1>
+            <form action="insert_publicacion.php" method="POST" enctype="multipart/form-data">
+                <input type="text" name="titulo" placeholder="Título de la publicación" required>
+                <input type="text" name="autor" placeholder="Autor de la publicación" required>        
+                <input type="text" name="contenido" placeholder="Contenido de la publicación" required>
+                <input type="text" name="resumen" placeholder="Resumen de la publicación" required>
+                <input type="file" name="imagen" accept="image/*" required>
+                <input type="date" name="fecha" required>
+                <input type="submit" value="Agregar publicación"> 
+            </form>
+        </div>
     </div>
 
     <div class="publicaciones-table">
@@ -77,8 +71,8 @@ if($varsession== null || $varsession=''){
         <table>
             <thead>
                 <tr>
-                    <th>publicacion</th>
-                    <th>Titulo</th>
+                    <th>Publicación</th>
+                    <th>Título</th>
                     <th>Autor</th>
                     <th>Contenido</th>
                     <th>Resumen</th>
@@ -92,29 +86,26 @@ if($varsession== null || $varsession=''){
             <tbody>
                 <?php while($row = mysqli_fetch_array($query)): ?>
                 <tr>
-
-                <th> <?= $row['publicacion']?> </th>
-                <th> <?= $row['titulo'] ?></th>
-                <th><?= $row['autor'] ?></th>
-                <th><?= $row['contenido'] ?></th>
-                <th><?= $row['resumen'] ?></th>
-                <th><?= $row['imagen'] ?></th>
-                <th><?= $row['fecha'] ?></th>
-                <th>
-<button class="ver-btn" 
-    data-titulo="<?= htmlspecialchars($row['titulo']) ?>"
-    data-autor="<?= htmlspecialchars($row['autor']) ?>"
-    data-contenido="<?= htmlspecialchars($row['contenido']) ?>"
-    data-resumen="<?= htmlspecialchars($row['resumen']) ?>"
-    data-imagen="<?= htmlspecialchars($row['imagen']) ?>"
-    data-fecha="<?= htmlspecialchars($row['fecha']) ?>"
->
-    Ver
-</button>
-</th>
-
-                <th><a href="update.php?publicacion=<?= $row['publicacion']?>" class="publicaciones-table--edit">Editar</a></th>
-                <th><a href="delete_publicacion.php?publicacion=<?= $row['publicacion']?>" class="publicaciones-table--delete">Eliminar</a></th>
+                    <td><?= $row['publicacion'] ?></td>
+                    <td><?= $row['titulo'] ?></td>
+                    <td><?= $row['autor'] ?></td>
+                    <td><?= $row['contenido'] ?></td>
+                    <td><?= $row['resumen'] ?></td>
+                    <td><?= $row['imagen'] ?></td>
+                    <td><?= $row['fecha'] ?></td>
+                    <td>
+                        <button class="ver-btn" 
+                            data-titulo="<?= htmlspecialchars($row['titulo']) ?>"
+                            data-autor="<?= htmlspecialchars($row['autor']) ?>"
+                            data-contenido="<?= htmlspecialchars($row['contenido']) ?>"
+                            data-resumen="<?= htmlspecialchars($row['resumen']) ?>"
+                            data-imagen="<?= htmlspecialchars($row['imagen']) ?>"
+                            data-fecha="<?= htmlspecialchars($row['fecha']) ?>">
+                            Ver
+                        </button>
+                    </td>
+                    <td><a href="update.php?publicacion=<?= $row['publicacion']?>" class="publicaciones-table--edit">Editar</a></td>
+                    <td><a href="delete_publicacion.php?publicacion=<?= $row['publicacion']?>" class="publicaciones-table--delete">Eliminar</a></td>
                 </tr>
                 <?php endwhile; ?>
             </tbody>
@@ -122,126 +113,97 @@ if($varsession== null || $varsession=''){
     </div>
 
     <div class="container-footer">
-            <footer>
-                <div class="logo-footer">
-                    <img src="../imagenWeb/img9.png" alt="">
-                </div>
-
-                <div class="redes-footer">
-                    <a href="https://www.facebook.com/share/193M2XwD2p/?mibextid=wwXIfr" target="_blank"><i class="fa-brands fa-facebook icon-redes-footer"></i></a>
-                    <a href="https://www.instagram.com/salud_optimaa?igsh=MXJuNXlsZGdjNGpvaQ%3D%3D&utm_source=qr" target="_blank"><i class="fa-brands fa-instagram icon-redes-footer"></i></a>
-                    <a href="https://x.com/VALERIACUE96463"><i class="fab fa-twitter icon-redes-footer"></i></a>
-                </div>
-
-                <hr>
-                <h4>@ 2025 salud y bienestar - Todos los derechos reservados</h4>
-            </footer>
-        </div>
-        <script>
-    window.onload = function() {
-        const popup = document.getElementById('popup-bienvenida');
-        popup.style.display = 'block';
-        popup.style.animation = 'fadeIn 1s ease forwards';
-
-        setTimeout(() => {
-            popup.style.animation = 'fadeOut 1s ease forwards';
-        }, 9000); // inicia salida al segundo 9
-
-        setTimeout(() => {
-            popup.style.display = 'none';
-        }, 10000); // oculta al segundo 10
-    };
-</script>
-<!-- Modal para ver publicación -->
-<div id="postModal" class="modal">
-<div class="modal-content">
-    <span class="close" id="modalClose">&times;</span>
-    <div id="modal-content">
-    <!-- Aquí se mostrará la información de la publicación -->
+        <footer>
+            <div class="logo-footer">
+                <img src="../imagenWeb/img9.png" alt="">
+            </div>
+            <div class="redes-footer">
+                <a href="https://www.facebook.com/share/193M2XwD2p/?mibextid=wwXIfr" target="_blank"><i class="fa-brands fa-facebook icon-redes-footer"></i></a>
+                <a href="https://www.instagram.com/salud_optimaa?igsh=MXJuNXlsZGdjNGpvaQ%3D%3D&utm_source=qr" target="_blank"><i class="fa-brands fa-instagram icon-redes-footer"></i></a>
+                <a href="https://x.com/VALERIACUE96463"><i class="fab fa-twitter icon-redes-footer"></i></a>
+            </div>
+            <hr>
+            <h4>@ 2025 salud y bienestar - Todos los derechos reservados</h4>
+        </footer>
     </div>
-</div>
-</div>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-const modal = document.getElementById("postModal");
-const modalContent = document.getElementById("modal-content");
-const closeBtn = document.getElementById("modalClose");
+    <script>
+        // Mostrar y ocultar el formulario
+        document.getElementById('toggleFormButton').addEventListener('click', function() {
+            const formContainer = document.getElementById('formContainer');
+            if (formContainer.style.display === 'none' || formContainer.style.display === '') {
+                formContainer.style.display = 'block'; // Muestra el formulario
+            } else {
+                formContainer.style.display = 'none'; // Oculta el formulario
+            }
+        });
 
-  // Escucha clics en todos los botones con la clase ver-btn
-document.querySelectorAll(".ver-btn").forEach(button => {
-    button.addEventListener("click", function () {
-    const titulo = this.dataset.titulo;
-    const autor = this.dataset.autor;
-    const contenido = this.dataset.contenido;
-    const resumen = this.dataset.resumen;
-    const imagen = this.dataset.imagen;
-    const fecha = this.dataset.fecha;
+        // Código para el popup de bienvenida
+        window.onload = function() {
+            const popup = document.getElementById('popup-bienvenida');
+            popup.style.display = 'block';
+            popup.style.animation = 'fadeIn 1s ease forwards';
 
-    modalContent.innerHTML = `
-        <h2>${titulo}</h2>
-        ${imagen ? `<img src="../imagenWeb/${imagen}" alt="Imagen de la publicación">` : ""}
-        <p><strong>Autor:</strong> ${autor}</p>
-        <p><strong>Contenido:</strong> ${contenido}</p>
-        <p><strong>Resumen:</strong> ${resumen}</p>
-        <p><strong>Fecha:</strong> ${fecha}</p>
-    `;
+            setTimeout(() => {
+                popup.style.animation = 'fadeOut 1s ease forwards';
+            }, 9000); // inicia salida al segundo 9
 
-    modal.style.display = "block";
-    });
-});
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 10000); // oculta al segundo 10
+        };
+    </script>
 
-closeBtn.addEventListener("click", function () {
-    modal.style.display = "none";
-});
+    <!-- Modal para ver publicación -->
+    <div id="postModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="modalClose">&times;</span>
+            <div id="modal-content">
+                <!-- Aquí se mostrará la información de la publicación -->
+            </div>
+        </div>
+    </div>
 
-window.addEventListener("click", function (event) {
-    if (event.target == modal) {
-    modal.style.display = "none";
-    }
-});
-});
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const modal = document.getElementById("postModal");
+            const modalContent = document.getElementById("modal-content");
+            const closeBtn = document.getElementById("modalClose");
 
-document.addEventListener("DOMContentLoaded", function () {
-const modal = document.getElementById("postModal");
-const modalContent = document.getElementById("modal-content");
-const closeBtn = document.getElementById("modalClose");
+            // Escucha clics en todos los botones con la clase ver-btn
+            document.querySelectorAll(".ver-btn").forEach(button => {
+                button.addEventListener("click", function () {
+                    const titulo = this.dataset.titulo;
+                    const autor = this.dataset.autor;
+                    const contenido = this.dataset.contenido;
+                    const resumen = this.dataset.resumen;
+                    const imagen = this.dataset.imagen;
+                    const fecha = this.dataset.fecha;
 
-  // Escucha clics en todos los botones con la clase ver-btn
-document.querySelectorAll(".ver-btn").forEach(button => {
-    button.addEventListener("click", function () {
-    const titulo = this.dataset.titulo;
-    const autor = this.dataset.autor;
-    const contenido = this.dataset.contenido;
-    const resumen = this.dataset.resumen;
-    const imagen = this.dataset.imagen;
-    const fecha = this.dataset.fecha;
+                    modalContent.innerHTML = `
+                        <h2>${titulo}</h2>
+                        ${imagen ? `<img src="../imagenWeb/${imagen}" alt="Imagen de la publicación">` : ""}
+                        <p><strong>Autor:</strong> ${autor}</p>
+                        <p><strong>Contenido:</strong> ${contenido}</p>
+                        <p><strong>Resumen:</strong> ${resumen}</p>
+                        <p><strong>Fecha:</strong> ${fecha}</p>
+                    `;
 
-    modalContent.innerHTML = `
-        <h2>${titulo}</h2>
-        ${imagen ? `<img src="../imagenWeb/${imagen}" alt="Imagen de la publicación">` : ""}
-        <p><strong>Autor:</strong> ${autor}</p>
-        <p><strong>Contenido:</strong> ${contenido}</p>
-        <p><strong>Resumen:</strong> ${resumen}</p>
-        <p><strong>Fecha:</strong> ${fecha}</p>
-    `;
+                    modal.style.display = "block";
+                });
+            });
 
-    modal.style.display = "block";
-    });
-});
+            closeBtn.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
 
-closeBtn.addEventListener("click", function () {
-    modal.style.display = "none";
-});
-
-window.addEventListener("click", function (event) {
-    if (event.target == modal) {
-    modal.style.display = "none";
-    }
-});
-});
-
-</script>
+            window.addEventListener("click", function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>

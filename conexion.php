@@ -1,17 +1,18 @@
 <?php
 
-function connection(){
+function connection() {
     $host = "localhost";
     $user = "root";
-    $password = "";
+    $pass = ""; 
+    $db = "blog_database";
 
-    $bd = "blog_database";
+    $con = mysqli_connect($host, $user, $pass, $db);
 
-    $connect = mysqli_connect($host, $user, $password);
+    if (!$con) {
+        die("Error de conexión: " . mysqli_connect_error());
+    }
 
-    mysqli_select_db($connect, $bd);
-
-    return $connect;
-};
+    return $con;
+}
 
 ?>

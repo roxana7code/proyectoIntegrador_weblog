@@ -403,6 +403,67 @@ box-shadow: 0 8px 20px rgba(55, 255, 0, 0.467); /* Aumenta la sombra para un efe
     margin-top: 40px;
   }
 }
+.comentarios-likes {
+    margin-top: 40px;
+}
+
+.comentarios-container {
+    margin-bottom: 30px;
+}
+
+.comentario {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.comentario h4 {
+    margin-bottom: 5px;
+}
+
+.comentario p.fecha-comentario {
+    font-size: 12px;
+    color: #888;
+}
+
+.likes-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#like-button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+}
+
+#like-button.liked {
+    color: #ff0000;
+}
+
+#comment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#comment-form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#comment-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 
 

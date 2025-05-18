@@ -1,0 +1,177 @@
+header {
+    width: 100%;
+    background-color: #fafafa; /* Color de fondo del header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+}
+
+.contenido-header {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos */
+    align-items: center; /* Centra verticalmente */
+    padding: 10px 20px; /* Espaciado interno */
+}
+
+.logo-ods img {
+    width: 120px; /* Ajusta el tamaño del logo */
+}
+
+h1 a {
+    color: #333; /* Color inicial del enlace */
+    transition: color 0.3s ease; /* Transición suave */
+}
+
+h1 a:hover {
+    color: #A6BD75; /* Color del enlace al pasar el mouse */
+}
+
+.menu-contenido nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-contenido nav ul li {
+    margin-left: 10px; /* Espaciado entre los elementos del menú */
+}
+
+.menu-contenido nav ul li a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: #333; /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+    transition: color 0.3s ease; /* Transición suave */
+}
+
+.menu-contenido nav ul li a:hover {
+    color: #A6BD75; /* Color de texto al pasar el mouse */
+}
+
+.perfil-usuario {
+    margin-left: 10px; /* Espaciado para el saludo del usuario */
+    color: #333; /* Color del texto */
+}
+
+/* ====================== */
+/* 🔹 MEDIA QUERIES 🔹 */
+/* ====================== */
+
+@media (max-width: 768px) {
+    .menu-contenido nav ul li {
+        display: flex;            /* Asegura que siga visible */
+        flex-wrap: wrap;          /* Permite que los elementos bajen si no caben */
+        justify-content: center;  /* Centra los elementos horizontalmente */
+        width: 100%;              /* Ocupará todo el ancho del contenedor */
+        gap: 0.5rem;              /* Menor separación entre elementos */
+    }
+
+    .menu-contenido nav ul li a {
+        font-size: 10px;          /* Texto más pequeño */
+        padding: 6px 10px;        /* Menos padding horizontal */
+    }
+
+    .contenido-header {
+        padding: 10px;            /* Menor padding general del encabezado */
+        flex-direction: column;    /* Si necesitas apilar logo y menú verticalmente */
+        align-items: center;
+    }
+}
+
+
+
+    h1 {
+    font-family: 'Poppins', sans-serif; /* Fuente del título */
+    font-weight: 700; /* Negrita */
+    font-size: 36px; /* Tamaño del título */
+}
+
+h2 {
+    font-family: 'Merriweather', serif; /* Fuente para subtítulos */
+    font-weight: 600; /* Negrita */
+    font-size: 28px; /* Tamaño de subtítulos */
+    margin-top: 20px; /* Margen superior */
+}
+
+h3 {
+    font-family: 'Merriweather', serif; /* Fuente para subtítulos */
+    font-weight: 500; /* Peso del texto */
+    font-size: 24px; /* Tamaño de subtítulos */
+    margin-top: 15px; /* Margen superior */
+}
+
+p {
+    font-size: 18px; /* Tamaño del texto */
+    margin: 15px 0; /* Margen vertical */
+}
+
+/* Estilos para las secciones */
+section {
+    background: white; /* Fondo blanco para secciones */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    margin: 20px auto; /* Margen automático para centrar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 800px; /* Ancho máximo */
+}
+
+/* Estilos para la lista del equipo */
+ul {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el padding */
+}
+
+ul li {
+    font-size: 18px; /* Tamaño del texto */
+    margin: 10px 0; /* Margen vertical */
+}
+
+nav ul {
+    list-style: none; /* Eliminar puntos de la lista */
+    display: flex; /* Mostrar los elementos en fila */
+    justify-content: center; /* Centrar el menú */
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar padding */
+}
+
+nav ul li {
+    margin: 0 15px; /* Espaciado entre los elementos del menú */
+}
+
+nav ul li a {
+    color: white; /* Color del texto del menú */
+    text-decoration: none; /* Eliminar subrayado */
+    font-weight: bold; /* Negrita */
+}
+.salud {
+    color: black; /* Color negro para "Salud y" */
+}
+
+.bienestar {
+    color: rgb(18, 139, 16); /* Color negro para "bienestar" */
+    font-weight: bold; /* Negrita para "bienestar" si es necesario */
+}
+
+.perfil-img {
+    width: 40px; /* Ajusta el tamaño según sea necesario */
+    height: 40px; /* Mantiene la proporción */
+    border-radius: 50%; /* Hace la imagen redonda */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+    vertical-align: middle; /* Alinea verticalmente la imagen con el texto */
+}
+header {
+    position: fixed; /* Fija el encabezado en la parte superior */
+    top: 0; /* Alinea el encabezado al borde superior */
+    left: 0; /* Alinea el encabezado al borde izquierdo */
+    width: 100%; /* Asegura que el encabezado ocupe todo el ancho */
+    background-color: white; /* Fondo blanco para el encabezado */
+    z-index: 1000; /* Asegura que el encabezado esté por encima del contenido */
+}
+
+.contenido-header {
+    padding: 10px; /* Espaciado interno para el encabezado */
+}
+
+/* Agrega margen superior al contenido principal para evitar que sea cubierto por el encabezado */
+main {
+    margin-top: 80px; /* Ajusta este valor según la altura de tu encabezado */
+}
+

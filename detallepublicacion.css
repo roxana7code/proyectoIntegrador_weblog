@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa, #cbd2dc); /* Degradado suave en el fondo */
+    font-family: 'Poppins', sans-serif; /* Fuente moderna */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    box-shadow: 0 4px 25px -22px black; /* Sombra del encabezado */
+    z-index: 2; /* Por encima de todo */
+}
+
+.contenido-header {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+}
+
+.menu-tips {
+    height: 80px;
+    display: flex;
+    justify-content: space-between; /* Espacio entre logo y menú */
+    align-items: center;
+    width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+.menu-tips .logo-ods img {
+    display: inline-flex;
+    height: 90px;
+}
+
+.menu-tips h1 a {
+    color: #201f1f;
+    font-size: 24px; /* Ajusta el tamaño del título */
+}
+
+.menu-tips nav {
+    height: 100%;
+}
+
+.menu-tips nav ul {
+    height: 100%;
+    display: flex;
+    list-style: none;
+    margin-left: auto; /* Empuja el menú a la derecha */
+}
+
+.menu-tips nav ul li {
+    height: 100%;
+    margin: 0 20px; /* Margen horizontal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-tips nav ul li a {
+    color: #201f1f; /* Color del texto del menú */
+}
+
+.menu-tips nav ul li a:hover {
+    color: #298d0e; /* Color del texto al pasar el ratón */
+    transition: color 300ms;
+}
+
+.titulo-posts h1 {
+    text-align: center;
+    margin-top: 100px;
+    text-transform: capitalize;
+    color: #191919f1;
+    font-size: 40px;
+}
+
+.posts-contenido {
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: -10px 0 20px -30px black;
+    background: #ffffff;
+    max-width: 70%;
+    margin: 100px auto; /* Centra el contenido y deja espacio para el encabezado */
+    font-size: 20px;
+    position: relative;
+    text-align: left;
+}
+
+.posts-contenido img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px auto; /* Espaciado superior e inferior */
+}
+
+.posts-contenido p {
+    color: #555;
+    font-size: 20px;
+    line-height: 1.6; /* Mejora la legibilidad */
+}
+
+footer {
+    width: 100%;
+    padding: 40px 0;
+    background: #1b7402cf;
+    margin-top: 40px;
+}
+
+.container-footer {
+    width: 100%; /* Asegura que el contenedor del footer ocupe todo el ancho */
+    text-align: center;
+}
+
+.container-footer footer .logo-footer img {
+    width: 100px; /* Ajusta el tamaño del logo */
+}
+
+.container-footer footer .redes-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.container-footer footer .redes-footer .icon-redes-footer {
+    font-size: 20px;
+    margin: 20px;
+    background: #b2afaf;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    color: #646363;
+}
+
+.container-footer footer .redes-footer .fa-facebook:hover {
+    background: #41479a;
+    color: #fff;    
+}
+
+.container-footer footer .redes-footer .fa-instagram:hover {
+    background: linear-gradient(to top right, #fcde30, #e9712a, #d2313b, #ae4198, #7546a1, #5443A6);
+    color: #fff;
+}
+
+.container-footer footer .redes-footer .fa-twitter:hover {
+    background: #1DA1F2;
+    color: #fff;
+}
+
+.container-footer footer hr {
+    margin-top: 20px;
+    border: none;
+    height: 2px;
+    background: #c0c0c07a;
+}
+
+.container-footer h4 {
+    margin-top: 70px;
+    color: #424242;
+    font-weight: normal;
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+    header {
+        height: 60px; /* Más pequeño que los 80px originales */
+    }
+
+    .menu-tips {
+        height: 60px;
+    }
+
+    .menu-tips .logo-ods img {
+        height: 50px;
+        margin-top: 5px;
+    }
+
+    .menu-tips nav ul {
+        margin-left: 10;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .menu-tips nav ul li {
+        margin: 0 10px;
+        font-size: 14px;
+    }
+
+    .titulo-posts h1 {
+        font-size: 28px; /* Tamaño más pequeño en móviles */
+    }
+
+    .posts-contenido {
+        max-width: 90%; /* Aumentar el ancho en dispositivos móviles */
+        padding: 20px; /* Ajustar el padding */
+    }
+
+    .container-footer {
+        padding: 20px 0;
+    }
+
+    .container-footer footer .logo-footer img {
+        width: 80px;
+    }
+
+    .container-footer footer .redes-footer .icon-redes-footer {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        margin: 10px;
+    }
+
+    .container-footer h4 {
+        font-size: 14px;
+        margin-top: 40px;
+    }
+}
+.posts-contenido {
+    display: flex; /* Usar flexbox para alinear el carrusel y el contenido */
+}
+
+.post-slider {
+    width: 250px; /* Ancho del carrusel */
+    margin-right: 20px; /* Espacio entre el carrusel y el contenido */
+}
+
+.post-slider .slider-title {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.post-wrapper {
+    height: auto; /* Ajusta la altura según el contenido */
+}
+
+.slick-slide .post {
+    opacity: 0.5; /* Baja la opacidad de los posts fuera del centro */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Resalta el post central */
+.slick-center .post {
+    transform: scale(1.2); /* Aumenta el tamaño del post central */
+    opacity: 1; /* El post central no tiene opacidad reducida */
+    z-index: 10; /* Asegura que el post central esté por encima de los demás */
+}
+
+/* Resalta la imagen del post central */
+.slick-center .post img {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen */
+}
+
+/* Para mejorar la visibilidad de los botones de navegación */
+.slick-prev, .slick-next {
+    opacity: 0.5;
+}
+.slick-prev:hover, .slick-next:hover {
+    opacity: 1; /* Aumenta la opacidad al pasar el mouse */
+}
+
+.post-slider {
+    position: relative; /* Para posicionar las flechas */
+}
+
+.post-slider .next, .post-slider .prev {
+    position: absolute;
+    left: 50%; /* Centra horizontalmente las flechas */
+    transform: translateX(-50%); /* Ajusta la posición horizontalmente */
+    font-size: 2em;
+    color: #A6BD75;
+    cursor: pointer;
+}
+
+.post-slider .next {
+    bottom: 10px; /* Posición del botón derecho */
+}
+
+.post-slider .prev {
+    top: 10px; /* Posición del botón izquierdo */
+}
+
+
+.post-wrapper {
+    width: 100%; /* Mantiene el ancho total del contenedor */
+    overflow: hidden; /* Oculta el desbordamiento */
+}
+
+.post-slider .post {
+    width: 100%; /* Mantiene el ancho total del contenedor */
+    margin: 10px 0; /* Margen entre publicaciones */
+    background: linear-gradient(to bottom, whitesmoke 65%, #406837eb 80%);
+    border-radius: 5px;
+    box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
+}
+
+.post-slider .post .slider-image {
+    width: 100%; /* Mantiene el ancho total del contenedor */
+    height: 150px; /* Ajusta la altura */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.post-info h3 {
+color: #333; /* Cambia el color del título aquí */
+font-size: 18px;
+font-weight: bold;
+margin-bottom: 5px;
+}
+.comentarios-likes {
+    margin-top: 40px;
+}
+
+.comentarios-container {
+    margin-bottom: 30px;
+}
+
+.comentario {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.comentario h4 {
+    margin-bottom: 5px;
+}
+
+.comentario p.fecha-comentario {
+    font-size: 12px;
+    color: #888;
+}
+
+.likes-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#like-button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+}
+
+#like-button.liked {
+    color: #ff0000;
+}
+
+#comment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#comment-form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#comment-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+

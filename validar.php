@@ -7,7 +7,6 @@ include("conexion.php");
 $conexion = connection();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Reemplazamos el operador null coalescing por isset() para compatibilidad con versiones anteriores de PHP
     $usuario = isset($_POST['usuario']) ? $_POST['usuario'] : '';
     $contraseña = isset($_POST['contraseña']) ? $_POST['contraseña'] : '';
 
@@ -20,6 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $fila = $result->fetch_assoc();
 
         if (password_verify($contraseña, $fila['contraseña'])) {
+            // Guardar el id del usuario en sesión
+            $_SESSION['usuario_id'] = $fila['id'];  // <-- Aquí está la clave
             $_SESSION['usuario'] = $usuario;
             $_SESSION['id_cargo'] = $fila['id_cargo'];
             $_SESSION['tipo'] = ($fila['id_cargo'] == 1) ? 'admin' : 'usuario';
@@ -35,12 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 exit;
             }
         } else {
-            // Redirige con error de contraseña
             header("Location: inicioSesion.php?error=contraseña");
             exit;
         }
     } else {
-        // Redirige con error de usuario no encontrado
         header("Location: /inicioSesion.php?error=usuario");
         exit;
     }
@@ -51,4 +50,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("Location: index.php?error=metodo");
     exit;
 }
-
+?>

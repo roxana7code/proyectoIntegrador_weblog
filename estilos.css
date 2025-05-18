@@ -197,10 +197,6 @@
     
 }
 
-
-
-
-
 .container-cover {
     max-width: 100%; /* Asegura que cubra toda la anchura de la pantalla */
     height: 100vh; /* Ocupa toda la altura de la pantalla */
@@ -606,6 +602,125 @@ font-weight: px;
         cursor: pointer;
     }
 
-    
-    
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo en la pantalla */
+    z-index: 1000; /* Por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    overflow: auto; /* Habilita el desplazamiento si es necesario */
+    background-color: rgb(0,0,0); /* Color de fondo */
+    background-color: rgba(0,0,0,0.4); /* Fondo negro con opacidad */
+}
 
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% desde la parte superior y centrado */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho del modal */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa, #cbd2dc);
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    box-shadow: 0 4px 25px -22px black;
+    z-index: 2;
+}
+
+.contenido-header {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+}
+
+.menu-tips {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-tips h1 a {
+    color: #201f1f;
+}
+
+.menu-tips nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.menu-tips nav ul li a {
+    color: #201f1f;
+}
+
+.menu-tips nav ul li a:hover {
+    color: #298d0e;
+    transition: color 300ms;
+}
+
+.titulo-posts {
+    text-align: center;
+    margin-top: 100px;
+    text-transform: capitalize;
+    color: #191919f1;
+    font-size: 40px;
+}
+
+.posts-contenido {
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: -10px 0 20px -30px black;
+    background: #ffffff;
+    max-width: 70%;
+    margin: 30px auto; /* Centra el contenido */
+    font-size: 20px;
+    text-align: left;
+}
+
+.contenido-posts img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px auto; /* Espaciado superior e inferior */
+}
+
+.contenido-posts p {
+    margin-top: 25px;
+    color: #555;
+    font-size: 20px;
+}

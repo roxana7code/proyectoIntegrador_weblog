@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,13 +33,14 @@
                 <div class="logo-ods"> 
                     <img src="imagenWeb/img9.png" alt="">
                 </div>
-                <h1><a href="index.html">Salud y <b>bienestar</b></a></h1>
+                <h1><a href="/visitante.php">Salud y <b>bienestar</b></a></h1>
                 <div class="menu-contenido">
                     <nav style="display: flex; align-items: center;">
                         <ul style="display: flex; margin: 0; padding: 0;">
-                            <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                            <li><a href="https://www.youtube.com/channel/UCP6DHuQs90149gArPEcevJg"><i class="fab fa-youtube"></i> Tutoriales</a></li>
-                            <li><a href="../proyectoIntegrador_weblog/visitante.html"><i class="fas fa-sign-in-alt"></i> Cerrar sesion</a></li>
+                            <li><a href="/visitante.php"><i class="fas fa-home"></i> Inicio</a></li>
+                            <li><a href="/inicioSesion.php"><i class="fab fa-youtube"></i> Tutoriales</a></li>
+                            <li><a href="/inicioSesion.php"><i class="fas fa-users"></i> Nosotros</a></li>
+                            <li><a href="/inicioSesion.php"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a></li>
                         </ul>
                         <form id="searchForm" class="search-form" action="buscar.php" method="GET" style="margin-left: 20px; display: flex;">
                             <input type="text" name="q" placeholder="Buscar..." required style="padding: 5px;">
@@ -55,58 +60,49 @@
             </div>
         </div>
 
-        <div class="post-slider">
-            <h1 class="slider-title">Trending Posts</h1>
-            <i class="fas fa-chevron-left prev"></i>
-            <i class="fas fa-chevron-right next"></i>
+    <div class="post-slider">
+    <h1 class="slider-title">Publicaciones Recientes</h1>
+    <i class="fas fa-chevron-left prev"></i>
+    <i class="fas fa-chevron-right next"></i>
 
-            <div class="post-wrapper">
-                <div class="post">
-                    <img src="imagenWeb/img18.jpeg" alt="" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="posts/post1.html">Ven a conocer esta receta</a></h4>
-                        <i class="far fa-user"> Gustavo Solorzano</i> &nbsp;
-                        <i class="far fa-calendar"> Feb 10, 2025</i>
-                    </div>
-                </div>
+    <div class="post-wrapper">
+    <?php
+    // Consulta para obtener las publicaciones
+    include 'conexion.php'; // Asegúrate de que este archivo contenga la función connection()
+    $con = connection(); // Llama a la función de conexión
 
-                <div class="post">
-                    <img src="imagenWeb/img19.jpeg" alt="" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="post2.html">Los mejores tips de alimentacion</a></h4>
-                        <i class="far fa-user"> Roxana Orozco </i> &nbsp;
-                        <i class="far fa-calendar"> Feb 12, 2025</i>
-                    </div>
-                </div>
+    // Consulta SQL para obtener las últimas 5 publicaciones
+    $sql = "SELECT * FROM publicaciones ORDER BY fecha DESC LIMIT 5"; 
+    $query = mysqli_query($con, $sql);
 
-                <div class="post">
-                    <img src="imagenWeb/img20.jpeg" alt="" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="post3.html">Los mejores ejercicios!</a></h4>
-                        <i class="far fa-user"> Axel Flores</i> &nbsp;
-                        <i class="far fa-calendar"> Feb 15, 2025</i>
-                    </div>
-                </div>
+    // Verificar si la consulta fue exitosa
+    if (!$query) {
+        die("Error en la consulta: " . mysqli_error($con));
+    }
 
-                <div class="post">
-                    <img src="imagenWeb/img21.jpeg" alt="" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="post4.html">Mantente activo...</a></h4>
-                        <i class="far fa-user"> Gustavo Solorzano</i> &nbsp;
-                        <i class="far fa-calendar"> Feb 20, 2025</i>
-                    </div>
-                </div>
+    // Procesar los resultados
+    if (mysqli_num_rows($query) > 0) {
+        while ($fila = mysqli_fetch_assoc($query)) {
+            echo '<div class="post">';
+            echo '<img src="../imagenWeb/' . htmlspecialchars($fila['imagen']) . '" alt="" class="slider-image">';
+            echo '<div class="post-info">';
+            echo '<h4><a href="/inicioSesion.php">' . htmlspecialchars($fila['titulo']) . '</a></h4>';
+            echo '<i class="far fa-user"> ' . htmlspecialchars($fila['autor']) . '</i> &nbsp;';
+            echo '<i class="far fa-calendar"> ' . htmlspecialchars($fila['fecha']) . '</i>';
+            echo '</div>';
+            echo '</div>';
+        }
+    } else {
+        echo "No hay publicaciones disponibles.";
+    }
 
-                <div class="post">
-                    <img src="imagenWeb/img22.jpeg" alt="" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="post5.html">Los mejores tips de alimentacion</a></h4>
-                        <i class="far fa-user"> Abigail Martinez</i> &nbsp;
-                        <i class="far fa-calendar"> Feb 23, 2025</i>
-                    </div>
-                </div>
-            </div>
-        </div>
+    // Cierra la conexión al final
+    mysqli_close($con);
+    ?>
+</div>
+
+    </div>
+</div>
         
         <div class="container-conten">
             <div class="Big-post">
@@ -129,7 +125,7 @@
                     </nav>
 
                     <button onclick="window.location.href='post-tips.html';">
-                        <a href="post-tips.html" style="color: whitesmoke; text-decoration: none;">Leer más</a>
+                        <a href="/inicioSesion.php" style="color: whitesmoke; text-decoration: none;">Leer más</a>
                     </button>
                 </div>
 
@@ -148,42 +144,42 @@
                     <h3>Galletas de avena y platano </h3>
                     <p>Estas son unas galletas de avena muy saludables y fáciles, ideales…  </p>
                     <span>24/05/2025</span>
-                    <a href="post-Bloguero/post6.html">Leer más</a>
+                    <a href="/inicioSesion.php">Leer más</a>
                 </div>
                 <div class="articulo-item">
                     <img src="post_Img/post1.jpg" alt="Salud y bienestar">
                     <h3>¿Cómo debe de ser la dieta para deportistas de alto rendimiento? </h3>
                     <p>La dieta para deportistas de alto rendimiento juega un papel crucial para… </p>
                     <span>24/05/2025</span>
-                    <a href="post-Bloguero/post1.html">Leer más</a>
+                    <a href="/inicioSesion.php">Leer más</a>
                 </div>
                 <div class="articulo-item">
                     <img src="post_Img/post2.jpg" alt="Salud y bienestar">
                     <h3>Dieta antiinflamatoria: alimentos recomendados y cuáles evitar </h3>
                     <p>Elegir una dieta antiinflamatoria es clave para prevenir y combatir la inflamación que… </p>
                     <span>24/05/2025</span>
-                    <a href="post-Bloguero/post2.html">Leer más</a>
+                    <a href="/inicioSesion.php">Leer más</a>
                 </div>
                 <div class="articulo-item">
                     <img src="post_Img/post3.jpg" alt="Salud y bienestar">
                     <h3>Galletas de calabaza para el desayuno  </h3>
                     <p>Estas galletas de calabaza se han vuelto una de mis recetas favoritas. Te prometo que te van a encantar… </p>
                     <span>24/05/2025</span>
-                    <a href="post-Bloguero/post3.html">Leer más</a>
+                    <a href="/inicioSesion.php">Leer más</a>
                 </div>
                 <div class="articulo-item">
                     <img src="post_Img/post4.jpg" alt="Salud y bienestar">
                     <h3>Smoothie de Frutas y Avena </h3>
                     <p>Este smoothie es una excelente manera de comenzar el… </p>
                     <span>24/05/2025</span>
-                    <a href="post-Bloguero/post4.html">Leer más</a>
+                    <a href="/inicioSesion.php">Leer más</a>
                 </div>
                 <div class="articulo-item">
                     <img src="post_Img/post5.png" alt="Salud y bienestar">
                     <h3>Ensalada con naranja, queso y pistachos </h3>
                     <p>Esta ensalada con naranja, queso de cabra y pistachos, aportan… </p>
                     <span>24/05/2025</span>
-                    <a href="post-Bloguero/post5.html">Leer más</a>
+                    <a href="/inicioSesion.php">Leer más</a>
                 </div>
                 <!-- Repite el bloque div para más artículos -->
             </div>
@@ -196,9 +192,9 @@
                 </div>
 
                 <div class="redes-footer">
-                    <a href="https://www.facebook.com/share/193M2XwD2p/?mibextid=wwXIfr" target="_blank"><i class="fa-brands fa-facebook icon-redes-footer"></i></a>
-                    <a href="https://www.instagram.com/salud_optimaa?igsh=MXJuNXlsZGdjNGpvaQ%3D%3D&utm_source=qr" target="_blank"><i class="fa-brands fa-instagram icon-redes-footer"></i></a>
-                    <a href="https://x.com/VALERIACUE96463"><i class="fab fa-twitter icon-redes-footer"></i></a>
+                    <a href="/inicioSesion.php" target="_blank"><i class="fa-brands fa-facebook icon-redes-footer"></i></a>
+                    <a href="/inicioSesion.php" target="_blank"><i class="fa-brands fa-instagram icon-redes-footer"></i></a>
+                    <a href="/inicioSesion.php"><i class="fab fa-twitter icon-redes-footer"></i></a>
                 </div>
 
                 <hr>

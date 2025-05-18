@@ -18,7 +18,9 @@ $row = mysqli_fetch_array($query);
     <title>Actualizar publicacion</title>
 </head>
 <body>
-
+    <div class="container">
+        <button onclick="window.location.href='indexCrud.php'" class="regresar-btn">Regresar</button>
+        </div>
     <div class="formulario">
     <form action="edit_publicacion.php" method="POST" enctype="multipart/form-data">
 
@@ -33,7 +35,7 @@ $row = mysqli_fetch_array($query);
             <input type="date" name="fecha" value="<?= $row['fecha'] ?>">
 
             <input type="submit" value="Actualizar publicacion"> 
-         </form>
+        </form>
     </div>
 </body>
 
