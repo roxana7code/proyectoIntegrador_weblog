@@ -10,7 +10,7 @@ session_start();
 error_reporting(0);
 $varsession = $_SESSION['usuario'];
 if($varsession == null || $varsession == ''){
-    header("location:/crud/indexCrud.php");
+    header("location:crud/indexCrud.php");
     die();
 }
 ?>
@@ -32,13 +32,13 @@ if($varsession == null || $varsession == ''){
                 <div class="logo-ods"> 
                     <img src="../imagenWeb/img9.png" alt="">
                 </div>
-                <h1><a href="crud/indexCrud.php">Panel del <b>admin</b></a></h1>
+                <h1><a href="/crud/indexCrud.php">Panel del <b>admin</b></a></h1>
                 <div class="menu-contenido">
                     <nav>
                         <ul>
-                            <li><a href="crud/indexCrud.php"><i class="fas fa-home"></i> Inicio</a></li>
-                            <li><a href="indexUsuario.php"><i class="fas fa-sign-in-alt"></i> Vista previa</a></li>
-                            <li><a href="crud/cerrar_sesion.php"><i class="fas fa-home"></i> Cerrar sesión</a></li>
+                            <li><a href="/crud/indexCrud.php"><i class="fas fa-home"></i> Inicio</a></li>
+                            <li><a href="/indexUsuario.php"><i class="fas fa-sign-in-alt"></i> Vista previa</a></li>
+                            <li><a href="/crud/cerrar_sesion.php"><i class="fas fa-home"></i> Cerrar sesión</a></li>
                         </ul>
                     </nav>
                 </div>

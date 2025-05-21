@@ -70,11 +70,11 @@ if ($row = mysqli_fetch_assoc($query_total_likes)) {
                 <div class="logo-ods"> 
                     <img src="imagenWeb/img9.png" alt="">
                 </div>
-                <h1><a href="indexUsuario.php">Salud y <b>bienestar</b></a></h1>
+                <h1><a href="/indexUsuario.php">Salud y <b>bienestar</b></a></h1>
                 <div class="menu-contenido">
                     <nav>
                         <ul>
-                            <li><a href="indexUsuario.php"><i class="fas fa-home"></i> Inicio</a></li>
+                            <li><a href="/indexUsuario.php"><i class="fas fa-home"></i> Inicio</a></li>
                     </nav>
                 </div>
             </div>
