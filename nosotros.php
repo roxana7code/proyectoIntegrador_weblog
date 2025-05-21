@@ -41,14 +41,6 @@ session_start();
                 <ul>
                     <li><a href="/indexUsuario.php"><i class="fas fa-home"></i> Inicio</a></li>
                 </ul>
-                <!-- Saludo al usuario -->
-                <div class="perfil-usuario">
-                    <?php
-                    if (isset($_SESSION['usuario'])) {
-                        echo '<span><i class="fas fa-user-circle"></i> Bienvenido, ' . htmlspecialchars($_SESSION['usuario']) . '</span>';
-                    }
-                    ?>
-                </div>
             </nav>
         </div>
     </div>
@@ -65,33 +57,36 @@ session_start();
         </section>
 
 <section>
-    <h3>Equipo Multidisciplinar</h3>
-    <ul>
-        <li>
-            <img src="/imagenWeb/img24.JPG" alt="Roxana" class="perfil-img"> 
-            <strong>Roxana</strong>: Administrador, Backend y análisis de datos.
-        </li>
-        <li>
-            <img src="/imagenWeb/img25.jpeg" alt="Naomy" class="perfil-img"> 
-            <strong>Naomy</strong>: Backend
-        </li>
-        <li>
-            <img src="/imagenWeb/img27.jpeg" alt="Abigail" class="perfil-img"> 
-            <strong>Abigail</strong>: Backend
-        </li>
-        <li>
-            <img src="/imagenWeb/img29.jpeg" alt="Valeria" class="perfil-img"> 
-            <strong>Valeria</strong>: Backend
-        </li>
-        <li>
-            <img src="/imagenWeb/img28.jpeg" alt="Gustavo" class="perfil-img"> 
-            <strong>Gustavo</strong>: Backend
-        </li>
-        <li>
-            <img src="/imagenWeb/img26.jpeg" alt="Axel" class="perfil-img"> 
-            <strong>Axel</strong>: Frontend y diseño accesible
-        </li>
-    </ul>
+<section>
+    <h3>DESARROLLADORES</h3>
+    <div class="equipo-grid">
+        <div class="equipo-item">
+            <img src="/imagenWeb/rox.jpeg" alt="Roxana" class="perfil-img">
+            <strong>Roxana</strong><br>Administrador, Backend y análisis de datos
+        </div>
+        <div class="equipo-item">
+            <img src="/imagenWeb/nao.jpeg" alt="Naomy" class="perfil-img">
+            <strong>Naomy</strong><br>Backend
+        </div>
+        <div class="equipo-item">
+            <img src="/imagenWeb/abi.jpeg" alt="Abigail" class="perfil-img">
+            <strong>Abigail</strong><br>Backend
+        </div>
+        <div class="equipo-item">
+            <img src="/imagenWeb/val.jpeg" alt="Valeria" class="perfil-img">
+            <strong>Valeria</strong><br>Backend
+        </div>
+        <div class="equipo-item">
+            <img src="/imagenWeb/gus.jpeg" alt="Gustavo" class="perfil-img">
+            <strong>Gustavo</strong><br>Backend
+        </div>
+        <div class="equipo-item">
+            <img src="/imagenWeb/axel.jpeg" alt="Axel" class="perfil-img">
+            <strong>Axel</strong><br>Frontend y diseño accesible
+        </div>
+    </div>
+</section>
+
 </section>
 
         <section>

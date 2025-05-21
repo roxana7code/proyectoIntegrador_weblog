@@ -464,6 +464,186 @@ box-shadow: 0 8px 20px rgba(55, 255, 0, 0.467); /* Aumenta la sombra para un efe
     border-radius: 5px;
     cursor: pointer;
 }
+/* === ANIMACIONES PERSONALIZADAS === */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  0% { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes swing {
+  20% { transform: rotate3d(0, 0, 1, 15deg); }
+  40% { transform: rotate3d(0, 0, 1, -10deg); }
+  60% { transform: rotate3d(0, 0, 1, 5deg); }
+  80% { transform: rotate3d(0, 0, 1, -5deg); }
+  100% { transform: rotate3d(0, 0, 1, 0deg); }
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px #298d0e; }
+  50% { box-shadow: 0 0 15px #298d0e; }
+  100% { box-shadow: 0 0 5px #298d0e; }
+}
+
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === EFECTOS ANIMADOS EN ELEMENTOS === */
+
+body {
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Header que se desliza y brilla */
+header {
+  animation: fadeInLeft 1s ease-in-out;
+}
+
+/* Logo que hace "pop" */
+.logo-ods img {
+  animation: popIn 0.8s ease-in-out;
+}
+
+/* Título de los posts con animación de entrada y pulso */
+.titulo-posts h1 {
+  animation: fadeInUp 1.2s ease forwards;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+}
+
+/* Posts individuales con entrada animada */
+.posts-contenido {
+  animation: fadeInLeft 1s ease-in-out;
+}
+
+/* Hover animado con resplandor en artículos del aside */
+.articulo-item:hover {
+  animation: glow 1.5s infinite alternate;
+}
+
+/* Íconos sociales que hacen "swing" */
+.icon-redes-footer:hover {
+  animation: swing 1s ease;
+}
+
+/* Botón de like con animación al hacer hover */
+#like-button:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Comentarios que aparecen suavemente */
+.comentario {
+  animation: fadeInUp 0.7s ease-in;
+}
+
+/* Botón enviar comentario con efecto de pulso al pasar el mouse */
+#comment-form button:hover {
+  animation: pulse 0.6s infinite;
+}
+
+/* Fondo animado */
+body, #body-posts {
+  background: linear-gradient(-45deg, #f5f7fa, #cbd2dc, #d0eaff, #d0f0da);
+  background-size: 400% 400%;
+  animation: moveGradient 12s ease infinite;
+}
+/* === NUEVAS ANIMACIONES DE COLOR, ESCALA Y ROTACIÓN === */
+
+@keyframes colorShift {
+  0% { color: #201f1f; }
+  25% { color: #298d0e; }
+  50% { color: #0066cc; }
+  75% { color: #8f00ff; }
+  100% { color: #201f1f; }
+}
+
+@keyframes buttonGradient {
+  0% { background-color: #4CAF50; }
+  50% { background-color: #45a049; }
+  100% { background-color: #4CAF50; }
+}
+
+@keyframes rotateIcon {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes imageZoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes waveText {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* === APLICACIÓN DE LAS NUEVAS ANIMACIONES === */
+
+/* Títulos principales con cambio de color cíclico */
+.titulo-posts h1, .contenido-posts h1 {
+  animation: colorShift 5s infinite ease-in-out;
+}
+
+/* Botón enviar comentario con fondo animado al pasar el mouse */
+#comment-form button:hover {
+  animation: buttonGradient 2s infinite alternate;
+  box-shadow: 0 0 15px rgba(0, 128, 0, 0.6);
+}
+
+/* Íconos sociales con rotación suave */
+.icon-redes-footer:hover {
+  animation: rotateIcon 1.5s linear infinite;
+}
+
+/* Imágenes de los posts con zoom cíclico */
+.contenido-posts img {
+  animation: imageZoom 4s ease-in-out infinite;
+}
+
+/* Nombres de autores o etiquetas con "ondulación" */
+.comentario h4, #aside .columna-aside span {
+  display: inline-block;
+  animation: waveText 2s ease-in-out infinite;
+}
+
+/* Links de navegación con transición de color y resplandor al pasar */
+.menu-tips nav ul li a:hover {
+  color: #34a853;
+  text-shadow: 0 0 8px #34a853;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Logo que "rebota" suavemente */
+.logo-ods img:hover {
+  animation: pulse 1s infinite;
+  cursor: pointer;
+}
+
+/* Enlaces del footer con efecto visual */
+#aside .columna-aside a:hover {
+  color: #FF4500;
+  text-shadow: 0 0 5px #FF4500;
+}
 
 
 

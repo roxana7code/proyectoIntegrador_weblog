@@ -8,19 +8,15 @@ session_start();
     <meta charset="UTF-8">
     <title>Diseño web tipo blog - para practica</title>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="estilosPost.css">
-    <link rel="stylesheet" type="text/css" href="path_to_slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="path_to_slick/slick-theme.css"/>
-<script type="text/javascript" src="path_to_slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, 
@@ -33,8 +29,11 @@ session_start();
                 <div class="logo-ods"> 
                     <img src="imagenWeb/img9.png" alt="">
                 </div>
-                <h1><a href="/visitante.php">Salud y <b>bienestar</b></a></h1>
-                <div class="menu-contenido">
+                <h1><a href="visitante.php">Salud y <b>bienestar</b></a></h1>
+                <button class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+</button>
+                <div class="menu-contenido" id="menu-contenido">
                     <nav style="display: flex; align-items: center;">
                         <ul style="display: flex; margin: 0; padding: 0;">
                             <li><a href="/visitante.php"><i class="fas fa-home"></i> Inicio</a></li>
@@ -124,9 +123,10 @@ session_start();
                         </ul>
                     </nav>
 
-                    <button onclick="window.location.href='post-tips.html';">
-                        <a href="/inicioSesion.php" style="color: whitesmoke; text-decoration: none;">Leer más</a>
-                    </button>
+<button onclick="window.location.href='post-tips.html';" style="color: whitesmoke; background: #333; border:none; padding:10px 20px; cursor:pointer;">
+    Leer más
+</button>
+
                 </div>
 
                 <img src="imagenWeb/img16.jpg" alt="">
@@ -213,14 +213,17 @@ session_start();
     <script src="js/script.js"></script>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const iconMenu = document.getElementById("icon-menu");
-        const navMenu = document.querySelector(".menu-contenido nav");
 
-        iconMenu.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
-        });
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.querySelector(".menu-contenido");
+
+menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+
     });
+
 </script>
     
 </body>

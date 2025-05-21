@@ -1,4 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Animaciones Keyframes */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeBackground {
+  0% { background-color: #f5f7fa; }
+  50% { background-color: #dbdccb; }
+  100% { background-color: #f5f7fa; }
+}
 
 *{
   margin: 0;
@@ -398,27 +436,46 @@ header{
   }
 }
 .comentarios-likes {
-    margin-top: 40px;
+    margin-top: 50px;
+    padding: 40px;
+    background: linear-gradient(135deg, #ffffff, #f0f4f8);
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease;
+    transition: all 0.4s ease-in-out;
 }
 
 .comentarios-container {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .comentario {
-    background-color: #f5f5f5;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #4CAF50;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    animation: slideInLeft 0.5s ease forwards;
+    opacity: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.comentario:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .comentario h4 {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .comentario p.fecha-comentario {
-    font-size: 12px;
-    color: #888;
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 10px;
 }
 
 .likes-container {
@@ -427,37 +484,96 @@ header{
 }
 
 #like-button {
-    background-color: transparent;
+    background: transparent;
     border: none;
-    font-size: 24px;
-    color: #888;
+    font-size: 28px;
+    color: #bbb;
     cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
-
+#like-button:hover {
+    color: #ff4444;
+    transform: scale(1.3);
+}
 #like-button.liked {
-    color: #ff0000;
+    color: #ff4444;
+    animation: glow 1s infinite alternate;
 }
 
 #comment-form {
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
 #comment-form textarea {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    resize: vertical;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease;
+}
+#comment-form textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px #4CAF5090;
 }
 
 #comment-form button {
-    background-color: #4CAF50;
+    align-self: flex-start;
+    background: linear-gradient(135deg, #4CAF50, #3e8e41);
     color: white;
+    padding: 12px 25px;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 25px;
+    font-size: 16px;
     cursor: pointer;
+    transition: transform 0.3s ease, backgroun 0.3s ease;
 }
+#comment-form button:hover {
+    background: linear-gradient(135deg, #3e8e41, #2e7030);
+    transform: scale(1.05);
+}
+
+#ultimos-articulos .articulo-item {
+
+  animation: fadeInUp 1s ease both;
+}
+#ultimos-articulos .articulo img {
+  
+  animation: zoomIn 0.8s ease both;
+}
+.titulo h1 {
+  
+  animation: slideInLeft 1s ease-out;
+}
+
+.sub-titulo h2 {
+  
+  animation: slideInRight 1s ease-out;
+}
+.tip-recetas p {
+  
+  animation: fadeInUp 0.9s ease both;
+}
+.icon-redes-footer {
+  
+  animation: bounce 2s infinite;
+}
+#comment-form button {
+  
+  animation: pulse 2s infinite;
+}
+#body-recetas {
+  
+  animation: fadeBackground 10s infinite;
+}
+
+
+
+
 
 
 

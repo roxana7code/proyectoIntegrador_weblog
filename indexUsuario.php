@@ -18,27 +18,34 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="estilosPost.css">
-    <link rel="stylesheet" type="text/css" href="path_to_slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="path_to_slick/slick-theme.css"/>
-    <script type="text/javascript" src="path_to_slick/slick.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, 
     minimum-scale=1.0">
 </head>
 <body>
+    <div id="overlay-menu"></div>
+
     <header>
         <div class="contenido-heder">
             <div class="menu-tips">
                 <div class="logo-ods"> 
                     <img src="imagenWeb/img9.png" alt="">
                 </div>
-                <h1><a href="/indexUsuario.php">Salud y <b>bienestar</b></a></h1>
-                <div class="menu-contenido">
+                <h1><a href="indexUsuario.php">Salud y <b>bienestar</b></a></h1>
+                <button class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+</button>
+
+                <div class="menu-contenido" id="menu-contenido">
                     <nav style="display: flex; align-items: center;">
                         <ul style="display: flex; margin: 0; padding: 0;">
-                            <li><a href="/indexUsuario.php"><i class="fas fa-home"></i> Inicio</a></li>
+                            <li><a href="indexUsuario.php"><i class="fas fa-home"></i> Inicio</a></li>
                             <li><a href="https://www.youtube.com/channel/UCP6DHuQs90149gArPEcevJg"><i class="fab fa-youtube"></i> Tutoriales</a></li>
-                            <li><a href="/nosotros.php"><i class="fas fa-users"></i> Nosotros</a></li>
+                            <li><a href="nosotros.php"><i class="fas fa-users"></i> Nosotros</a></li>
                             <li><a href="/crud/cerrar_sesion.php"><i class="fas fa-sign-in-alt"></i> Cerrar sesión</a></li>
                         </ul>
 
@@ -137,10 +144,10 @@ if (isset($_SESSION['usuario'])) {
                             <p>suficiente agua a lo largo del día</p>
                         </ul>
                     </nav>
+<a href="post-tips.php" style="display: inline-block; padding: 10px 20px; background-color: #2c3e50; color: whitesmoke; text-decoration: none; border-radius: 5px; font-weight: bold;">
+    Leer más
+</a>
 
-                    <button onclick="window.location.href='post-tips.php';">
-                        <a href="post-tips.php" style="color: whitesmoke; text-decoration: none;">Leer más</a>
-                    </button>
                 </div>
 
                 <img src="imagenWeb/img16.jpg" alt="">
@@ -227,14 +234,16 @@ if (isset($_SESSION['usuario'])) {
     <script src="js/script.js"></script>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const iconMenu = document.getElementById("icon-menu");
-        const navMenu = document.querySelector(".menu-contenido nav");
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleBtn = document.getElementById("menu-toggle");
+  const menu = document.getElementById("menu-contenido");
 
-        iconMenu.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
-        });
-    });
+  toggleBtn.addEventListener("click", function () {
+    menu.classList.toggle("active");
+  });
+});
+
+
     document.addEventListener("DOMContentLoaded", function () {
     const modal = document.getElementById("postModal");
     const modalContent = document.getElementById("modal-content");

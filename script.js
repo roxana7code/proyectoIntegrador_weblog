@@ -13,7 +13,7 @@ $(document).ready(function () {
         slidesToShow: 3,         // Muestra 3 slides a la vez
         slidesToScroll: 1,       // Desplaza 1 slide a la vez
         autoplay: true,          // Activar autoplay
-        autoplaySpeed: 2000,     // Velocidad de autoplay
+        autoplaySpeed: 1000,     // Velocidad de autoplay
         nextArrow: $(".next"),   // Configuración de los botones de navegación
         prevArrow: $(".prev"),
         responsive: [

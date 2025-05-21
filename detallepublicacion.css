@@ -320,27 +320,46 @@ font-weight: bold;
 margin-bottom: 5px;
 }
 .comentarios-likes {
-    margin-top: 40px;
+    margin-top: 50px;
+    padding: 40px;
+    background: linear-gradient(135deg, #ffffff, #f0f4f8);
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease;
+    transition: all 0.4s ease-in-out;
 }
 
 .comentarios-container {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .comentario {
-    background-color: #f5f5f5;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #4CAF50;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    animation: slideInLeft 0.5s ease forwards;
+    opacity: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.comentario:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .comentario h4 {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .comentario p.fecha-comentario {
-    font-size: 12px;
-    color: #888;
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 10px;
 }
 
 .likes-container {
@@ -349,36 +368,362 @@ margin-bottom: 5px;
 }
 
 #like-button {
-    background-color: transparent;
+    background: transparent;
     border: none;
-    font-size: 24px;
-    color: #888;
+    font-size: 28px;
+    color: #bbb;
     cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
-
+#like-button:hover {
+    color: #ff4444;
+    transform: scale(1.3);
+}
 #like-button.liked {
-    color: #ff0000;
+    color: #ff4444;
+    animation: glow 1s infinite alternate;
 }
 
 #comment-form {
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
 #comment-form textarea {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    resize: vertical;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease;
+}
+#comment-form textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px #4CAF5090;
 }
 
 #comment-form button {
-    background-color: #4CAF50;
+    align-self: flex-start;
+    background: linear-gradient(135deg, #4CAF50, #3e8e41);
     color: white;
+    padding: 12px 25px;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 25px;
+    font-size: 16px;
     cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
+#comment-form button:hover {
+    background: linear-gradient(135deg, #3e8e41, #2e7030);
+    transform: scale(1.05);
+}
+
+/* Animaciones personalizadas */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px #4CAF50;
+    }
+    50% {
+        box-shadow: 0 0 20px #4CAF50, 0 0 10px #4CAF50;
+    }
+    100% {
+        box-shadow: 0 0 5px #4CAF50;
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Aplicación de animaciones */
+
+body {
+    animation: fadeInUp 1s ease-out;
+}
+
+.menu-tips h1 a {
+    transition: all 0.3s ease;
+}
+.menu-tips h1 a:hover {
+    color: #4CAF50;
+    transform: scale(1.1);
+}
+
+.menu-tips nav ul li a {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+.menu-tips nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #298d0e;
+    transition: width 0.3s ease-in-out;
+}
+.menu-tips nav ul li a:hover::after {
+    width: 100%;
+}
+
+.posts-contenido {
+    animation: bounceIn 1s ease-in-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(100px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05) translateY(-10px);
+    }
+    70% {
+        transform: scale(0.95) translateY(5px);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+
+.posts-contenido:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.post-slider .post {
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease;
+}
+.post-slider .post:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.slick-center .post {
+    animation: pulse 1.5s infinite;
+}
+
+#like-button {
+    transition: all 0.3s ease-in-out;
+}
+#like-button:hover {
+    transform: scale(1.2);
+}
+
+#like-button.liked {
+    animation: glow 1s infinite alternate;
+}
+
+#comment-form button {
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+#comment-form button:hover {
+    background-color: #3e8e41;
+    transform: scale(1.05);
+}
+
+/* Animación en la entrada de los comentarios */
+.comentario {
+    animation: slideInLeft 0.5s ease forwards;
+    opacity: 0;
+}
+
+footer {
+    animation: floating 3s ease-in-out infinite;
+    transition: background-color 0.5s ease;
+}
+footer:hover {
+    background-color: #155e00;
+}
+
+/* Efecto al pasar sobre íconos de redes */
+.icon-redes-footer {
+    transition: all 0.3s ease;
+}
+.icon-redes-footer:hover {
+    transform: scale(1.2) rotate(5deg);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+/* --- Animaciones adicionales --- */
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes swing {
+    20% {
+        transform: rotate(15deg);
+    }
+    40% {
+        transform: rotate(-10deg);
+    }
+    60% {
+        transform: rotate(5deg);
+    }
+    80% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -400px 0;
+    }
+    100% {
+        background-position: 400px 0;
+    }
+}
+
+/* --- Estilos animados adicionales --- */
+
+/* Efecto brillante en h1 */
+.titulo-posts h1 {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #4CAF50;
+    animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #4CAF50; }
+}
+
+
+/* Swing en logo al pasar el cursor */
+.menu-tips .logo-ods img:hover {
+    animation: swing 1s ease-in-out;
+}
+
+/* Zoom in en imagen de post al cargar */
+.posts-contenido img {
+    animation: zoomIn 0.8s ease-in-out;
+}
+
+/* Aparición suave de cada post individual */
+.post-slider .post {
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+}
+.post-slider .post:nth-child(1) {
+    animation-delay: 0.2s;
+}
+.post-slider .post:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.post-slider .post:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Floating sutil en los ítems del menú */
+.menu-tips nav ul li a {
+    animation: floating 4s ease-in-out infinite;
+}
+
+/* Botones sociales con pulso */
+.icon-redes-footer {
+    animation: pulse 2s infinite;
+}
+
+/* Aparición con fade para los comentarios */
+.comentario {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Brillo al enfocar campos del formulario */
+#comment-form textarea:focus,
+#comment-form button:focus {
+    outline: none;
+    box-shadow: 0 0 8px #4CAF50;
+    animation: glow 1.5s infinite alternate;
+}
+
+/* Fondo del sitio con animación sutil */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #dbe9e0 0%, transparent 70%);
+    opacity: 0.2;
+    z-index: -1;
+    animation: floating 10s ease-in-out infinite;
+}
+
+/* Resaltar títulos de post al pasar cursor */
+.post-info h3:hover {
+    color: #4CAF50;
+    text-shadow: 1px 1px 2px rgba(76, 175, 80, 0.4);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+.post-slider .post:hover {
+    transform: rotateY(10deg) scale(1.08);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
 
 

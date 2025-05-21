@@ -499,6 +499,114 @@ header {
     border-radius: 5px;
     font-weight: bold;
 }
+/* NUEVAS ANIMACIONES */
+@keyframes bounceIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px #298d0e; }
+  50% { box-shadow: 0 0 20px #60a100; }
+  100% { box-shadow: 0 0 5px #298d0e; }
+}
+
+/* Aplicación de animaciones */
+header {
+  animation: slideInLeft 1s ease;
+}
+
+.formulario {
+  animation: bounceIn 1.2s ease;
+}
+
+.formulario h1 {
+  animation: slideUp 1s ease;
+}
+
+.formulario form input[type=submit] {
+  animation: pulse 2s infinite;
+}
+
+.menu-tips nav ul li a:hover {
+  animation: pulse 0.5s ease;
+}
+
+.publicaciones-table {
+  animation: fadeIn 1s ease;
+}
+
+.publicaciones-table tr:hover {
+  animation: glow 1.5s infinite alternate;
+}
+
+.crear-publicacion-btn {
+  animation: bounceIn 1.2s ease;
+}
+
+.crear-publicacion-btn:hover {
+  animation: shake 0.4s ease-in-out;
+}
+
+.ver-btn {
+  animation: slideUp 1.2s ease;
+}
+
+.ver-btn:hover {
+  animation: glow 1.2s infinite alternate;
+}
+
+.regresar-btn {
+  animation: fadeIn 1s ease;
+}
+
+.regresar-btn:hover {
+  animation: pulse 0.8s infinite;
+}
+
+.popup-bienvenida {
+  animation: fadeIn 1s ease forwards;
+}
+
+.container-footer {
+  animation: slideUp 2s ease;
+}
+
+.container-footer footer .icon-redes-footer:hover {
+  animation: pulse 0.6s ease-in-out infinite;
+}
+
+.modal-content {
+  animation: bounceIn 0.6s ease;
+}
+
+.mensaje-error {
+  animation: shake 0.5s ease;
+}
 
 
 
