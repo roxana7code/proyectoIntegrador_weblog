@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Resultados de búsqueda</title>
-    <link rel="stylesheet" href="/detallepublicacion.css">  <!-- Opcional, según tus estilos -->
+    <link rel="stylesheet" href="detallepublicacion.css">  <!-- Opcional, según tus estilos -->
 </head>
 <body>
 

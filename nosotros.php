@@ -32,14 +32,14 @@ session_start();
             <img src="imagenWeb/img9.png" alt="Logo de Salud y Bienestar">
         </div>
         <h1>
-            <a href="/indexUsuario.php">
+            <a href="indexUsuario.php">
                 <span class="salud">Salud y </span><b class="bienestar">bienestar</b>
             </a>
         </h1>
         <div class="menu-contenido">
             <nav>
                 <ul>
-                    <li><a href="/indexUsuario.php"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="indexUsuario.php"><i class="fas fa-home"></i> Inicio</a></li>
                 </ul>
             </nav>
         </div>
@@ -61,27 +61,27 @@ session_start();
     <h3>DESARROLLADORES</h3>
     <div class="equipo-grid">
         <div class="equipo-item">
-            <img src="/imagenWeb/rox.jpeg" alt="Roxana" class="perfil-img">
+            <img src="imagenWeb/rox.jpeg" alt="Roxana" class="perfil-img">
             <strong>Roxana</strong><br>Administrador, Backend y análisis de datos
         </div>
         <div class="equipo-item">
-            <img src="/imagenWeb/nao.jpeg" alt="Naomy" class="perfil-img">
+            <img src="imagenWeb/nao.jpeg" alt="Naomy" class="perfil-img">
             <strong>Naomy</strong><br>Backend
         </div>
         <div class="equipo-item">
-            <img src="/imagenWeb/abi.jpeg" alt="Abigail" class="perfil-img">
+            <img src="imagenWeb/abi.jpeg" alt="Abigail" class="perfil-img">
             <strong>Abigail</strong><br>Backend
         </div>
         <div class="equipo-item">
-            <img src="/imagenWeb/val.jpeg" alt="Valeria" class="perfil-img">
+            <img src="imagenWeb/val.jpeg" alt="Valeria" class="perfil-img">
             <strong>Valeria</strong><br>Backend
         </div>
         <div class="equipo-item">
-            <img src="/imagenWeb/gus.jpeg" alt="Gustavo" class="perfil-img">
+            <img src="imagenWeb/gus.jpeg" alt="Gustavo" class="perfil-img">
             <strong>Gustavo</strong><br>Backend
         </div>
         <div class="equipo-item">
-            <img src="/imagenWeb/axel.jpeg" alt="Axel" class="perfil-img">
+            <img src="imagenWeb/axel.jpeg" alt="Axel" class="perfil-img">
             <strong>Axel</strong><br>Frontend y diseño accesible
         </div>
     </div>

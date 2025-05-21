@@ -62,6 +62,7 @@
     
   }
   
+
   #ultimos-articulos .articulo-item {
     width: 30%; /* Cada artículo ocupará el 30% del ancho disponible */
     padding: 15px;
@@ -110,7 +111,7 @@
   
   #ultimos-articulos .articulo a {
     text-decoration: none;
-    color: #007BFF;
+    color: #22549edd;
     font-weight: bold;
     margin-top: 10px;
     display: inline-block; /* Mantiene el enlace en su propia línea */

@@ -37,9 +37,9 @@ session_start();
                     <nav style="display: flex; align-items: center;">
                         <ul style="display: flex; margin: 0; padding: 0;">
                             <li><a href="/visitante.php"><i class="fas fa-home"></i> Inicio</a></li>
-                            <li><a href="/inicioSesion.php"><i class="fab fa-youtube"></i> Tutoriales</a></li>
-                            <li><a href="/inicioSesion.php"><i class="fas fa-users"></i> Nosotros</a></li>
-                            <li><a href="/inicioSesion.php"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a></li>
+                            <li><a href="inicioSesion.php"><i class="fab fa-youtube"></i> Tutoriales</a></li>
+                            <li><a href="inicioSesion.php"><i class="fas fa-users"></i> Nosotros</a></li>
+                            <li><a href="inicioSesion.php"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a></li>
                         </ul>
                         <form id="searchForm" class="search-form" action="buscar.php" method="GET" style="margin-left: 20px; display: flex;">
                             <input type="text" name="q" placeholder="Buscar..." required style="padding: 5px;">
@@ -144,42 +144,42 @@ session_start();
                     <h3>Galletas de avena y platano </h3>
                     <p>Estas son unas galletas de avena muy saludables y fáciles, ideales…  </p>
                     <span>24/05/2025</span>
-                    <a href="/inicioSesion.php">Leer más</a>
+                    <a href="inicioSesion.php">Leer más</a>
                 </div>
                 <div class="articulo-item">
                     <img src="post_Img/post1.jpg" alt="Salud y bienestar">
                     <h3>¿Cómo debe de ser la dieta para deportistas de alto rendimiento? </h3>
                     <p>La dieta para deportistas de alto rendimiento juega un papel crucial para… </p>
                     <span>24/05/2025</span>
-                    <a href="/inicioSesion.php">Leer más</a>
+                    <a href="inicioSesion.php">Leer más</a>
                 </div>
                 <div class="articulo-item">
                     <img src="post_Img/post2.jpg" alt="Salud y bienestar">
                     <h3>Dieta antiinflamatoria: alimentos recomendados y cuáles evitar </h3>
                     <p>Elegir una dieta antiinflamatoria es clave para prevenir y combatir la inflamación que… </p>
                     <span>24/05/2025</span>
-                    <a href="/inicioSesion.php">Leer más</a>
+                    <a href="inicioSesion.php">Leer más</a>
                 </div>
                 <div class="articulo-item">
                     <img src="post_Img/post3.jpg" alt="Salud y bienestar">
                     <h3>Galletas de calabaza para el desayuno  </h3>
                     <p>Estas galletas de calabaza se han vuelto una de mis recetas favoritas. Te prometo que te van a encantar… </p>
                     <span>24/05/2025</span>
-                    <a href="/inicioSesion.php">Leer más</a>
+                    <a href="inicioSesion.php">Leer más</a>
                 </div>
                 <div class="articulo-item">
                     <img src="post_Img/post4.jpg" alt="Salud y bienestar">
                     <h3>Smoothie de Frutas y Avena </h3>
                     <p>Este smoothie es una excelente manera de comenzar el… </p>
                     <span>24/05/2025</span>
-                    <a href="/inicioSesion.php">Leer más</a>
+                    <a href="inicioSesion.php">Leer más</a>
                 </div>
                 <div class="articulo-item">
                     <img src="post_Img/post5.png" alt="Salud y bienestar">
                     <h3>Ensalada con naranja, queso y pistachos </h3>
                     <p>Esta ensalada con naranja, queso de cabra y pistachos, aportan… </p>
                     <span>24/05/2025</span>
-                    <a href="/inicioSesion.php">Leer más</a>
+                    <a href="inicioSesion.php">Leer más</a>
                 </div>
                 <!-- Repite el bloque div para más artículos -->
             </div>
@@ -192,9 +192,9 @@ session_start();
                 </div>
 
                 <div class="redes-footer">
-                    <a href="/inicioSesion.php" target="_blank"><i class="fa-brands fa-facebook icon-redes-footer"></i></a>
-                    <a href="/inicioSesion.php" target="_blank"><i class="fa-brands fa-instagram icon-redes-footer"></i></a>
-                    <a href="/inicioSesion.php"><i class="fab fa-twitter icon-redes-footer"></i></a>
+                    <a href="inicioSesion.php" target="_blank"><i class="fa-brands fa-facebook icon-redes-footer"></i></a>
+                    <a href="inicioSesion.php" target="_blank"><i class="fa-brands fa-instagram icon-redes-footer"></i></a>
+                    <a href="inicioSesion.php"><i class="fab fa-twitter icon-redes-footer"></i></a>
                 </div>
 
                 <hr>
