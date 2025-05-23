@@ -1,8 +1,8 @@
 /* === ESTILOS GENERALES === */
 :root {
-  --primary: #25ba14;         /* Color primario (verde) */
+  --primary: #19870d;         /* Color primario (verde) */
   --primary-dark: #1e9a10;    /* Versión oscura del color primario */
-  --secondary: #14c4e3;       /* Color secundario (azul claro) */
+  --secondary: #07171a;       /* Color secundario (azul claro) */
   --error: #ff4d4d;           /* Color para errores (rojo) */
   --success: #1e6;            /* Color para éxito (verde claro) */
   --text-light: #ffffff;      /* Color de texto claro */
@@ -20,7 +20,7 @@
 
 /* Estilos del cuerpo */
 body {
-  background-image: url(../IMG/fondo1.jpg);
+  background-image: url(../IMG/descargar\ \(1\).jpeg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -96,7 +96,7 @@ form {
   max-width: 500px;
   margin: 70px auto 30px auto;
   padding: 50px 40px;
-  background: rgba(37, 186, 20, 0.95);
+  background: rgba(32, 144, 32, 0.95);
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   position: relative;
@@ -372,7 +372,7 @@ button[type="submit"]:active {
 /* === RESPONSIVE: TABLETS === */
 @media (max-width: 991px) {
   body {
-    background-image: url(../IMG/fondo1.jpg);
+    background-image: url(../IMG/descargar\ \(1\).jpeg);
     padding: 15px;
     display: flex;
     flex-direction: column;

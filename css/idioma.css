@@ -1,0 +1,62 @@
+.language-toggle {
+  position: fixed;          /* Fijar posición en pantalla */
+  top: 15px;                /* Distancia desde el borde superior */
+  right: 15px;              /* Distancia desde el borde derecho */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #874d4d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  z-index: 9999;            /* Asegura que esté por encima de otros elementos */
+}
+
+.language-toggle img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+
+.language-toggle.idioma-activo {
+  border-color: #27ae60;              /* Borde verde */
+  box-shadow: 0 0 12px #2ecc71;       /* Resplandor verde */
+  transform: scale(1.15);             /* Leve zoom */
+}
+
+
+.language-toggle:hover {
+  transform: scale(1.1);
+}
+
+.language-toggle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.language-toggle {
+  /* todo lo que ya tenías... */
+  animation: slideInRight 0.6s ease-out;
+}

@@ -25,6 +25,8 @@ session_start();
 
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, 
     minimum-scale=1.0">
+     <!-- Estilos del selector de idioma -->
+    <link rel="stylesheet" href="css/idioma.css">
 </head>
 <body>
     <div id="overlay-menu"></div>
@@ -35,7 +37,16 @@ session_start();
                 <div class="logo-ods"> 
                     <img src="imagenWeb/img9.png" alt="">
                 </div>
-                <h1><a href="indexUsuario.php">Salud y <b>bienestar</b></a></h1>
+               <!-- Botón de idioma -->
+<div class="language-toggle" onclick="toggleLanguage()">
+  <img id="flag-icon" src="img/esp.png" alt="Idioma" />
+</div>
+
+<h1>
+  <a href="indexUsuario.php">
+    <span data-es="Salud y " data-en="Health and ">Salud y </span><b><span data-es="bienestar" data-en="well-being">bienestar</span></b>
+  </a>
+</h1>
                 <button class="menu-toggle" id="menu-toggle">
         <i class="fas fa-bars"></i>
 </button>
@@ -43,24 +54,31 @@ session_start();
                 <div class="menu-contenido" id="menu-contenido">
                     <nav style="display: flex; align-items: center;">
                         <ul style="display: flex; margin: 0; padding: 0;">
-                            <li><a href="indexUsuario.php"><i class="fas fa-home"></i> Inicio</a></li>
-                            <li><a href="https://www.youtube.com/channel/UCP6DHuQs90149gArPEcevJg"><i class="fab fa-youtube"></i> Tutoriales</a></li>
-                            <li><a href="nosotros.php"><i class="fas fa-users"></i> Nosotros</a></li>
-                            <li><a href="/crud/cerrar_sesion.php"><i class="fas fa-sign-in-alt"></i> Cerrar sesión</a></li>
+                           <li><a href="indexUsuario.php" class="lang-inicio"><i class="fas fa-home"></i> Inicio</a></li>
+<li><a href="https://www.youtube.com/" class="lang-tutoriales"><i class="fab fa-youtube"></i> Tutoriales</a></li>
+<li><a href="nosotros.php" class="lang-nosotros"><i class="fas fa-users"></i> Nosotros</a></li>
+<li><a href="/crud/cerrar_sesion.php" class="lang-cerrarSesion"><i class="fas fa-sign-in-alt"></i> Cerrar sesión</a></li>
+
                         </ul>
 
-                    <!-- Formulario de búsqueda -->
                     <form id="searchForm" class="search-form" action="buscar.php" method="GET" style="margin-left: 20px; display: flex;">
-                            <input type="text" name="q" placeholder="Buscar..." required style="padding: 5px;">
-                            <button type="submit" style="padding: 5px;"><i class="fas fa-search"></i></button>
-                        </form>
+  <input type="text" name="q" 
+         placeholder="Buscar..." 
+         data-placeholder-es="Buscar..." 
+         data-placeholder-en="Search..."
+         required 
+         style="padding: 5px;">
+  <button type="submit" style="padding: 5px;"><i class="fas fa-search"></i></button>
+</form>
+
                         <!-- Saludo al usuario -->
-                        <div class="perfil-usuario" style="margin-left: 20px; color: white;">
-                        <?php
+                    <div class="perfil-usuario" style="margin-left: 20px; color: white;">
+<?php
 if (isset($_SESSION['usuario'])) {
-    echo '<span style="color:rgb(0, 0, 0);"><i class="fas fa-user-circle"></i> Bienvenido, ' . htmlspecialchars($_SESSION['usuario']) . '</span>';
+    echo '<span style="color:rgb(0, 0, 0);"><i class="fas fa-user-circle"></i> <span class="lang-bienvenido">Bienvenido</span>, ' . htmlspecialchars($_SESSION['usuario']) . '</span>';
 }
 ?>
+</div>
                         </div>
                     </nav>
                 </div>
@@ -76,7 +94,7 @@ if (isset($_SESSION['usuario'])) {
         </div>
 
     <div class="post-slider">
-    <h1 class="slider-title">Publicaciones Recientes</h1>
+<h1 class="slider-title lang-publicaciones">Publicaciones Recientes</h1>
     <i class="fas fa-chevron-left prev"></i>
     <i class="fas fa-chevron-right next"></i>
 
@@ -102,8 +120,7 @@ if (isset($_SESSION['usuario'])) {
             echo '<div class="post">';
             echo '<img src="../imagenWeb/' . htmlspecialchars($fila['imagen']) . '" alt="" class="slider-image">';
             echo '<div class="post-info">';
-            echo '<h4><a href="detalle_publicacion.php?id=' . $fila['publicacion'] . '">' . htmlspecialchars($fila['titulo']) . '</a></h4>';
-            echo '<i class="far fa-user"> ' . htmlspecialchars($fila['autor']) . '</i> &nbsp;';
+            echo '<h4><a href="/post-Bloguero/post' . $fila['publicacion'] . '.php">' . htmlspecialchars($fila['titulo']) . '</a></h4>';            echo '<i class="far fa-user"> ' . htmlspecialchars($fila['autor']) . '</i> &nbsp;';
             echo '<i class="far fa-calendar"> ' . htmlspecialchars($fila['fecha']) . '</i>';
             echo '</div>';
             echo '</div>';
@@ -115,39 +132,35 @@ if (isset($_SESSION['usuario'])) {
     // Cierra la conexión al final
     mysqli_close($con);
     ?>
-</div>
-
-
-
-
-
+    </div>
     </div>
 </div>
 
 
         <div class="container-conten">
             <div class="Big-post">
-                <h1>Pasos para una alimentación saludable</h1>
+<h1 class="lang-pasoTitulo">Pasos para una alimentación saludable</h1>
             </div>
             <article>
                 <div class="contenido">
                     <nav>
                         <ul>
-                            <li><a href="#"><i class="fas fa-calendar-alt"></i></a> Planificas tus comidas</li>
-                            <p>Organiza tus comidas saludables para</p>
-                            <p>asegurar una dieta balanceada</p>
-                            <li><a href="#"><i class="fas fa-apple-alt"></i></a> Incluye mas frutas y verduras</li>
-                            <p>Aumenta el consumo de alimentos frescos y</p>
-                            <p>naturales en tu dieta diaria</p>
-                            <li><a href="#"><i class="fas fa-tint"></i></a> Hidratate adecuadamente</li>
-                            <p>Mantén tu cuerpo hidratado bebiendo</p>
-                            <p>suficiente agua a lo largo del día</p>
-                        </ul>
-                    </nav>
-<a href="post-tips.php" style="display: inline-block; padding: 10px 20px; background-color: #2c3e50; color: whitesmoke; text-decoration: none; border-radius: 5px; font-weight: bold;">
-    Leer más
-</a>
+                            <h1 class="lang-pasoTitulo">Pasos para una alimentación saludable</h1>
 
+                            <li><a href="#"><i class="fas fa-calendar-alt"></i></a> <span class="lang-paso1">Planificas tus comidas</span></li>
+                            <p class="lang-paso1desc">Organiza tus comidas saludables para asegurar una dieta balanceada</p>
+
+                            <li><a href="#"><i class="fas fa-apple-alt"></i></a> <span class="lang-paso2">Incluye mas frutas y verduras</span></li>
+                            <p class="lang-paso2desc">Aumenta el consumo de alimentos frescos y naturales en tu dieta diaria</p>
+
+                            <li><a href="#"><i class="fas fa-tint"></i></a> <span class="lang-paso3">Hidratate adecuadamente</span></li>
+                            <p class="lang-paso3desc">Mantén tu cuerpo hidratado bebiendo suficiente agua a lo largo del día</p>
+
+                                                    </ul>
+                                                </nav>
+                            <a href="post-tips.php" style="display: inline-block; padding: 10px 20px; background-color: #2c3e50; color: whitesmoke; text-decoration: none; border-radius: 5px; font-weight: bold;">
+                            <span data-es="Leer más" data-en="Read more">Leer más</span>
+                            </a>
                 </div>
 
                 <img src="imagenWeb/img16.jpg" alt="">
@@ -159,52 +172,82 @@ if (isset($_SESSION['usuario'])) {
         </div>
 
         <section id="ultimos-articulos">
-            <div class="articulo">
-                <div class="articulo-item">
-                    <img src="post_Img/post6.jpg" alt="Salud y bienestar">
-                    <h3>Galletas de avena y platano </h3>
-                    <p>Estas son unas galletas de avena muy saludables y fáciles, ideales…  </p>
-                    <span>24/05/2025</span>
-                    <a href="post-Bloguero/post6.php">Leer más</a>
-                </div>
-                <div class="articulo-item">
-                    <img src="post_Img/post1.jpg" alt="Salud y bienestar">
-                    <h3>¿Cómo debe de ser la dieta para deportistas de alto rendimiento? </h3>
-                    <p>La dieta para deportistas de alto rendimiento juega un papel crucial para… </p>
-                    <span>24/05/2025</span>
-                    <a href="post-Bloguero/post1.php">Leer más</a>
-                </div>
-                <div class="articulo-item">
-                    <img src="post_Img/post2.jpg" alt="Salud y bienestar">
-                    <h3>Dieta antiinflamatoria: alimentos recomendados y cuáles evitar </h3>
-                    <p>Elegir una dieta antiinflamatoria es clave para prevenir y combatir la inflamación que… </p>
-                    <span>24/05/2025</span>
-                    <a href="post-Bloguero/post2.php">Leer más</a>
-                </div>
-                <div class="articulo-item">
-                    <img src="post_Img/post3.jpg" alt="Salud y bienestar">
-                    <h3>Galletas de calabaza para el desayuno  </h3>
-                    <p>Estas galletas de calabaza se han vuelto una de mis recetas favoritas. Te prometo que te van a encantar… </p>
-                    <span>24/05/2025</span>
-                    <a href="post-Bloguero/post3.php">Leer más</a>
-                </div>
-                <div class="articulo-item">
-                    <img src="post_Img/post4.jpg" alt="Salud y bienestar">
-                    <h3>Smoothie de Frutas y Avena </h3>
-                    <p>Este smoothie es una excelente manera de comenzar el… </p>
-                    <span>24/05/2025</span>
-                    <a href="post-Bloguero/post4.php">Leer más</a>
-                </div>
-                <div class="articulo-item">
-                    <img src="post_Img/post5.png" alt="Salud y bienestar">
-                    <h3>Ensalada con naranja, queso y pistachos </h3>
-                    <p>Esta ensalada con naranja, queso de cabra y pistachos, aportan… </p>
-                    <span>24/05/2025</span>
-                    <a href="post-Bloguero/post5.php">Leer más</a>
-                </div>
-                <!-- Repite el bloque div para más artículos -->
-            </div>
-        </section>
+  <div class="articulo">
+    <div class="articulo-item">
+    <img src="post_Img/post1.jpg" alt="Salud y bienestar">
+    <h3>¿Cómo debe de ser la dieta para deportistas?</h3>
+    <p>La dieta para deportistas de alto rendimiento...</p>
+    <span>24/05/2025</span>
+    <a href="/post-Bloguero/post1.php" class="lang-leer-mas">Leer más</a>
+</div>
+
+<div class="articulo-item">
+    <img src="post_Img/post2.jpg" alt="Salud y bienestar">
+    <h3>Dieta antiinflamatoria</h3>
+    <p>Elegir una dieta antiinflamatoria es clave...</p>
+    <span>24/05/2025</span>
+    <a href="/post-Bloguero/post2.php" class="lang-leer-mas">Leer más</a>
+</div>
+
+<!-- Repite para post3.php a post6.php -->
+    <!-- Artículo 1 -->
+<div class="articulo-item">
+    <img src="/post_Img/post1.jpg" alt="Salud y bienestar">
+    <h3>¿Cómo debe de ser la dieta para deportistas?</h3>
+    <p>La dieta para deportistas de alto rendimiento...</p>
+    <span>24/05/2025</span>
+    <a href="/post-Bloguero/post1.php" class="lang-leer-mas">Leer más</a>
+</div>
+
+<!-- Artículo 2 -->
+<div class="articulo-item">
+    <img src="/post_Img/post2.jpg" alt="Salud y bienestar">
+    <h3>Dieta antiinflamatoria</h3>
+    <p>Elegir una dieta antiinflamatoria es clave...</p>
+    <span>24/05/2025</span>
+    <a href="/post-Bloguero/post2.php" class="lang-leer-mas">Leer más</a>
+</div>
+    <div class="articulo-item">
+      <img src="post_Img/post4.jpg" alt="Salud y bienestar">
+      <h3 data-es="Smoothie de Frutas y Avena" data-en="Fruit and Oat Smoothie"></h3>
+      <p data-es="Este smoothie es una excelente manera de comenzar el…" data-en="This smoothie is an excellent way to start your…"></p>
+      <span>24/05/2025</span>
+      <a href="post-Bloguero/post4.php" data-es="Leer más" data-en="Read more"></a>
+    </div>
+    <div class="articulo-item">
+      <img src="post_Img/post5.png" alt="Salud y bienestar">
+      <h3 data-es="Ensalada con naranja, queso y pistachos" data-en="Salad with orange, cheese and pistachios"></h3>
+      <p data-es="Esta ensalada con naranja, queso de cabra y pistachos, aportan…" data-en="This salad with orange, goat cheese, and pistachios provides…"></p>
+      <span>24/05/2025</span>
+      <a href="post-Bloguero/post5.php" data-es="Leer más" data-en="Read more"></a>
+    </div>
+  </div>
+</section>
+
+
+<script>
+// Función para cambiar textos según el idioma
+function cambiarIdioma(idioma) {
+  document.querySelectorAll('[data-es]').forEach(el => {
+    el.textContent = el.getAttribute('data-' + idioma);
+  });
+}
+
+// Detectar idioma guardado o usar español por defecto
+const idiomaGuardado = localStorage.getItem('language') || 'es';
+cambiarIdioma(idiomaGuardado);
+
+// Botones para cambiar idioma y guardar la elección
+document.getElementById('btn-es').addEventListener('click', () => {
+  localStorage.setItem('language', 'es');
+  cambiarIdioma('es');
+});
+document.getElementById('btn-en').addEventListener('click', () => {
+  localStorage.setItem('language', 'en');
+  cambiarIdioma('en');
+});
+</script>
+
 
         <div class="container-footer">
             <footer>
@@ -219,7 +262,12 @@ if (isset($_SESSION['usuario'])) {
                 </div>
 
                 <hr>
-                <h4>@ 2025 salud y bienestar - Todos los derechos reservados</h4>
+<h4>
+  <span data-es="@ 2025 salud y bienestar - Todos los derechos reservados"
+        data-en="@ 2025 health and well-being - All rights reserved">
+    @ 2025 salud y bienestar - Todos los derechos reservados
+  </span>
+</h4>
             </footer>
         </div> 
 
@@ -233,7 +281,57 @@ if (isset($_SESSION['usuario'])) {
 
     <script src="js/script.js"></script>
 
+<!-- Script del selector de idioma -->
+    <script src="js/idioma.js"></script>
+
     <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const iconMenu = document.getElementById("icon-menu");
+        const navMenu = document.querySelector(".menu-contenido nav");
+
+        iconMenu.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+        
+        // Cargar idioma al iniciar
+        loadLanguage();
+    });
+    
+    // Función para cambiar el idioma
+    function toggleLanguage() {
+        const flagIcon = document.getElementById('flag-icon');
+        const currentLang = flagIcon.src.includes('esp.png') ? 'es' : 'en';
+        
+        if (currentLang === 'es') {
+            flagIcon.src = 'img/eng.png';
+            localStorage.setItem('language', 'en');
+            applyLanguage('en');
+        } else {
+            flagIcon.src = 'img/esp.png';
+            localStorage.setItem('language', 'es');
+            applyLanguage('es');
+        }
+    }
+    
+    // Función para cargar el idioma guardado
+    function loadLanguage() {
+        const savedLang = localStorage.getItem('language') || 'es';
+        const flagIcon = document.getElementById('flag-icon');
+        
+        flagIcon.src = savedLang === 'en' ? 'img/eng.png' : 'img/esp.png';
+        applyLanguage(savedLang);
+    }
+    
+  
+        // Aplicar las traducciones a todos los elementos con clases lang-*
+        Object.keys(translations[lang]).forEach(key => {
+            const elements = document.querySelectorAll(`.lang-${key}`);
+            elements.forEach(element => {
+                element.textContent = translations[lang][key];
+            });
+        });
+
 document.addEventListener("DOMContentLoaded", function () {
   const toggleBtn = document.getElementById("menu-toggle");
   const menu = document.getElementById("menu-contenido");
@@ -291,6 +389,7 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['tipo']) && $_SESSION['tipo']
     ⬅ Regresar al panel</a>';
 }
 ?>
+
 
 </body>
 </html>

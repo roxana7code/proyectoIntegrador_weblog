@@ -1,25 +1,104 @@
-
-.login-box{
-
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	position: absolute;
-    top: 50px;
-    left: 10px;
-	left: calc(36% - 45px);
-}
-.lef{
+/* ESTILOS EXISTENTES (conservados) */
+.login-box {
     width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	position: absolute;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
     top: 50px;
-    left: 10px;
-	left: calc(45% - 45px);
+    left: calc(36% - 45px);
 }
-.righ{
 
+.lef {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    left: calc(45% - 45px);
+}
+
+.righ {
     background-position: right;
     position: absolute;
+}
+
+/* NUEVOS ESTILOS PARA EL FORMULARIO */
+.registro-container {
+    max-width: 400px;
+    margin: 120px auto 40px; /* Ajustado para tus elementos circulares */
+    padding: 30px;
+    background: white;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
+
+.registro-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 4px;
+    background: linear-gradient(to right, transparent, #25ba14, transparent);
+}
+
+.registro-title {
+    text-align: center;
+    color: #333;
+    margin: 25px 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.registro-form .input-group {
+    margin-bottom: 20px;
+}
+
+.registro-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.registro-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.registro-form input:focus {
+    border-color: #25ba14;
+    outline: none;
+}
+
+.btn-registro {
+    width: 100%;
+    padding: 14px;
+    background: #25ba14;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-registro:hover {
+    background: #1e9a10;
+}
+
+.link-regresar {
+    display: inline-block;
+    color: #25ba14;
+    text-decoration: none;
+    margin-top: 20px;
+    font-weight: 500;
 }

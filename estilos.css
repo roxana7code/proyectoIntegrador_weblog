@@ -264,8 +264,7 @@ header {
     width: 300px;
     height: 330px;
     margin: 0 10px;
-    display: inline-block;
-    background: linear-gradient(to bottom, whitesmoke 65%, #406837eb 80%);
+    background: rgb(198, 224, 187);
     border-radius: 5px;
     box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
     transition: all 0.3s ease;

@@ -71,7 +71,7 @@
     position: relative;
     overflow: hidden;
     text-align: left;
-    background: #deded8cd;
+    background:  rgb(198, 224, 187);
     
   }
   #ultimos-articulos .articulo-item:hover{
