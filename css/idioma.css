@@ -1,7 +1,18 @@
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .language-toggle {
-  position: fixed;          /* Fijar posición en pantalla */
-  top: 15px;                /* Distancia desde el borde superior */
-  right: 15px;              /* Distancia desde el borde derecho */
+  position: fixed;
+  top: 15px;
+  left: 15px;               /* Fijo a la izquierda */
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -10,8 +21,10 @@
   border: 2px solid #874d4d;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s;
-  z-index: 9999;            /* Asegura que esté por encima de otros elementos */
+  z-index: 9999;
+  animation: slideInLeft 0.6s ease-out;  /* Animación desde la izquierda */
 }
+
 
 .language-toggle img {
   max-width: 100%;

@@ -63,6 +63,7 @@ if ($row = mysqli_fetch_assoc($query_total_likes)) {
     <link rel="stylesheet" href="post-blogero.css">
 
     <link rel="stylesheet" href="../estilosPost.css">
+   
 
 </head>
 <body id="body-posts">

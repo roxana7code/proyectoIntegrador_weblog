@@ -1,4 +1,6 @@
-/* Importa la fuente Source Sans Pro desde Google Fonts */
+/* ============================= */
+/* 🔹 IMPORTACIÓN DE FUENTES 🔹 */
+/* ============================= */
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -13,8 +15,7 @@
     box-sizing: border-box;
     text-decoration: none;
     font-family: 'Source Sans Pro', sans-serif;
-    
-} 
+}
 
 /* ====================== */
 /* 🔹 HEADER Y MENÚ 🔹 */
@@ -157,41 +158,40 @@ header {
         z-index: 999;
     }
 
-    
     .menu-tips h1 a {
         font-size: 25px;
     }
-    
+
     .menu-contenido.active {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
     }
-    
+
     .menu-contenido nav ul {
         flex-direction: column;
         gap: 10px;
         width: 100%;
     }
-    
+
     .menu-contenido nav ul li {
         width: 100%;
     }
-    
+
     .menu-contenido nav ul li a {
         padding: 12px 15px;
         justify-content: center;
     }
-    
+
     .search-form {
         margin: 15px 0 0 0;
         width: 100%;
     }
-    
+
     .search-form input {
         flex-grow: 1;
     }
-    
+
     .menu-toggle {
         display: block;
     }
@@ -201,11 +201,12 @@ header {
     .menu-tips h1 {
         font-size: 1.2rem;
     }
-    
+
     .logo-ods img {
         height: 40px;
     }
 }
+
 
 /* ====================== */
 /* 🔹 POST SLIDER 🔹 */
@@ -214,7 +215,7 @@ header {
     position: relative;
     margin-top: 100px;
     padding: 20px 0;
-} 
+}
 
 .post-slider .slider-title {
     text-align: center;
@@ -307,15 +308,17 @@ header {
 /* ====================== */
 /* 🔹 POST SLIDER RESPONSIVE 🔹 */
 /* ====================== */
-@media (max-width: 992px) {
+@media (max-width: 576px) {
     .post-slider {
-        margin-top: 120px;
+        margin-top: 40px; /* Espacio natural después de la imagen */
     }
-    
+}
+
+
     .post-slider .post-wrapper {
         width: 90%;
     }
-    
+
     .post-slider .next,
     .post-slider .prev {
         font-size: 1.5em;
@@ -323,104 +326,76 @@ header {
         height: 35px;
     }
 
-    
-}
 
 @media (max-width: 768px) {
-    
     .post-slider {
         margin-top: 80px;
     }
-    
+
     .post-slider .slider-title {
         font-size: 20px;
         margin: 20px auto;
     }
-    
+
     .post-slider .post-wrapper {
         width: 95%;
         height: 320px;
     }
-    
+
     .post-slider .post-wrapper .post {
         width: 280px;
         height: 310px;
     }
-    
+
     .post-slider .post-wrapper .post .slider-image {
         height: 180px;
     }
-    
+
     .post-slider .post-wrapper .post .post-info {
         height: 120px;
     }
-    
+
     .post-info h4 a {
         font-size: 16px;
     }
-    
+
     .post-info i {
         font-size: 12px;
     }
 }
 
 @media (max-width: 576px) {
-
-    body{
+    body {
         overflow-x: hidden;
     }
+
     .post-slider {
         margin-top: -620px;
     }
-    
+
     .post-slider .slider-title {
         font-size: 18px;
     }
-    
+
     .post-slider .post-wrapper {
         height: 300px;
     }
-    
+
     .post-slider .post-wrapper .post {
         width: 260px;
         height: 290px;
     }
-    
+
     .post-slider .post-wrapper .post .slider-image {
         height: 160px;
     }
-    
+
     .post-slider .next,
     .post-slider .prev {
         font-size: 1.2em;
         width: 30px;
         height: 30px;
     }
-}
-
-/* ======================= */
-/* 🔹 LOGO DEL HEADER 🔹 */
-/* ======================= */
-#icon-menu {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    right: 20px;
-    top: 16px;
-    font-size: 20px;
-    background: #fafafa;
-    border-radius: 100%;
-    color:#000000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.4s ease-in-out;
-}
-
-#icon-menu:hover {
-    opacity: 0.85;
-    transform: scale(1.1) rotate(5deg);
 }
 
 /* ====================== */
@@ -446,8 +421,6 @@ header {
         height: 100vh;
         margin-bottom: 20px;
     }
-
-    
 }
 
 /* ====================== */
@@ -492,7 +465,6 @@ article {
 .Big-post h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-style: normal;
     text-align: center;
     font-size: 50px;
 }
@@ -505,9 +477,7 @@ article h1 {
 
 .contenido nav ul li {
     font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 500;
-    font-style: normal;
     text-decoration: none;
     list-style: none;
     margin-top: 80px;
@@ -518,9 +488,7 @@ article h1 {
 
 .contenido nav ul p {
     font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 400;
-    font-style: normal;
     font-size: 20px;
     opacity: 0.5;
     margin-left: 55px;
@@ -543,7 +511,7 @@ article img {
         align-items: center;
         text-align: center;
     }
-    
+
     article img {
         height: 500px;
         margin-top: 30px;
@@ -578,8 +546,6 @@ article .contenido button:hover {
     background-color: #2a621a;
     transform: scale(1.05);
 }
-
-
 
 /* ====================== */
 /* 🔹 ARTÍCULOS RECIENTES 🔹 */
@@ -823,4 +789,161 @@ article img:hover {
 
 .post-info h4 a:hover::after {
     width: 100%;
+}
+.menu-contenido {
+  display: none; /* oculto por defecto en móvil */
+  position: absolute;
+  top: 60px; /* justo debajo del header */
+  right: 10px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.menu-contenido.active {
+  display: block;
+}
+
+/* En escritorio, que siempre esté visible */
+@media screen and (min-width: 768px) {
+  .menu-contenido {
+    display: flex !important;
+    position: static;
+    box-shadow: none;
+    padding: 0;
+  }
+}
+.menu-contenido {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    flex-direction: column;
+}
+
+.menu-contenido.active {
+    display: flex;
+}
+
+.menu-contenido nav ul {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-contenido nav ul li {
+    margin: 10px 0;
+}
+
+/* En escritorio que siempre esté visible en fila */
+@media (min-width: 768px) {
+    .menu-contenido {
+        display: flex !important;
+        position: static;
+        box-shadow: none;
+        padding: 0;
+        flex-direction: row;
+    }
+
+    .menu-contenido nav ul {
+        flex-direction: row;
+    }
+
+    .menu-contenido nav ul li {
+        margin: 0 15px;
+    }
+}
+
+/* Botón Leer Más - Estilo base */
+button.leer-mas,
+a.leer-mas {
+    display: inline-block;
+    background-color: #406837;
+    color: #fff;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 6px 15px rgba(64,104,55,0.5);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Animación de pulso suave */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 6px 15px rgba(64,104,55,0.5);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(64,104,55,0.7);
+    }
+}
+
+button.leer-mas,
+a.leer-mas {
+    animation: pulse 3s infinite ease-in-out;
+}
+
+/* Efecto hover con movimiento y cambio de color */
+button.leer-mas:hover,
+a.leer-mas:hover {
+    background-color: #2d3e1e;
+    transform: scale(1.15) rotate(-3deg);
+    box-shadow: 0 14px 35px rgba(45,62,30,0.9);
+}
+
+/* Efecto "ondas" al hacer click */
+button.leer-mas:active,
+a.leer-mas:active {
+    animation: none;
+    transform: scale(0.95) rotate(0deg);
+    box-shadow: 0 4px 12px rgba(64,104,55,0.4);
+}
+
+/* Pequeña animación flotante cuando el botón aparece */
+@keyframes floatY {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+button.leer-mas.aparece,
+a.leer-mas.aparece {
+    animation: floatY 4s ease-in-out infinite;
+}
+
+/* Header fijo ya tienes */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 1000;
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+}
+
+.post-meta i {
+    color: #2c3e50;
+    margin-right: 5px;
 }

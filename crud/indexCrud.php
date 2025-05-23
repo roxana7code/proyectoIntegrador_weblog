@@ -158,6 +158,7 @@ if(isset($_SESSION['lang'])) {
                     <nav>
                         <ul>
                             <li><a href="/crud/indexCrud.php"><i class="fas fa-home"></i> <span class="nav-inicio"><?= $lang == 'es' ? 'Inicio' : 'Home' ?></span></a></li>
+                                    <li><a href="/crud/listaUsuarios.php"><i class="fas fa-users"></i> <span class="nav-usuarios"><?= $lang == 'es' ? 'Usuarios' : 'Users' ?></span></a></li>
                             <li><a href="/indexUsuario.php"><i class="fas fa-sign-in-alt"></i> <span class="nav-vista"><?= $lang == 'es' ? 'Vista previa' : 'Preview' ?></span></a></li>
                             <li><a href="/crud/cerrar_sesion.php"><i class="fas fa-sign-out-alt"></i> <span class="nav-cerrar"><?= $lang == 'es' ? 'Cerrar sesión' : 'Log out' ?></span></a></li>
                         </ul>

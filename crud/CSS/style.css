@@ -608,6 +608,124 @@ header {
 .mensaje-error {
   animation: shake 0.5s ease;
 }
+@keyframes slideUpFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 0px rgba(102, 187, 106, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(102, 187, 106, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 0px rgba(102, 187, 106, 0.3);
+    }
+}
+
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(1deg);
+    }
+    75% {
+        transform: rotate(-1deg);
+    }
+}
+
+@keyframes bounceOnHover {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.formulario {
+    margin: 40px auto;
+    padding: 40px 30px;
+    background: linear-gradient(145deg, #e2f4dc, #f5f7f7);
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    animation: slideUpFadeIn 1s ease forwards;
+    opacity: 0;
+}
+
+.formulario h1 {
+    text-align: center;
+    color: #1b4d1b;
+    font-family: 'Segoe UI', sans-serif;
+    margin-bottom: 25px;
+    font-size: 30px;
+    animation: pulseGlow 2s infinite;
+}
+
+.formulario form input,
+.formulario form textarea {
+    width: 100%;
+    background-color: #f9fff9;
+    border: 1px solid #a5d6a7;
+    padding: 14px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: wiggle 3s infinite;
+}
+
+.formulario form input:focus,
+.formulario form textarea:focus {
+    border-color: #66bb6a;
+    box-shadow: 0 0 15px rgba(102, 187, 106, 0.6);
+    transform: scale(1.02);
+    animation: pulseGlow 2s infinite;
+}
+
+.formulario form input[type=submit] {
+    background-color: #2e7d32;
+    color: #fff;
+    font-size: 18px;
+    padding: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    animation: bounceOnHover 2s infinite;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.formulario form input[type=submit]:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+.eliminar-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.eliminar-btn:hover {
+    background-color: #c0392b;
+}
 
 
 

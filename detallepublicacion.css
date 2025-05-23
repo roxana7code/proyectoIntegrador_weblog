@@ -724,6 +724,1167 @@ body::before {
     transform: rotateY(10deg) scale(1.08);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
 }
+.main-content {
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+  flex-wrap: wrap; /* para que en pantallas pequeñas se apilen */
+}
 
+.carousel {
+  flex: 1 1 400px;  /* ocupa mínimo 400px, se adapta */
+  max-width: 600px;
+  background: #e4f0dc;  /* verde claro */
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 128, 0, 0.25);
+  animation: fadeInLeft 1s ease forwards;
+}
 
+.post {
+  flex: 1 1 400px;
+  max-width: 600px;
+  background: #def5e1;  /* verde muy suave */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 128, 0, 0.15);
+  animation: fadeInRight 1s ease forwards;
+}
+
+/* Animaciones */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .main-content {
+    flex-direction: column;
+  }
+  .carousel, .post {
+    max-width: 100%;
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa, #cbd2dc);
+    font-family: 'Poppins', sans-serif;
+    animation: fadeInUp 1s ease-out;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    box-shadow: 0 4px 25px -22px rgba(0,0,0,0.7);
+    z-index: 999;
+    animation: slideDown 0.6s ease forwards;
+}
+
+.contenido-header {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.menu-tips {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.menu-tips .logo-ods img {
+    height: 90px;
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1));
+    transition: transform 0.3s ease;
+}
+.menu-tips .logo-ods img:hover {
+    transform: scale(1.05) rotate(-3deg);
+}
+
+.menu-tips h1 a {
+    color: #201f1f;
+    font-size: 24px;
+    font-weight: 700;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.menu-tips h1 a:hover {
+    color: #4CAF50;
+    transform: scale(1.1);
+}
+
+.menu-tips nav ul {
+    display: flex;
+    list-style: none;
+    margin-left: auto;
+}
+
+.menu-tips nav ul li {
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-tips nav ul li a {
+    color: #201f1f;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+.menu-tips nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background-color: #298d0e;
+    transition: width 0.3s ease;
+}
+.menu-tips nav ul li a:hover {
+    color: #298d0e;
+}
+.menu-tips nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* TITULO DE POSTS */
+.titulo-posts h1 {
+    margin-top: 100px;
+    text-align: center;
+    color: #191919f1;
+    font-size: 40px;
+    text-transform: capitalize;
+    letter-spacing: 1.2px;
+    animation: zoomIn 0.8s ease forwards;
+}
+
+/* CONTENIDO DE POSTS */
+.posts-contenido {
+    max-width: 70%;
+    margin: 100px auto;
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    font-size: 20px;
+    color: #444;
+    text-align: left;
+    position: relative;
+    animation: bounceIn 1s ease forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.posts-contenido:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.posts-contenido img {
+    display: block;
+    max-width: 100%;
+    border-radius: 12px;
+    margin: 20px auto;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease;
+}
+.posts-contenido img:hover {
+    transform: scale(1.05);
+}
+
+.posts-contenido p {
+    line-height: 1.7;
+    color: #555;
+}
+
+/* CARRUSEL (POST SLIDER) */
+.posts-contenido {
+    display: flex;
+    gap: 25px;
+}
+.post-slider {
+    width: 280px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: linear-gradient(to bottom, #f9f9f9 65%, #406837eb 80%);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+    overflow: hidden;
+    animation: fadeInRight 1s ease forwards;
+    cursor: grab;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.post-slider:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transform: scale(1.05);
+}
+
+.post-slider .slider-title {
+    text-align: center;
+    margin: 20px 0;
+    font-weight: 600;
+    font-size: 20px;
+    color: #2e4d0e;
+    text-shadow: 0 1px 2px #c0d5a4;
+}
+
+.post-wrapper {
+    padding: 0 10px 20px;
+}
+
+.slick-slide .post {
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border-radius: 8px;
+}
+.slick-center .post {
+    transform: scale(1.15);
+    opacity: 1;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    z-index: 10;
+    animation: pulse 1.5s infinite;
+}
+
+.slick-center .post img {
+    transform: scale(1.1);
+    border-radius: 8px;
+    transition: transform 0.4s ease;
+}
+
+/* Navegación carrusel */
+.slick-prev, .slick-next {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+.slick-prev:hover, .slick-next:hover {
+    opacity: 1;
+    color: #4CAF50;
+}
+.post-slider .prev, .post-slider .next {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.2rem;
+    color: #A6BD75;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+.post-slider .prev {
+    top: 10px;
+}
+.post-slider .next {
+    bottom: 10px;
+}
+
+/* COMENTARIOS Y LIKES */
+.comentarios-likes {
+    margin-top: 50px;
+    padding: 40px;
+    background: linear-gradient(135deg, #ffffff, #f0f4f8);
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease;
+    transition: all 0.4s ease-in-out;
+}
+
+.comentarios-container {
+    margin-bottom: 40px;
+}
+
+.comentario {
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #4CAF50;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    animation: slideInLeft 0.5s ease forwards;
+    opacity: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.comentario:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.comentario h4 {
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.comentario p.fecha-comentario {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.likes-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#like-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+    color: #4CAF50;
+    transition: transform 0.3s ease;
+}
+#like-button.liked {
+    color: #a8cc70;
+    transform: scale(1.2);
+}
+#like-button:hover {
+    color: #74a935;
+    transform: scale(1.15);
+}
+
+#like-count {
+    font-weight: 600;
+    font-size: 20px;
+    color: #555;
+}
+
+/* BOTONES */
+button {
+    background: #4CAF50;
+    color: white;
+    font-weight: 600;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 17px;
+    box-shadow: 0 8px 25px rgba(76,175,80,0.3);
+    transition: background-color 0.4s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+button:hover {
+    background-color: #2d6a0e;
+    box-shadow: 0 15px 40px rgba(45,106,14,0.5);
+    transform: translateY(-3px);
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    background: #4CAF50;
+    padding: 25px 0;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 -10px 20px rgba(46,124,14,0.7);
+    animation: slideUp 0.7s ease forwards;
+}
+
+footer p {
+    font-size: 16px;
+}
+
+/* ANIMACIONES */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1.15);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    50% {
+        transform: scale(1.22);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background: linear-gradient(135deg, #e6f0d4, #a7c957);
+    font-family: 'Poppins', sans-serif;
+    color: #2d2d2d;
+    overflow-x: hidden;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    z-index: 9999;
+    backdrop-filter: saturate(180%) blur(10px);
+    border-bottom: 2px solid #4CAF50;
+    animation: slideDownFade 0.7s ease forwards;
+    transition: background-color 0.5s ease;
+}
+header:hover {
+    background-color: #e7f3d9;
+    box-shadow: 0 10px 40px rgba(76,175,80,0.35);
+}
+
+.contenido-header {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.menu-tips {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.menu-tips .logo-ods img {
+    height: 90px;
+    filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.15));
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.menu-tips .logo-ods img:hover {
+    transform: scale(1.15) rotate(-7deg);
+    filter: drop-shadow(4px 4px 10px rgba(0,0,0,0.3));
+}
+
+.menu-tips h1 a {
+    color: #1e1e1e;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.menu-tips h1 a:hover {
+    color: #3f7d0e;
+    text-shadow: 0 0 10px #a6cc71;
+}
+
+.menu-tips nav ul {
+    display: flex;
+    list-style: none;
+    margin-left: auto;
+}
+
+.menu-tips nav ul li {
+    margin: 0 20px;
+    position: relative;
+}
+
+.menu-tips nav ul li a {
+    color: #2d2d2d;
+    font-weight: 600;
+    font-size: 17px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: all 0.4s ease;
+    user-select: none;
+}
+.menu-tips nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: #4caf50;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+.menu-tips nav ul li a:hover {
+    color: #4caf50;
+    background-color: #e7f3d9;
+}
+.menu-tips nav ul li a:hover::after {
+    width: 70%;
+}
+
+/* TITULO DE POSTS */
+.titulo-posts h1 {
+    margin-top: 110px;
+    text-align: center;
+    color: #1a1a1a;
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    animation: neonGlow 3s ease-in-out infinite alternate;
+    user-select: none;
+}
+
+/* CONTENIDO DE POSTS */
+.posts-contenido {
+    max-width: 70%;
+    margin: 100px auto;
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 25px 40px rgba(76,175,80,0.3);
+    font-size: 20px;
+    color: #2e2e2e;
+    text-align: left;
+    animation: fadeInScale 1.2s ease forwards;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+}
+.posts-contenido:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 40px 60px rgba(76,175,80,0.5);
+}
+
+.posts-contenido img {
+    display: block;
+    max-width: 100%;
+    border-radius: 18px;
+    margin: 25px auto;
+    box-shadow: 0 18px 30px rgba(0,0,0,0.15);
+    transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
+    cursor: pointer;
+}
+.posts-contenido img:hover {
+    transform: scale(1.12) rotate(1deg);
+}
+
+.posts-contenido p {
+    line-height: 1.75;
+    color: #444;
+    font-weight: 500;
+}
+
+/* CARRUSEL */
+.posts-contenido {
+    display: flex;
+    gap: 28px;
+}
+.post-slider {
+    width: 300px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #f2f9e2, #86b817);
+    box-shadow: 0 15px 45px rgba(76,175,80,0.25);
+    overflow: hidden;
+    animation: slideInRightFade 1.3s ease forwards;
+    cursor: grab;
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+    position: relative;
+}
+.post-slider:hover {
+    box-shadow: 0 30px 60px rgba(76,175,80,0.5);
+    transform: scale(1.07);
+}
+
+.post-slider .slider-title {
+    text-align: center;
+    margin: 24px 0;
+    font-weight: 700;
+    font-size: 22px;
+    color: #234d06;
+    text-shadow: 0 1px 3px #c3d786;
+    user-select: none;
+}
+
+.post-wrapper {
+    padding: 0 15px 25px;
+}
+
+.slick-slide .post {
+    opacity: 0.5;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    border-radius: 14px;
+    box-shadow: inset 0 0 20px rgba(255,255,255,0.2);
+}
+.slick-center .post {
+    transform: scale(1.2);
+    opacity: 1;
+    box-shadow: 0 18px 40px rgba(76,175,80,0.4);
+    z-index: 20;
+    animation: heartbeat 1.8s infinite;
+}
+
+.slick-center .post img {
+    transform: scale(1.15);
+    border-radius: 14px;
+    transition: transform 0.5s ease;
+}
+
+/* Navegación carrusel */
+.slick-prev, .slick-next {
+    opacity: 0.75;
+    transition: opacity 0.3s ease;
+    color: #538c11 !important;
+    font-size: 2.6rem !important;
+    filter: drop-shadow(0 0 2px #4caf50);
+}
+.slick-prev:hover, .slick-next:hover {
+    opacity: 1;
+    color: #2e5a00 !important;
+    filter: drop-shadow(0 0 6px #a8d063);
+}
+.post-slider .prev, .post-slider .next {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.4s ease;
+}
+.post-slider .prev {
+    top: 15px;
+}
+.post-slider .next {
+    bottom: 15px;
+}
+
+/* COMENTARIOS Y LIKES */
+.comentarios-likes {
+    margin-top: 60px;
+    padding: 45px;
+    background: linear-gradient(135deg, #f8fcf5, #dff4be);
+    border-radius: 25px;
+    box-shadow: 0 25px 50px rgba(76,175,80,0.3);
+    animation: fadeInUp 1.2s ease forwards;
+    transition: all 0.5s ease-in-out;
+}
+
+.comentarios-container {
+    margin-bottom: 45px;
+}
+
+.comentario {
+    background: #e7f3d9;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-left: 8px solid #4caf50;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+    animation: slideInLeftFade 0.7s ease forwards;
+    opacity: 0;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: default;
+}
+.comentario:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.comentario h4 {
+    margin-bottom: 10px;
+    color: #2a2a2a;
+    font-size: 20px;
+    font-weight: 700;
+    text-shadow: 0 0 3px #a7cc72;
+}
+
+.comentario p.fecha-comentario {
+    font-size: 14px;
+    color: #799b4f;
+    margin-bottom: 12px;
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+.likes-container {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+#like-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: #4caf50;
+    transition: all 0.5s ease;
+    user-select: none;
+}
+#like-button.liked {
+    color: #a6cc71;
+    transform: scale(1.3);
+    text-shadow: 0 0 12px #d4f18f;
+    animation: pulseGlow 2s infinite alternate;
+}
+#like-button:hover {
+    color: #7bc743;
+    transform: scale(1.15);
+}
+
+/* CONTADOR DE LIKES */
+#like-count {
+    font-weight: 700;
+    font-size: 22px;
+    color: #3f670b;
+    margin-left: 12px;
+    user-select: none;
+}
+
+/* BOTONES */
+button {
+    background: linear-gradient(135deg, #74b72e, #3c6510);
+    color: #f0f8e7;
+    font-weight: 700;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 12px 30px rgba(60,101,16,0.5);
+    transition: background-color 0.5s ease, box-shadow 0.4s ease, transform 0.4s ease;
+    user-select: none;
+}
+button:hover {
+    background: linear-gradient(135deg, #5e9621, #2c4805);
+    box-shadow: 0 20px 45px rgba(46,124,14,0.7);
+    transform: translateY(-5px) scale(1.05);
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    background: #4caf50;
+    padding: 30px 0;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    box-shadow: 0 -15px 30px rgba(46,124,14,0.85);
+    animation: slideUpFade 0.8s ease forwards;
+    user-select: none;
+}
+
+footer p {
+    font-size: 18px;
+}
+
+/* ANIMACIONES */
+
+/* Entrada */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes slideDownFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slideInRightFade {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slideInLeftFade {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Pulso suave y brillante */
+@keyframes pulseGlow {
+    0% {
+        transform: scale(1);
+        text-shadow: 0 0 6px #4caf50;
+    }
+    100% {
+        transform: scale(1.15);
+        text-shadow: 0 0 18px #a8d063;
+    }
+}
+
+/* Latido heartbeat */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 4px #8aba37);
+    }
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 14px #9ccc65);
+    }
+}
+
+/* Glow neón para títulos */
+@keyframes neonGlow {
+    0% {
+        text-shadow:
+          0 0 6px #a8d063,
+          0 0 12px #7bc744,
+          0 0 18px #8bc74f,
+          0 0 30px #9ccc65;
+        color: #4caf50;
+    }
+    100% {
+        text-shadow:
+          0 0 12px #d0f098,
+          0 0 20px #b9e774,
+          0 0 28px #a7d94e,
+          0 0 40px #8fc83a;
+        color: #77b900;
+    }
+}
+
+/* Hover con zoom y sombra */
+@keyframes zoomHoverShadow {
+    0% {
+        box-shadow: 0 15px 30px rgba(76,175,80,0.3);
+        transform: scale(1);
+    }
+    100% {
+        box-shadow: 0 35px 70px rgba(76,175,80,0.6);
+        transform: scale(1.07);
+    }
+}
+/* --- Responsive General --- */
+
+/* Móviles pequeños (hasta 480px) */
+@media screen and (max-width: 480px) {
+
+    /* Header contenido */
+    .contenido-header {
+        padding: 0 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Logo */
+    .menu-tips .logo-ods img {
+        height: 65px;
+        margin-bottom: 5px;
+    }
+
+    /* Menú */
+    .menu-tips nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 10px 0 0;
+        width: 100%;
+    }
+    .menu-tips nav ul li {
+        margin: 8px 12px;
+    }
+
+    /* Título posts */
+    .titulo-posts h1 {
+        font-size: 28px;
+        margin-top: 130px;
+        padding: 0 15px;
+    }
+
+    /* Contenido posts */
+    .posts-contenido {
+        max-width: 95%;
+        margin: 60px auto 40px;
+        padding: 25px 20px;
+        font-size: 17px;
+        flex-direction: column;
+        box-shadow: 0 18px 35px rgba(76,175,80,0.25);
+    }
+    
+    /* Carrusel: que el slider ocupe todo el ancho */
+    .posts-contenido {
+        display: block; /* ya no flex para que sea vertical */
+    }
+    .post-slider {
+        width: 90vw !important;
+        margin: 15px auto !important;
+        transform: none !important;
+        box-shadow: 0 15px 35px rgba(76,175,80,0.3);
+    }
+
+    /* Imágenes */
+    .posts-contenido img {
+        margin: 20px auto;
+        max-width: 100%;
+        border-radius: 14px;
+    }
+
+    /* Comentarios */
+    .comentarios-likes {
+        padding: 30px 20px;
+        margin-top: 30px;
+        border-radius: 18px;
+    }
+
+    .comentario {
+        padding: 18px 15px;
+        margin-bottom: 18px;
+        font-size: 15px;
+    }
+
+    .comentario h4 {
+        font-size: 18px;
+    }
+    .comentario p.fecha-comentario {
+        font-size: 12px;
+    }
+
+    /* Botones */
+    button {
+        padding: 12px 22px;
+        font-size: 16px;
+    }
+
+    /* Likes */
+    #like-button {
+        font-size: 26px;
+    }
+    #like-count {
+        font-size: 18px;
+        margin-left: 8px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 20px 10px;
+        font-size: 15px;
+    }
+}
+
+/* Tablets (481px a 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+    .contenido-header {
+        padding: 0 25px;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .menu-tips .logo-ods img {
+        height: 75px;
+    }
+
+    .menu-tips nav ul {
+        margin: 0;
+        width: auto;
+        flex-wrap: nowrap;
+    }
+    .menu-tips nav ul li {
+        margin: 0 18px;
+    }
+
+    .titulo-posts h1 {
+        font-size: 34px;
+        margin-top: 110px;
+        padding: 0 10px;
+    }
+
+    .posts-contenido {
+        max-width: 85%;
+        margin: 90px auto;
+        font-size: 18px;
+        padding: 30px 35px;
+        flex-direction: column;
+    }
+
+    .posts-contenido {
+        display: block;
+    }
+    .post-slider {
+        width: 70vw !important;
+        margin: 20px auto !important;
+        transform: none !important;
+    }
+
+    .comentarios-likes {
+        padding: 35px 30px;
+        margin-top: 40px;
+    }
+
+    .comentario {
+        font-size: 16px;
+        padding: 20px 18px;
+    }
+
+    button {
+        padding: 14px 26px;
+        font-size: 17px;
+    }
+
+    #like-button {
+        font-size: 28px;
+    }
+    #like-count {
+        font-size: 20px;
+        margin-left: 10px;
+    }
+
+    footer {
+        padding: 25px 15px;
+        font-size: 16px;
+    }
+}
+
+/* Desktop grande (>768px) */
+/* Ya tienes estilos para desktop que pueden quedarse igual */
+/* Pero podemos mejorar un poco márgenes para pantallas muy grandes */
+@media screen and (min-width: 1200px) {
+    .posts-contenido {
+        max-width: 60%;
+        margin: 110px auto;
+        padding: 40px 50px;
+    }
+    .post-slider {
+        width: 320px !important;
+    }
+}
 
